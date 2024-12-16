@@ -1,0 +1,103 @@
+.c-card-snippet {
+	display: flex;
+	padding: 32px;
+	padding-bottom: 36px;
+	color: var(--gray-100);
+	background-color: var(--body-color);
+	transition: color var(--tr), background-color var(--tr);
+
+	@media (max-width: $breakpoint-xl) {
+		padding: 30px;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--body-color);
+			background-color: var(--white);
+
+			svg {
+				color: var(--body-color);
+			}
+
+			.c-card-snippet__head {
+				svg {
+					fill: var(--body-color);
+				}
+			}
+
+			.c-card-snippet__info {
+				svg {
+					fill: var(--body-color);
+				}
+			}
+		}
+	}
+
+
+
+	&__left {}
+
+	&__right {
+		margin-left: auto;
+
+		svg {
+			color: var(--gray-100);
+			transition: all var(--tr);
+			max-width: 70px;
+			height: auto;
+		}
+	}
+
+	&__label {
+		margin-bottom: 20px;
+		font-size: var(--fs-18);
+		font-weight: 700;
+	}
+
+	&__head {
+		font-family: var(--font-family-second);
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1em;
+
+		@media (max-width: $breakpoint-xl) {
+			font-size: 38px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		svg {
+			fill: var(--gray-100);
+			transition: fill var(--tr);
+		}
+	}
+
+	&__info {
+		@media (max-width: $breakpoint-xl) {
+			font-size: 14px;
+			width: calc(100% + 20px);
+		}
+
+		svg {
+			margin-left: 2px;
+			margin-right: 5px;
+			fill: var(--gray-100);
+			transition: fill var(--tr);
+
+			@media (max-width: $breakpoint-xl) {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		b {
+			margin-right: 12px;
+
+			@media (max-width: $breakpoint-xl) {
+				margin-right: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_extra_light/css";
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_light/css";
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_regular/css";
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_medium/css";
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_semi_bold/css";
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_bold/css";
+@import "../libs/Noto-Serif-KR-CSS-master/noto_serif_kr_black/css";
+
+@font-face {
+	font-family: CourierNew;
+	font-display: swap;
+	src: url("../fonts/CourierNew-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: CourierNew;
+	font-display: swap;
+	src: url("../fonts/CourierNew-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+// @font-face {
+// 	font-family: NotoSerifKROLD;
+// 	font-display: swap;
+// 	src: url("../fonts/NotoSerifKR-Light.ttf") format("truetype");
+// 	font-weight: 300;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: NotoSerifKROLD;
+// 	font-display: swap;
+// 	src: url("../fonts/NotoSerifKR-Regular.ttf") format("truetype");
+// 	font-weight: 400;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: NotoSerifKROLD;
+// 	font-display: swap;
+// 	src: url("../fonts/NotoSerifKR-Medium.ttf") format("truetype");
+// 	font-weight: 500;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: NotoSerifKROLD;
+// 	font-display: swap;
+// 	src: url("../fonts/NotoSerifKR-SemiBold.ttf") format("truetype");
+// 	font-weight: 600;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: NotoSerifKROLD;
+// 	font-display: swap;
+// 	src: url("../fonts/NotoSerifKR-Bold.ttf") format("truetype");
+// 	font-weight: 700;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: NotoSerifKROLD;
+// 	font-display: swap;
+// 	src: url("../fonts/NotoSerifKR-Black.ttf") format("truetype");
+// 	font-weight: 800;
+// 	font-style: normal;
+// }

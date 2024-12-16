@@ -1,0 +1,71 @@
+.c-auth {
+	width: 100%;
+	max-width: 475px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	border-top: 1px solid var(--body-color);
+	border-bottom: 1px solid var(--body-color);
+
+	@media (max-width: $breakpoint-sm) {
+		padding: 0;
+		border: none;
+	}
+
+	&__header {
+		margin-bottom: 50px;
+	}
+
+	&__logotype {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 43px;
+
+		@media (max-width: $breakpoint-sm) {
+			height: 33px;
+		}
+
+		img {
+			max-height: 100%;
+			width: auto;
+		}
+	}
+
+	&__form {
+		&-input {
+			margin-bottom: 20px;
+
+			@media (max-width: $breakpoint-sm) {
+				margin-bottom: 24px;
+			}
+		}
+
+		&-links {
+			margin-top: 50px;
+			text-align: center;
+
+			@media (max-width: $breakpoint-sm) {
+				margin-top: 30px;
+			}
+		}
+	}
+
+	&__content {
+		margin-bottom: 12px;
+		line-height: 1.4em;
+		text-align: center;
+
+		@media (max-width: $breakpoint-sm) {
+			margin-bottom: 10px;
+		}
+
+		h2 {
+			font-family: var(--font-family-second);
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 12px;
+		}
+	}
+}

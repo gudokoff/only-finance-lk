@@ -1,0 +1,75 @@
+.ui-pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	user-select: none;
+	@extend %hidescroll;
+
+	@media (max-width: $breakpoint-sm) {
+		width: calc(100% + 40px);
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		overflow: auto;
+	}
+	@media (max-width: 440px) {
+		justify-content: center;
+	}
+	&__item {
+		span {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 0px;
+			border: 1px solid var(--body-color);
+			transition: color var(--tr), background-color var(--tr);
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--white);
+					background-color: var(--body-color);
+
+					svg {
+						fill: var(--white);
+					}
+				}
+			}
+
+			svg {
+				transition: fill var(--tr);
+			}
+		}
+
+		&.is-dots {
+			pointer-events: none;
+
+			@media (max-width: 500px) {
+				display: none;
+			}
+		}
+
+		&.is-prev-double,
+		&.is-next-double {
+			@media (max-width: 440px) {
+				display: none;
+			}
+		}
+
+		&.is-current {
+			span {
+				color: var(--white);
+				background-color: var(--body-color);
+
+				svg {
+					fill: var(--white);
+				}
+			}
+		}
+	}
+
+	&__dots {}
+}

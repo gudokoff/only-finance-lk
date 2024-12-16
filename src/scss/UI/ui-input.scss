@@ -1,0 +1,22 @@
+.ui-input {
+	&__field {
+		display: block;
+		width: 100%;
+		height: 40px;
+		padding-left: 0px;
+		padding-right: 0px;
+		background-color: transparent;
+		color: var(--body-color);
+		border-radius: 0 !important;
+		border-bottom: 1px solid var(--gray-500);
+
+		&::placeholder {
+			color: var(--gray-400);
+		}
+	}
+}
+
+textarea.ui-input__field {
+	resize: none;
+	padding-top: 10px;
+}

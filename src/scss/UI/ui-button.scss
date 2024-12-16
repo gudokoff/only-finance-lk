@@ -1,0 +1,339 @@
+.ui-button {
+	position: relative;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 8px;
+	row-gap: 0px;
+	padding: 12px 24px;
+
+	font-family: var(--font-family-default);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1em;
+
+	border-radius: 0px;
+
+	transition: var(--tr);
+	overflow: hidden;
+	user-select: none;
+
+	// disabled
+	&:disabled,
+	&.is-disabled {
+		border-color: var(--gray-250);
+		background-color: var(--gray-250);
+		color: var(--gray-500);
+		pointer-events: none;
+
+		.ui-icon {
+			fill: var(--gray-500);
+		}
+	}
+	
+	&--primary{
+		color: var(--gray-100);
+		background-color: var(--body-color);
+		@media (any-hover: hover){
+			&:hover{
+				background-color: var(--gray-600);
+			}
+		}
+	}
+	&--gray {
+		background-color: var(--gray-200);
+		color: var(--gray-600);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--gray-300);
+				color: var(--black);
+			}
+		}
+	}
+
+	&--outline {
+		&-black {
+			background-color: transparent;
+			border: 1px solid var(--gray-600);
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--gray-250);
+				}
+			}
+
+			&:disabled,
+			&.is-disabled {
+				border-color: var(--gray-250);
+				background-color: var(--gray-250);
+				color: var(--gray-500);
+			}
+		}
+	}
+
+	&--black {
+		font-size: 18px;
+		letter-spacing: -0.012em;
+		background-color: var(--body-color);
+		color: var(--gray-100);
+		transition: .2s ease-in-out;
+
+		@media (max-width: $breakpoint-sm) {
+			font-size: 16px;
+			letter-spacing: -0.02em;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #63696A;
+			}
+
+			&:active {
+				background-color: #F0F6F7;
+			}
+		}
+
+		&:disabled {
+			background-color: #F0F6F7;
+			color: #FB4F93;
+		}
+	}
+
+	&--round {
+		padding: 0;
+		border-radius: 50%;
+	}
+
+	// Size
+	&--xxl {}
+
+	&--xl {}
+
+	&--lg {}
+
+	&--md {}
+
+	&--sm {}
+
+	&--xs {}
+
+	&--fw {
+		width: 100%;
+	}
+
+	.ui-icon {
+		flex-shrink: 0;
+		fill: var(--body-color);
+	}
+
+	// Кнопка-гамбургем
+	&-hamburger {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+
+		background-color: var(--primary-color);
+
+		&__lines {
+			position: relative;
+			width: rem(30);
+			height: rem(18);
+			cursor: pointer;
+			z-index: 5;
+
+			span,
+			&::before,
+			&::after {
+				content: "";
+				transition: all 0.3s ease 0s;
+				right: 0;
+				position: absolute;
+				width: 100%;
+				height: rem(2);
+				background-color: #000;
+			}
+
+			&::before {
+				top: 0;
+			}
+
+			&::after {
+				bottom: 0;
+			}
+
+			span {
+				top: calc(50% - rem(1));
+			}
+
+			._c-menu-open & {
+				span {
+					width: 0;
+					transform: translateX(-15px);
+				}
+
+				&::before {
+					top: calc(50% - rem(1));
+					transform: rotate(-45deg);
+				}
+
+				&::after {
+					bottom: calc(50% - rem(1));
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+
+	// Кнопка навигации в слайдере
+	&-swiper {
+		width: 40px;
+		height: 40px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 50%;
+
+		background-color: var(--primary-color);
+
+		transition: var(--tr);
+
+		svg {
+			fill: var(--white);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	// Кнопка открытия фильтров
+	&-filter {
+		// Кнопка на мобильном
+		display: inline-flex;
+		align-items: center;
+		user-select: none;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		width: auto;
+		cursor: pointer;
+
+		&__name {
+			color: var(--gray-800);
+		}
+
+		&__counter {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: var(--primary-color);
+			color: var(--white);
+			font-size: 12px;
+			line-height: 1em;
+			margin-left: 8px;
+		}
+	}
+
+	// Кнопка Показать еще
+	&-showmore {}
+
+	&-tippy {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 18px;
+		height: 18px;
+		border: 1px solid var(--black);
+		border-radius: 50%;
+
+		.ui-icon {
+			fill: var(--black);
+			margin-top: -1px;
+		}
+	}
+
+	// Кнопка "Показать/скрыть пароль"
+	&-eye {
+		background-color: transparent;
+
+		svg {
+			fill: var(--body-color);
+		}
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 18px;
+			height: 18px;
+
+			&:last-child {
+				display: none;
+				transform: translateY(1px);
+
+				.has-visible-password & {
+					display: inline-flex;
+				}
+
+				svg {
+					fill: #63696A;
+				}
+			}
+
+			&:first-child {
+				.has-visible-password & {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&-more {
+		border-top: 1px solid var(--body-color);
+		border-bottom: 1px solid var(--body-color);
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		width: 100%;
+		background-color: transparent;
+		user-select: none;
+		transition: color var(--tr), background-color var(--tr);
+
+		svg {
+			transition: fill var(--tr);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--white);
+				background-color: var(--body-color);
+
+				svg {
+					fill: var(--white);
+				}
+			}
+		}
+	}
+
+	&-right {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 32px;
+		height: 32px;
+		background-color: transparent;
+	}
+}

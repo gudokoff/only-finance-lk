@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Поддержка</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="robots" content="index, follow"> <!-- noindex, nofollow -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="URL">
+	<meta property="og:title" content="Поддержка">
+	<meta property="og:image" content="URL">
+	<meta name="description" content="Описание">
+
+	<meta name="apple-mobile-web-app-title" content="Поддержка">
+	<meta name="application-name" content="Поддержка">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="css/style.min.css?_v=20241216161147">
+</head>
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			<div class="t-page__aside">
+				<div class="t-page__aside-inner">
+					<div class="t-page__aside-top">
+						<img src="img/upload/logotype-white-1.svg" width="168" height="20" alt="only-finance">
+					</div>
+
+					<div class="t-page__aside-body">
+						<ul class="c-menu-aside">
+							<li class="c-menu-aside__item">
+								<a href="analytics.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-1"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Аналитика</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item">
+								<a href="transactions.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="14" height="13">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-2"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Транзакции</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item">
+								<a href="constructor.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="15" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-3"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Конструктор</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item is-active">
+								<a href="support.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-4"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Поддержка</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="t-page__aside-footer">
+						<div class="t-page__aside-copyright">©2024 OOO «ОНЛИФИНАНС»</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="t-page__main">
+				<header class="c-header  is-transparent">
+					<div class="c-header__top">
+						<div class="c-header__top-cnt container">
+							<div class="c-header__top-left">
+								<div class="c-header__title f-heading-3">Поддержка</div>
+							</div>
+
+							<div class="c-header__top-right">
+
+								<div class="ui-dropdown for-hover">
+									<div class="ui-dropdown__box">
+										<button type="button" class="ui-dropdown__btn">
+											<span class="ui-dropdown__btn-icon">
+												<svg class="ui-icon" width="14" height="14">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-down"></use>
+												</svg>
+											</span>
+											<span class="ui-dropdown__btn-value">Дмитрий Кухарь</span>
+										</button>
+										<div class="ui-dropdown__body">
+											<ul class="ui-dropdown__list">
+												<li><a href="settings.html" class="ui-dropdown__item">
+														<span class="ui-dropdown__item-icon">
+															<svg class="ui-icon" width="13" height="14">
+																<use xlink:href="img/assets/sprite.svg#svg-settings"></use>
+															</svg>
+														</span>
+														<span class="ui-dropdown__item-name">Настройки</span>
+													</a></li>
+												<li><a href="index.html" class="ui-dropdown__item">
+														<span class="ui-dropdown__item-icon">
+															<svg class="ui-icon" width="12" height="12">
+																<use xlink:href="img/assets/sprite.svg#svg-exit"></use>
+															</svg>
+														</span>
+														<span class="ui-dropdown__item-name">Выйти</span>
+													</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="c-language">
+									<a href="#" class="c-language__item">Ru</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="ui-table ui-table--support">
+							<div class="ui-table__header">
+								<div class="ui-table__header-left">
+									<button type="button" class="ui-button ui-button--outline-black" data-popup="#new-support">Создать заявку</button>
+								</div>
+								<div class="ui-table__header-right">
+									<div class="ui-table__info">
+										<span class="ui-table__info-title">Всего:</span>
+										<span class="ui-table__info-value">1 025</span>
+									</div>
+								</div>
+							</div>
+
+							<table class="ui-table__el f-body-b2">
+								<thead>
+									<tr>
+										<th>Заявка</th>
+										<th>Тема</th>
+										<th></th>
+										<th>Статус</th>
+										<th>Создано</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="is-sent">
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Добрый день, Дмитрий. Можно указать Добрый день, Дмитрий. Можно указать...</span></td>
+										<td><span class="f-badge f-badge--green">Отправлено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>#148</td>
+										<td>Возврат</td>
+										<td><span class="f-body-lcl">Подскажите где можно указать адрес Подскажите где можно указать адрес Подскажите где можно указать адрес</span></td>
+										<td><span class="f-badge f-badge--gray">Завершено</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-right" data-popup="#ticket-support">
+												<svg class="ui-icon" width="7" height="11">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-right"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="ui-table__footer">
+								<button type="button" class="ui-button ui-button--gray">Показать еще</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <footer class="c-footer">
+	<div class="c-footer__cnt container">
+		
+	</div>
+</footer> -->
+			</div>
+
+		</div>
+		<!-- Новая заявка -->
+		<div id="new-support" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<div class="ui-modal__content">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Новая заявка</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+
+						<form action="#" method="POST" class="c-form c-form--support js-validate-support">
+							<div class="ui-input">
+								<input autocomplete="off" type="text" name="NAME" placeholder="Имя" class="ui-input__field" required>
+							</div>
+							<div class="ui-input">
+								<input autocomplete="off" type="text" name="PHONE" placeholder="Телефон" class="ui-input__field js-mask-phone" required>
+							</div>
+
+							<select name="" id="" class="js-select-single">
+								<option value="0">Тема</option>
+								<option value="1">Тема 1</option>
+								<option value="2">Тема 2</option>
+								<option value="3">Тема 3</option>
+							</select>
+
+							<div class="ui-input">
+								<textarea autocomplete="off" type="text" name="MSG" placeholder="Описание проблемы" class="ui-input__field js-mask-phone" required></textarea>
+							</div>
+						</form>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Заявка # -->
+		<div id="ticket-support" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<div class="ui-modal__content">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Заявка #144 / Возврат</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" data-close class="ui-button ui-button--gray">Закрыть</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/app.min.js?_v=20241216161147"></script>
+
+		<!-- Затемнение для попап -->
+		<span class="u-body-after" aria-hidden="true"></span>
+	</div>
+</body>
+
+</html>

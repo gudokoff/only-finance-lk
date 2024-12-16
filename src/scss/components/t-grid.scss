@@ -1,0 +1,88 @@
+.t-grid {
+	&-auth {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		@media (max-width: $breakpoint-sm) {
+			padding-top: 44px;
+			padding-bottom: 44px;
+			align-items: flex-start;
+			height: auto;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	&-dashboard {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 60px;
+		row-gap: 80px;
+		margin-bottom: 72px;
+		margin-top: 13px;
+
+		@media (max-width: $breakpoint-xl) {
+			row-gap: 40px;
+			margin-bottom: 60px;
+		}
+	}
+
+	&__item {
+		flex-grow: 1;
+		width: 100%;
+
+		&--sm {
+			min-width: 400px;
+			width: calc(25% - 40px);
+
+			@media (max-width: $breakpoint-xl) {
+				width: calc(35% - 30px);
+
+				canvas {
+					width: 100%;
+				}
+			}
+
+			@media (max-width:600px) {
+				min-width: initial;
+				width: 100%;
+			}
+		}
+
+		&--sm2 {
+			width: calc(29% - 40px);
+
+			@media (max-width: $breakpoint-xl) {
+				width: calc(59% - 30px);
+			}
+		}
+
+		&--md {
+			width: calc(46% - 40px);
+
+			@media (max-width: $breakpoint-xl) {
+				width: calc(59% - 30px);
+			}
+
+			@media (max-width: $breakpoint-lg) {
+				width: 100%;
+			}
+		}
+
+		&--md2 {
+			width: calc(50% - 40px);
+
+			@media (max-width: $breakpoint-xl) {
+				width: calc(60% - 30px);
+			}
+		}
+
+		&--fw {
+			width: 100%;
+		}
+	}
+}

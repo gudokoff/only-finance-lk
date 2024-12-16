@@ -1,0 +1,19 @@
+.c-language {
+	display: inline-flex;
+	align-items: center;
+	flex-shrink: 0;
+	user-select: none;
+	&__item {
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 24px;
+
+		text-align: center;
+
+		border: 1px solid var(--gray-300);
+		border-radius: 2px;
+	}
+}

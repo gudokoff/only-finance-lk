@@ -1,0 +1,27 @@
+.ui-chart-line {
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: #010101;
+		margin-bottom: 8px;
+	}
+
+	&__name {}
+
+	&__value {
+		font-weight: 700;
+	}
+
+	&__view {
+		width: 100%;
+		background-color: #E4E4E4;
+
+		&-inner {
+			display: block;
+			height: 12px;
+			transition: width .5s ease-in-out;
+			width: 0;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.c-form {
+	.ui-input {
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&--support {}
+}

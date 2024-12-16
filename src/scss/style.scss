@@ -1,0 +1,78 @@
+@use "sass:math";
+@use "sass:map";
+
+// Параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
+@import "root/root";
+// Файл шрифтов (формируется автоматически, при изменении шрифтов его нужно удалить и перезапустить сборку)
+@import "fonts/fonts";
+@import "libs/select";
+
+// Подключение библиотек
+// @import "libs/bootstrap";
+// @import "libs/tippy";
+// @import "libs/plyr";
+// @import "libs/jvectormap.css";
+// @import "libs/fancybox"; // Медиа-галерея
+
+// UI элементы
+@import "UI/**/*";
+// Стили компонентов/блоков/секций
+@import "components/**/*";
+
+body {
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.02em;
+
+	// Скролл заблокирован
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+
+
+.container {
+	width: 100%;
+	padding-left: 44px;
+	padding-right: 44px;
+
+	@media (max-width: $breakpoint-xl) {}
+
+	@media (max-width: $breakpoint-lg) {}
+
+	@media (max-width: $breakpoint-sm) {}
+
+	&-main {
+		width: 100%;
+		padding-left: 44px;
+		padding-right: 44px;
+	}
+}
+
+// Затемнения для попап окон
+.u-body-after {
+	display: block;
+	position: fixed;
+
+	top: 0;
+	left: 0;
+	// pointer-events: none;
+	user-select: none;
+
+	background-color: rgba(1, 1, 1, 0.05);
+
+	// transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+	opacity: 0;
+	visibility: hidden;
+	z-index: -1;
+
+	.ui-modal-show & {
+		opacity: 1;
+		visibility: visible;
+		z-index: 149;
+		width: 100%;
+		height: 100%;
+	}
+}

@@ -1,0 +1,54 @@
+.c-menu-aside {
+	user-select: none;
+	&__item {
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(240, 246, 247, 0.10);
+			}
+		}
+
+		&.is-active {
+			background-color: rgba(240, 246, 247, 0.10);
+
+			.c-menu-aside__link-icon {
+				svg {
+					fill: var(--gray-100);
+				}
+			}
+
+			.c-menu-aside__link-name {
+				color: var(--gray-100);
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		padding: 12px 20px;
+		border-radius: 3px;
+
+		&-icon {
+			width: 16px;
+			height: 16px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			margin-right: 16px;
+
+			svg {
+				fill: var(--gray-500);
+			}
+		}
+
+		&-name {
+			color: var(--gray-400);
+		}
+	}
+
+}

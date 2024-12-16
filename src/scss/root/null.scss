@@ -1,0 +1,130 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: var(--font-family-default);
+	color: var(--body-color);
+	//text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+	font-family: var(--font-family-default);
+	font-size: inherit;
+	outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+video {
+	&:focus {
+		outline: none;
+	}
+}
+
+img {
+	pointer-events: none;
+
+	&.u-lazy {
+		display: block;
+	}
+}
+
+svg {
+	flex-shrink: 0;
+}
+
+button {
+	color: inherit;
+	cursor: pointer;
+}
+
+a {
+	color: inherit;
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+
+	&:link,
+	&:visited,
+	&:hover {
+		text-decoration: none;
+	}
+
+	&[href^="tel"],
+	&[href^="mailto"] {
+		white-space: nowrap;
+	}
+
+	&[data-modal],
+	&[data-fancybox] {
+		display: block;
+	}
+}
+
+ul li {
+	list-style: none;
+}
+
+ol {
+	list-style-type: none;
+	counter-reset: num;
+
+	li {
+		&:before {
+			content: counter(num) '.';
+			counter-increment: num;
+			display: inline-block;
+			padding-right: 16px;
+			padding-left: 16px;
+		}
+	}
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+code {
+	background-color: var(--gray-300);
+	padding: 2px 5px;
+	border-radius: 5px;
+}
