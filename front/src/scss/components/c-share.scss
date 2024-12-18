@@ -1,0 +1,26 @@
+.c-share {
+	display: inline-flex;
+	align-items: center;
+	&__title {
+		margin-right: 10px;
+	}
+
+	&__list {
+		display: flex;
+		gap: 10px;
+	}
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 39px;
+		height: 39px;
+		background-color: var(--body-color);
+		border-radius: 50%;
+
+		svg {
+			fill: var(--white);
+		}
+	}
+}

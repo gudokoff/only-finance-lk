@@ -1,0 +1,28 @@
+.ui-timer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	&__icon {
+		width: 22px;
+		height: 22px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__data {}
+
+	&__name {
+		font-size: 11px;
+		line-height: 1.2em;
+		color: #63696A;
+	}
+
+	&__counter {
+		font-family: var(--font-family-second);
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.4em;
+	}
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include|'html/_head.htm',{
+"title":"Поздравляем вас!",
+"description":"Описание"
+}|
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+			@@include|'html/_c-header.htm',{
+			"fixedClass": "is-fixed"
+			}|
+			<main class="t-page__main">
+				<section class="s-page-text">
+					<div class="s-page-text__cnt container">
+						<div class="s-page-text__row-1 row">
+							<div class="col-lg-11">
+								<div class="s-page-text__title">
+									<div class="f-type-heading01">Поздравляем вас! <span class="f-type-cursor is-black"></span></div>
+								</div>
+							</div>
+							<div class="s-page-text__counter col-lg-1">
+								<div class="c-section-counter">
+									<div class="c-section-counter__num">01</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="s-product">
+					<div class="s-product__cnt container">
+						<div class="s-product__row row">
+							<div class="s-product__row-left col-md-7">
+								<div class="s-product__preview">
+									<div class="s-product__preview-img">
+										<img src="img/upload/showcase-1.jpg" srcset="img/upload/showcase-1@2x.jpg 2x" width="513" height="372" alt="1">
+									</div>
+								</div>
+							</div>
+							<div class="s-product__row-right col-md-5">
+								<div class="s-product__descr">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+								</div>
+
+								<div class="s-product__button">
+									<a href="#" class="s-product__button-download ui-button-primary">
+										<span>Скачать файл </span>
+										<svg class="ui-icon" width="15" height="16">
+											<use xlink:href="img/assets/sprite.svg#svg-upload"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="s-product__qr">
+									<img src="img/upload/qr.png" width="145" height="145" alt="1">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="s-page-text">
+					<div class="s-page-text__cnt container">
+						<div class="s-page-text__back">
+							<a href="product.html" class="ui-button-arrow">
+								<svg class="ui-icon" width="38" height="15">
+									<use xlink:href="img/assets/sprite.svg#svg-arrow-left"></use>
+								</svg>
+								<span>вернуться назад</span>
+							</a>
+
+							<div class="c-share">
+								<div class="c-share__title">поделиться</div>
+								<div class="c-share__list">
+									<a href="#" target="_blank" class="c-share__item">
+										<svg class="ui-icon ui-icon--tg" width="20" height="16">
+											<use xlink:href="img/assets/sprite.svg#svg-telegram"></use>
+										</svg>
+									</a>
+									<button type="button" class="c-share__item js-copy-to-clipboard" data-copy="text123" data-tippy-note="Скопирован">
+										<svg class="ui-icon" width="20" height="20">
+											<use xlink:href="img/assets/sprite.svg#svg-copy"></use>
+										</svg>
+									</button>
+									<a href="mailto:mail@mail.ru" class="c-share__item">
+										<svg class="ui-icon" width="20" height="16">
+											<use xlink:href="img/assets/sprite.svg#svg-email"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+
+			@@include|'html/_c-footer.htm',{}|
+		</div>
+		@@include|'html/popup.htm',{}|
+		@@include|'html/_js.htm',{}|
+
+</body>
+
+</html>

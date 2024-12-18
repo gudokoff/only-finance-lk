@@ -1,0 +1,30 @@
+.ui-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0;
+	line-height: 0;
+
+	&-line-through {
+		display: inline-block;
+		position: relative;
+		white-space: nowrap;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			left: 0;
+			top: 8px;
+			transform: rotate(-9deg);
+			display: inline-block;
+			border-top: 1px solid var(--white);
+			border-bottom: 1px solid var(--red);
+			border-radius: 4px;
+		}
+	}
+
+	&--tg {
+		transform: translate(-1px, 0px);
+	}
+}

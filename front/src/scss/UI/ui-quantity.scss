@@ -1,0 +1,129 @@
+//<QUANTITY>
+// Снипет (HTML): qa
+.ui-quantity {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 152px;
+	height: 44px;
+	overflow: visible;
+	@include media-breakpoint-down(md) {
+	}
+	&--hide-control{
+		.ui-quantity__button{
+			display: none;
+		}
+	}
+	&--lg{
+		@media (min-width: 400px){
+			&.ui-quantity{
+				width: 188px;
+			}
+			.ui-quantity__button{
+				flex: 0 0 52px;
+				height: 52px;
+			}
+		}
+	}
+	&__note{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) translateY(0);
+		opacity: 1;
+		visibility: visible;
+		bottom: 100%;
+		margin-bottom: 5px;
+		padding: 5px 7px;
+		background-color: rgba(var(--primary-rgb), 0.9);
+		color: var(--white);
+		border-radius: var(--border-radius);
+		white-space: nowrap;
+		transition: var(--tr);
+		z-index: 4;
+		max-width: 300px;
+		@include media-breakpoint-down(md) {
+			white-space: normal;
+			max-width: 180px;
+			min-width: 180px;
+			left: -15px;
+			transform: none;
+		}
+		&.is-hide{
+			opacity: 0;
+			visibility: hidden;
+			transform: translateX(-50%) translateY(-5px);
+		}
+		&::after{
+			content: "";
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 100%;
+			border: 7px solid transparent; border-top: 7px solid rgba(var(--primary-rgb), 0.9);
+			@include media-breakpoint-down(md) {
+				left: 25px;
+				transform: none;
+			}
+		}
+	}
+	// .quantity__button
+	&__button {
+		position: relative;
+		flex: 0 0 44px;
+		height: 44px;
+
+		border-radius: 50%;
+		background-color: var(--gray-100);
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 16px;
+			height: 2px;
+			margin: 0px 0px 0px -8px;
+
+			background-color: var(--primary-color);
+
+			// transition: all 0.3s ease 0s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--primary-color);
+				&::before,
+				&::after {
+					background-color: var(--white);
+				}
+			}
+		}
+		// .quantity__button_plus
+		&_plus {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		// .quantity__button_minus
+		&_minus {
+		}
+	}
+	// .quantity__input
+	&__input {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1 1 auto;
+		color: var(--gray-800);
+		input {
+			height: 100%;
+			width: 19px;
+			font-size: rem(16);
+			font-weight: 500;
+			text-align: center;
+
+			background-color: transparent;
+		}
+	}
+}

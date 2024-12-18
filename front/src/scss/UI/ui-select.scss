@@ -1,0 +1,20 @@
+@import "../libs/select2/core";
+
+.js-select-single{
+	opacity: 0;
+	visibility: hidden;
+	height: 56px;
+}
+// Общий, корневой контейнер для кнопки и выпадающих опций
+.select2.select2-container{
+	width: 100%;
+}
+.select2-validator{
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	.c-input__error{
+		order: 1;
+		width: 100%;
+	}
+}

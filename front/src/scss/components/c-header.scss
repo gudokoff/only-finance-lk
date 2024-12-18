@@ -1,0 +1,147 @@
+.c-header {
+	&.is-fixed {
+		.c-header__top {
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 50;
+
+			height: 100px;
+			background-color: #fff;
+			transition: background-color var(--tr), transform var(--tr);
+
+			@include media-breakpoint-down(md) {
+				height: 70px;
+			}
+		}
+	}
+
+	&.is-md {
+		.c-header__top-col-1 {
+			@include media-breakpoint-up(lg) {
+				padding-left: 32px;
+			}
+		}
+
+		.c-header__top-col-2 {
+			.c-header__top-logotype {
+				@include media-breakpoint-up(lg) {
+					img {
+						height: 42px;
+						width: auto;
+					}
+				}
+			}
+		}
+
+		.c-header__top-col-3 {
+
+			@include media-breakpoint-up(lg) {
+				padding-right: 32px;
+			}
+		}
+	}
+
+	&.for-fixed-style {
+		.c-header__top {
+			background-color: #fff;
+		}
+	}
+
+	&.for-fixed-up {
+		.c-header__top {
+			transform: translateY(0%);
+		}
+	}
+
+	&.for-fixed-down {
+		.c-header__top {
+			transform: translateY(-100%);
+		}
+	}
+
+	&__pattern {
+		display: block;
+		height: 100px;
+
+		@include media-breakpoint-down(md) {
+			height: 70px;
+		}
+	}
+
+	&__top {
+		display: flex;
+
+		&-logotype {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: opacity .1s ease-in-out;
+
+			img {
+				max-width: 100%;
+				height: auto;
+
+				@include media-breakpoint-down(md) {}
+			}
+		}
+
+		&-controls {
+			margin-left: auto;
+		}
+
+		&-ctn {
+			.row {
+				height: 100%;
+				align-items: center;
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 10px;
+					bottom: 0;
+					right: 10px;
+					height: 1px;
+					background: #000;
+				}
+			}
+		}
+
+		&-col {
+			&-1 {
+				@include media-breakpoint-down(md) {
+					display: none;
+				}
+			}
+
+			&-2 {
+				justify-content: center;
+			}
+
+			&-3 {
+				text-align: right;
+
+				@include media-breakpoint-down(md) {
+					width: auto;
+					margin-left: auto;
+				}
+
+				.for-desktop {
+					@include media-breakpoint-down(md) {
+						display: none;
+					}
+				}
+
+				.for-mobile {
+					display: none;
+
+					@include media-breakpoint-down(md) {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

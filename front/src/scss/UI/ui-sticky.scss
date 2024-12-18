@@ -1,0 +1,15 @@
+.ui-sticky {
+	display: flex;
+	align-items: flex-start;
+
+	@include media-breakpoint-down(lg) {
+		display: block;
+	}
+
+	&__main {}
+
+	&__side {
+		position: relative;
+		flex-shrink: 0;
+	}
+}

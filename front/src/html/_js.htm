@@ -1,0 +1,85 @@
+<script>
+	const validatorRules = {
+		name: {
+			normalizer: function (value) {
+				return $.trim(value);
+			}
+		},
+		CARD_NUMBER: {
+			required: true,
+			creditcard: true
+		},
+		EMAIL: {
+			required: false,
+			email: true,
+		},
+		CARD_MMYY: {
+			required: true,
+			checkDate: true,
+		},
+		EMAIL: {
+      required: "#getReceipt:checked"
+    },
+		PHONE: {
+			required: true,
+			checkMask: true
+		},
+		review: {
+			required: true,
+		},
+		rating: {
+			required: true,
+		},
+		captcha: {
+			captcha: true,
+		}
+	};
+	const validatorMessages = {
+		required: "ошибка в данных",
+		remote: "Пожалуйста, исправьте это поле",
+		email: "E-mail введен не верно",
+		url: "Введите корректный URL",
+		date: "ошибка в данных",
+		checkDate: "ошибка в данных",
+		dateISO: "Введите правильную дату (ГГ.ММ.ДД).",
+		number: "Введите правильный номер",
+		digits: "Введите только цифры",
+		creditcard: "Неверный номер карты",
+		checkMask: "Номер телефона введен не правильно",
+		equalTo: "Пожалуйста, введите значение повторно",
+		accept: "Пожалуйста, введите значение с допустимым расширением",
+	};
+	const validatorRulesMessages = {
+		name: {
+			required: "Имя не заполнено"
+		},
+		PHONE: {
+			required: "Введите номер телефона"
+		},
+		CITY: {
+			required: "Выберите город4"
+		},
+		email: {
+			required: "Введите E-mail"
+		},
+		rating: {
+			required: 'Поставьте оценку'
+		},
+		review: {
+			required: "Напишите ваш отзыв",
+		},
+		captcha: {
+			captcha: "Не правильно",
+		}
+	};
+	const validatorSubmitHandler = {
+		submitHandler: function (form) {
+			form.submit();
+		}
+	}
+</script>
+
+<script src="js/app.min.js"></script>
+
+<!-- Затемнения для попап окон -->
+<span class="u-body-after" aria-hidden="true"></span>

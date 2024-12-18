@@ -1,0 +1,290 @@
+.ui-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 16px;
+	z-index: 150;
+	// Animation
+	opacity: 0;
+	visibility: hidden;
+	transition: 0s ease 0s;
+	pointer-events: none;
+	user-select: none;
+
+	@include media-breakpoint-down(md) {
+		padding: 0;
+		transition: none;
+	}
+
+	@include media-breakpoint-down(sm) {
+		// background-color: var(--white);
+	}
+
+	&--pay {
+		.ui-modal__content {
+			max-width: 456px;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-top: 34px;
+			padding-bottom: 28px;
+			border-radius: 6px;
+
+			@include media-breakpoint-down(md) {
+				max-width: 100%;
+				border-radius: 0;
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-bottom: 16px;
+				padding-top: 12px;
+			}
+		}
+	}
+
+
+	&_show {
+
+		overflow: auto;
+
+		// Animation
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+
+		& .ui-modal__content {
+			// Animation
+			visibility: visible;
+			transform: rotateX(0) translateY(0);
+			transition: transform 0s ease 0s, visibility 0s, opacity 0s;
+		}
+
+		& .ui-modal__close {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&--dialog {
+		.ui-modal__content {
+			max-width: 512px;
+
+			@include media-breakpoint-down(xl) {
+				max-width: 620px;
+			}
+		}
+	}
+
+	&--md {
+		.ui-modal__content {
+			max-width: 624px;
+
+			@include media-breakpoint-down(xl) {
+				max-width: 620px;
+			}
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100%;
+		flex: 1 1 auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		// Animation
+		// perspective: 870px;
+		// transform-style: preserve-3d;
+		will-change: transform;
+
+		@include media-breakpoint-down(md) {
+			height: 100%;
+			perspective: initial;
+			transform-style: initial;
+			background-color: var(--white);
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+	}
+
+	&__content {
+		position: relative;
+		background-color: #fff;
+		padding: 40px;
+		width: 100%;
+		max-width: 980px;
+		border-radius: 0px;
+
+		// Animation
+		visibility: hidden;
+		transform: rotateX(0deg) translateY(0px);
+		transition: 0s ease 0s;
+		will-change: transform;
+
+		@include media-breakpoint-down(xl) {}
+
+		@include media-breakpoint-down(md) {
+			padding: 20px;
+			// border-radius: 0;
+			// box-shadow: none;
+
+			// transform: none;
+			// transition: none;
+		}
+
+		@include media-breakpoint-down(sm) {}
+
+		.lock & {
+			visibility: visible;
+		}
+	}
+
+	// Кнопка закрытия
+	&__close {
+		position: absolute;
+		right: 13px;
+		top: 15px;
+		display: inline-flex;
+		width: 30px;
+		height: 30px;
+		align-items: center;
+		justify-content: center;
+		visibility: hidden;
+		z-index: 1;
+		opacity: 0;
+		transition: 0s;
+
+		@include media-breakpoint-down(sm) {
+			top: 8px;
+			right: 16px;
+		}
+
+		.ui-icon {
+			fill: var(--gray-500);
+			flex-shrink: 0;
+
+			@include media-breakpoint-down(sm) {
+				width: 14px;
+				height: auto;
+			}
+		}
+	}
+
+	// Шапка
+	&__header {
+		position: relative;
+		margin-bottom: 80px;
+		padding-right: 100px;
+
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 60px;
+			padding-right: 50px;
+		}
+
+		@include media-breakpoint-down(md) {
+			padding-right: 30px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 24px;
+
+	}
+
+	&__subtitle {}
+
+	&__descr {
+		color: var(--gray-500);
+		margin-bottom: 33px;
+
+		a {
+			color: var(--primary-color);
+		}
+	}
+
+	&__text {
+		&--has-icon {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.ui-modal__title {
+				margin-top: 32px;
+				margin-bottom: 32px;
+				text-align: center;
+			}
+
+			.ui-button {}
+		}
+	}
+
+	&__buttons {
+		width: calc(100% + 24px);
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+
+
+	&__form {
+		.row {
+			--bs-gutter-x: 1.25rem;
+			--bs-gutter-y: 2.5rem;
+
+			@include media-breakpoint-down(lg) {
+				--bs-gutter-y: 1.25rem;
+			}
+		}
+
+		.ui-input {
+			.ui-input__field {
+				&::placeholder {
+					color: #C0C0C0;
+				}
+			}
+		}
+
+		.ui-table {
+			margin-bottom: 80px;
+
+			@include media-breakpoint-down(lg) {
+				margin-bottom: 60px;
+			}
+		}
+
+		&-subtitle {
+			margin-top: 80px;
+			margin-bottom: 60px;
+
+			@include media-breakpoint-down(lg) {
+				margin-top: 60px;
+				margin-bottom: 40px;
+			}
+		}
+
+		&-accept {
+			margin-top: 80px;
+			margin-bottom: 40px;
+
+			@include media-breakpoint-down(lg) {
+				margin-top: 60px;
+			}
+		}
+
+		&-submit {
+			.ui-button {
+				min-width: 212px;
+
+				@include media-breakpoint-down(lg) {
+					min-width: initial;
+				}
+			}
+		}
+	}
+}

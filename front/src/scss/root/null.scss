@@ -1,0 +1,152 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: var(--font-family-default);
+	color: var(--body-color);
+	//text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+	font-family: var(--font-family-default);
+	font-size: inherit;
+	outline: none;
+}
+
+video {
+	&:focus {
+		outline: none;
+	}
+}
+
+img {
+	pointer-events: none;
+}
+
+button {
+	color: inherit;
+	background-color: inherit;
+	cursor: pointer;
+}
+
+a {
+	color: inherit;
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+
+	&:link,
+	&:visited,
+	&:hover {
+		text-decoration: none;
+	}
+
+	&[href^="tel"],
+	&[href^="mailto"] {
+		white-space: nowrap;
+	}
+
+	&[data-fancybox] {
+		display: block;
+	}
+}
+
+ul li {
+	list-style: none;
+}
+
+ol {
+	counter-reset: section;
+	list-style-type: none;
+
+	&>li {
+		position: relative;
+		padding-left: 20px;
+
+		list-style: none;
+		list-style-type: none;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			counter-increment: section;
+			content: counter(section) ". ";
+		}
+
+		&>ol {
+			counter-reset: subsection;
+
+			li {
+				position: relative;
+				padding-left: 20px;
+
+				&:before {
+					counter-increment: subsection;
+					content: counter(section) "." counter(subsection) " ";
+				}
+
+				&::before {
+					content: "―";
+					position: absolute;
+					left: 0;
+					top: -2px;
+					width: auto;
+					height: auto;
+					background-color: transparent;
+					border-radius: 0;
+				}
+			}
+		}
+	}
+
+	&>li ol,
+	&>li ul {
+		margin-top: 15px !important;
+		margin-bottom: 15px !important;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+code {
+	background-color: var(--gray-300);
+	padding: 2px 5px;
+	border-radius: 5px;
+}

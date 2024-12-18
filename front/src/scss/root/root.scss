@@ -1,0 +1,37 @@
+@import "_mixins-extends";
+@import "null";
+
+:root {
+	--primary-color: #8bc34a;
+	--primary-color-rgb: #{hexToRGBString(#888)};
+	--secondary-color: #{#888};
+	--red: #{#FB4F93};
+	
+	--white: #{#ffffff};
+	--gray-100: #{#F0F6F7};
+	--gray-200: #{#5c5c5c};
+	--gray-300: #{#e6e6e6};
+	--gray-400: #{#828E90};//
+	--gray-500: #{#A7B2B4};
+	--gray-600: #{#111};
+	--gray-700: #{#111};
+	--gray-800: #{#111};
+	--gray-900: #{#111};
+	--black: #{#000000};
+	--body-color: #{#010101};
+
+	--font-family-default: "CourierNew";
+	--font-family-second: "NotoSerifKR";
+	--font-family-third: "";
+	--font-family-fourth: "";
+
+	--fs-16: 16px;
+
+	--tr: .3s ease-in-out;
+	--tr-in: .3s ease-in;
+	--tr-out: .3s ease-out;
+}
+
+.theme-dark {}
+
+@media (prefers-color-scheme: dark) {}

@@ -1,0 +1,57 @@
+.ui-pagination {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	color: var(--gray-800);
+	font-size: 14px;
+	user-select: none;
+	@extend %hidescroll;
+	@include media-breakpoint-down(xl) {
+		font-size: 24px;
+	}
+	@include media-breakpoint-down(md) {
+		width: calc(100% + 32px);
+		margin-left: -16px;
+		gap: 8px;
+		margin-right: -16px;
+		padding-left: 16px;
+		padding-right: 16px;
+		overflow: auto;
+		.ui-pagination__dots{
+			display: none;
+		}
+	}
+	&.is-centered {
+		justify-content: center;
+		@include media-breakpoint-down(md) {
+			justify-content: flex-start;
+		}
+	}
+	&__item {
+		span{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			@media (any-hover: hover){
+				&:hover{
+					color: var(--primary-color);
+				}
+			}
+			@include media-breakpoint-down(xl) {
+				width: 60px;
+				height: 60px;
+			}
+		}
+		&.is-current{
+			span{
+				background-color: var(--primary-color);
+				color: var(--white);
+			}
+		}
+	}
+	&__dots {
+	}
+}

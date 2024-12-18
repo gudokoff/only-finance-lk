@@ -1,0 +1,42 @@
+.ui-breadcrumb{
+	display: flex;
+	align-items: center;
+	color: var(--gray-500);
+	li{
+		display: inline-flex;
+		align-items: center;
+		padding-top: rem(10);
+		padding-bottom: rem(10);
+		
+		&::after{
+			content: '';
+
+			display: inline-block;
+			width: rem(7);
+			height: rem(10);
+			margin: 0 10px;
+
+			background-image: url("data:image/svg+xml,%3Csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.0254517 9.95166V0.95166L6.95748 5.45166L-0.0254517 9.95166Z' fill='%23acacac'/%3E%3C/svg%3E");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		&:last-child{
+			&::after{
+				content: none;
+			}
+		}
+
+		a{
+			display: inline-flex;
+			@media (any-hover: hover){
+				&:hover{
+					color: var(--primary-color);
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+

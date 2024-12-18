@@ -1,0 +1,15 @@
+.ui-input {
+	&__field {
+		display: block;
+		width: 100%;
+		height: 30px;
+		padding-left: 10px;
+		padding-right: 10px;
+		background-color: var(--body-color);
+		color: var(--gray-100);
+
+		&::placeholder {
+			color: var(--gray-100);
+		}
+	}
+}

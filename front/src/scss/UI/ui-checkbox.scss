@@ -1,0 +1,117 @@
+%checkboxSelect {
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5 9C7.20914 9 9 7.20914 9 5C9 2.79086 7.20914 1 5 1C2.79086 1 1 2.79086 1 5C1 7.20914 2.79086 9 5 9ZM5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.ui-checkbox {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+
+	.ui-input__error {
+		order: 1;
+		width: 100%;
+	}
+
+	&:not(:last-child) {}
+
+	// .checkbox__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		// &:focus + .ui-checkbox__label:before {
+		// 	border: $checkboxHoverBorder;
+		// }
+
+		&:checked~.ui-checkbox__label {
+			&::before {
+				@extend %checkboxSelect;
+			}
+		}
+
+		&:disabled~.ui-checkbox__label {
+			opacity: 0.6;
+
+			pointer-events: none;
+		}
+
+		&[aria-invalid="true"]+.ui-checkbox__label {
+			&::before {
+				border-color: var(--red);
+			}
+		}
+	}
+
+	// .checkbox__label
+	&__label {
+		cursor: pointer;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		vertical-align: middle;
+
+		color: var(--body-color);
+
+		&::before {
+			content: "";
+			width: 18px;
+			height: 18px;
+			flex: 0 0 18px;
+			align-self: flex-start;
+
+			background-repeat: no-repeat;
+			background-size: 10px;
+			background-position: center;
+			background-color: var(--body-color);
+
+			transition: 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+				}
+			}
+		}
+
+		[aria-selected="true"]>&,
+		[aria-selected="true"]>&:hover {
+			color: var(--black);
+
+			&::before {
+				@extend %checkboxSelect;
+			}
+		}
+
+		[aria-disabled="true"]>& {
+			opacity: 0.6;
+
+			pointer-events: none;
+		}
+	}
+
+	// .checkbox__text
+	&__text {
+		user-select: none;
+
+		a {
+			color: var(--primary-color);
+		}
+	}
+
+	// Валидация
+	.ui-input__error~.ui-checkbox__label {
+		&::before {
+			border-color: var(--red);
+		}
+	}
+
+	.ui-input__error[style="display: none;"]~.ui-checkbox__label {
+		&::before {
+			border-color: var(--primary-color);
+		}
+	}
+}

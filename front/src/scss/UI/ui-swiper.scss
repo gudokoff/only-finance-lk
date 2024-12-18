@@ -1,0 +1,152 @@
+.ui-swiper {
+	position: relative;
+	/* Fix of Webkit flickering */
+	z-index: 1;
+	overflow: hidden;
+
+	// Мало слайдов (слайдер не активен)
+	&.has-few-slides {
+		
+	}
+
+	&__slider {
+		height: 100%;
+		width: 100%;
+	}
+
+	// Универсальный свайпер (горизонтальный скрол)
+	&-touch {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+
+		.swiper-wrapper {
+			&:not(.row) {
+				.swiper-slide {
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
+
+.swiper-wrapper {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+	&.row {
+		flex-wrap: nowrap;
+		--bs-gutter-x: 0rem;
+		--bs-gutter-y: 0rem;
+	}
+
+	&:not(.row) {
+		&>.swiper-slide {
+			width: 100%;
+		}
+	}
+}
+
+.swiper-android .swiper-slide,
+.swiper-ios .swiper-slide,
+.swiper-wrapper {
+	transform: translate3d(0px, 0, 0);
+}
+
+.swiper-horizontal {
+	touch-action: pan-y;
+}
+
+.swiper-vertical {
+	touch-action: pan-x;
+}
+
+.swiper-slide {
+	position: relative;
+	flex-shrink: 0;
+	transition-property: transform;
+
+	// .plyr {
+	// 	pointer-events: none;
+	// 	height: 100%;
+	// 	width: 100%;
+
+	// 	.plyr__video-wrapper {
+	// 		height: 100%;
+
+	// 		video {
+	// 			object-fit: cover;
+	// 		}
+	// 	}
+	// }
+}
+
+.swiper-slide-invisible-blank {
+	visibility: hidden;
+}
+
+// Vertical
+.swiper-vertical>.swiper-wrapper {
+	flex-direction: column;
+}
+
+// Grid
+.swiper-grid>.swiper-wrapper {
+	flex-wrap: wrap;
+}
+
+.swiper-grid-column>.swiper-wrapper {
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+/* Auto Height */
+.swiper-autoheight,
+.swiper-autoheight .c-slider__item {
+	height: auto;
+}
+
+.swiper-autoheight .swiper-wrapper {
+	align-items: flex-start;
+	transition-property: transform, height;
+}
+
+.swiper-backface-hidden .c-slider__item {
+	transform: translateZ(0);
+	backface-visibility: hidden;
+}
+
+.swiper-button-lock {
+	display: none !important;
+}
+
+// Effect Fade
+.swiper-fade {
+	&.swiper-free-mode {
+		.swiper-slide {
+			transition-timing-function: ease-out;
+		}
+	}
+
+	.swiper-slide {
+		pointer-events: none;
+		transition-property: opacity;
+
+		.swiper-slide {
+			pointer-events: none;
+		}
+	}
+
+	.swiper-slide-active {
+
+		&,
+		& .swiper-slide-active {
+			pointer-events: auto;
+		}
+	}
+}

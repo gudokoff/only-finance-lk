@@ -1,0 +1,109 @@
+//Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff2") format("woff2"),
+		url("../fonts/#{$file_name}.woff") format("woff");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+// Map reverse
+@function mapReverse ($map) {
+	$result: null;
+
+	@if type-of($map)=="map" {
+		$keys: map-keys($map);
+		$map-reversed: (
+		);
+
+		@for $i from length($keys) through 1 {
+			$map-reversed: map-merge($map-reversed,
+					(nth($keys, $i): map-get($map, nth($keys, $i))));
+		}
+
+		@if type-of($map-reversed)=="map" {
+			$result: $map-reversed;
+		}
+
+		@else {
+			@warn 'There was an error reversing the order of "#{$map}"';
+		}
+	} @else {
+		@warn '"#{$map}" is not a valid map';
+	}
+
+	@return $result;
+}
+
+// HEX to RGB string
+@function hexToRGBString($hexColor) {
+	@return "#{red($hexColor)},#{green($hexColor)},#{blue($hexColor)}";
+}
+
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+
+// Шаблоны (заготовки). @extend %имя шаблона. Сниппет (SCSS): ex
+// Счетчик для списка
+%listCounter {
+	list-style-type: none;
+	counter-reset: item;
+
+	li {
+		position: relative;
+
+		&:before {
+			counter-increment: item;
+			content: counter(item);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+// Серый фильтр
+%grayfilter {
+	filter: grayscale(1);
+
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}
+
+// Скрыть скролл
+%hidescroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+%uiscroll {
+	&::-webkit-scrollbar {
+		width: 5px;
+		/* ширина scrollbar */
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--gray-200);
+		/* цвет дорожки */
+		border-radius: 7px;
+		/* закругление дорожки */
+		// border: 1px solid var(--white);  /* padding вокруг плашки */
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--secondary-color);
+		/* цвет плашки */
+		border-radius: 7px;
+		/* закругления плашки */
+	}
+}

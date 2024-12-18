@@ -1,0 +1,48 @@
+// Блок со спойлерами
+.ui-spollers {
+	display: grid;
+	gap: 15px;
+	// Спойлер
+	&__item {
+		font-size: rem(20);
+	}
+	// Заголовок спойлера
+	&__title {
+		position: relative;
+		width: 100%;
+		cursor: default;
+		text-align: left;
+		border: 1px solid var(--gray-500);;
+		padding: rem(10) rem(15);
+		border-radius: rem(5);
+		position: relative;
+		&::after{
+			content: "";
+			position: absolute;
+			right: 16px;
+			top: 10px;
+			width: 24px;
+			height: 24px;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: 12px;
+			background-image: var(--icon-arrow);
+		}
+		._ui-spoller-init & {
+			cursor: pointer;
+			
+			&._ui-spoller-active {
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+	// Контент спойлера
+	&__body {
+		padding: rem(20);
+		border-radius: rem(5);
+		border: 1px solid var(--gray-500);;
+	}
+
+}

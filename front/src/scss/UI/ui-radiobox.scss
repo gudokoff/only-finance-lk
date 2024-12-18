@@ -1,0 +1,136 @@
+.ui-radiobox {
+	font-size: 0;
+	line-height: 0;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	.ui-input__error{
+		order: 1;
+		width: 100%;
+		margin-top: 4px;
+	}
+	&:not(:last-child) {
+		margin-bottom: em(5);
+	}
+	// .radiobox__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		// &:focus + .ui-radiobox__label:before {
+		// 	border: $radioboxHoverBorder;
+		// }
+
+		&:checked ~ .ui-radiobox__label{
+			.ui-radiobox__text{
+				color: var(--black);
+			}
+			&::before{
+				border-color: var(--primary-color);
+			}
+			&::after{
+				opacity: 1;
+			}
+		}
+
+		&:disabled ~ .ui-radiobox__label{
+			opacity: 0.4;
+
+			pointer-events: none;
+		}
+	}
+	// .radiobox__label
+	&__label {
+		cursor: pointer;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		vertical-align: middle;
+
+		font-size: 14px;
+		line-height: 1.5em;
+
+		color: var(--black);
+
+		&::before {
+			content: "";
+			width: 20px;
+			height: 20px;
+			flex: 0 0 20px;
+			align-self: flex-start;
+		
+			background-repeat: no-repeat;
+			background-size: 12px;
+			background-position: center;
+			background-color: var(--white);
+			border: 1px solid var(--gray-200);
+			border-radius: 50%;
+		
+			// transition: 0s;
+		}
+		&::after{
+			content: "";
+			width: 12px;
+			height: 12px;
+			background-color: var(--primary-color);
+			flex-shrink: 0;
+			border-color: var(--primary-color);
+			border-radius: 50%;
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			opacity: 0;
+		}
+
+		@media (any-hover: hover){
+			&:hover{
+				color: var(--black);
+
+				&::before{
+					background-color: var(--white);;
+					border: 1px solid var(--gray-300);
+				}
+			}
+		}
+
+		[aria-selected="true"] > &, [aria-selected="true"] > &:hover  {
+			color: var(--black);
+
+			&::before{
+				border-color: var(--primary-color);
+			}
+			&::after{
+				opacity: 1;
+			}
+		}
+
+		[aria-disabled="true"] > &{
+			opacity: 0.6;
+
+			pointer-events: none;
+		}
+	}
+	// .radiobox__text
+	&__text {
+		line-height: 1.5em;
+		user-select: none;
+		a{
+			color: var(--primary-color);
+		}
+	}
+
+	// Валидация
+	.ui-input__error ~ .ui-radiobox__label{
+		&::before{
+			border-color: var(--red);
+		}
+	}
+	.ui-input__error[style="display: none;"] ~ .ui-radiobox__label{
+		&::before{
+			border-color: var(--primary-color);
+		}
+	}
+}

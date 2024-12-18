@@ -1,0 +1,44 @@
+[data-showmore] {
+	&.is-active {
+		[data-showmore-content] {
+			&::after{
+				opacity: 0;
+			}
+		}
+		[data-showmore-button] {
+			span {
+				display: none;
+
+				&:last-child {
+					display: block;
+				}
+			}
+		}
+	}
+	[data-showmore-content] {
+		position: relative;
+		&::after{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 50px;
+			background: linear-gradient(0deg, #ffffff, transparent);
+			transition: opacity var(--tr);
+		}
+	}
+	[data-showmore-button] {
+		span {
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+}
+
+.ui-showmore {
+	&__content {}
+
+	&__button {}
+}

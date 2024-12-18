@@ -1,0 +1,18 @@
+.t-page {
+	height: 100%;
+
+	@include media-breakpoint-down(sm) {
+		// height: 99%;
+		// overflow: auto;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__main {
+		flex-grow: 1;
+	}
+}

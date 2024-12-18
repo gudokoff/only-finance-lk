@@ -1,0 +1,20 @@
+.ui-separator{
+	display: block;
+	width: 100%;
+	border-top: 22px solid var(--black);
+	&.is-fluid{
+		height: 1px;
+		position: relative;
+		border: none;
+		&::after{
+			content: "";
+			position: absolute;
+			left: -50vw;
+			right: -50vw;
+			top: 0;
+			width: 200vw;
+			display: block;
+			border-top: 22px solid var(--black);
+		}
+	}
+}
