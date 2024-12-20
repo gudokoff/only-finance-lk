@@ -1,5 +1,7 @@
 .c-form {
-	.ui-input {
+
+	.ui-input,
+	.ui-select {
 		&:not(:last-child) {
 			margin-bottom: 24px;
 		}

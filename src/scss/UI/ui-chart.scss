@@ -199,4 +199,16 @@
 			}
 		}
 	}
+
+	&-sm {
+		&__box {
+			width: 99px;
+			height: 57px;
+		}
+
+		&__canvas {
+			width: 99px;
+			height: 57px;
+		}
+	}
 }

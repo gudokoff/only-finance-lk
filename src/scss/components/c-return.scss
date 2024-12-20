@@ -1,0 +1,31 @@
+.c-return {
+	&__name {
+		font-size: 12px;
+		letter-spacing: -0.01em;
+		color: var(--gray-600);
+		line-height: 1.16em;
+		margin-bottom: 2px;
+	}
+
+	&__input {
+		.ui-input__field {
+			height: 44px;
+			font-size: 16px;
+			font-family: var(--font-family-second);
+			font-weight: 600;
+		}
+	}
+
+	&__summ {
+		margin-top: 6px;
+		font-size: 12px;
+		line-height: 1.33em;
+		letter-spacing: -0.01em;
+		color: var(--gray-600);
+		line-height: 1.16em;
+
+		span {
+			font-weight: 700;
+		}
+	}
+}

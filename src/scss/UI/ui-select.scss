@@ -1,0 +1,30 @@
+@import "../libs/select";
+
+select {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid var(--gray-500);
+	outline: none;
+	color: var(--gray-400);
+	padding: 0;
+	margin-bottom: 24px;
+}
+
+.ui-select {
+	display: flex;
+	flex-direction: column;
+
+	.js-select-single {
+		order: 1;
+	}
+
+	span.is-error {
+		display: block;
+		margin-top: 6px;
+		font-size: 12px;
+		letter-spacing: -0.01;
+		line-height: 1.16em;
+		color: var(--magenta-01);
+		order: 2;
+	}
+}

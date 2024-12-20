@@ -1,0 +1,66 @@
+.c-settings {
+	&__box {
+		max-width: 320px;
+		padding: 24px;
+		border: 1px solid var(--gray-300);
+
+	}
+
+	&__title {
+		margin-bottom: 32px;
+	}
+
+	&__user {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 32px;
+
+		&-ava {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: var(--gray-100);
+
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+		}
+
+		&-name {}
+	}
+
+	&__form {
+		.ui-input {
+			margin-bottom: 24px;
+		}
+
+		&-edit,
+		&-submit {
+			margin-top: 8px;
+
+			&.is-hide {
+				display: none;
+			}
+
+			// &:disabled {
+			// 	display: none;
+			// }
+		}
+
+		&-generate-password {
+			padding-left: 15px;
+			padding-right: 0;
+		}
+	}
+
+	&__footer {
+		margin-top: 24px;
+	}
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include|'html/_head.htm',{
+"title":"Настройки",
+"description":"Описание"
+}|
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			@@include|'html/_page-aside.htm',{}|
+
+			<div class="t-page__main">
+				@@include|'html/_c-header.htm',{
+				"fixedClass": "",
+				"bgClass": "is-transparent",
+				"title": "Настройки"
+				}|
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="c-page-nav">
+							<a href="settings-personal.html" class="c-page-nav__button is-active">Личная информация</a>
+							<a href="settings-token.html" class="c-page-nav__button">Платежный токен</a>
+							<a href="settings-password.html" class="c-page-nav__button">Смена пароля</a>
+						</div>
+
+						<div class="c-settings">
+							<div class="c-settings__box">
+								<div class="c-settings__user">
+									<div class="c-settings__user-ava">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+										</svg>
+									</div>
+									<span class="c-settings__user-name">dk@onlyfinance.ru</span>
+								</div>
+
+								<form action="#" method="POST" class="c-settings__form js-validate-settings-1">
+									<div class="ui-input">
+										<input type="text" name="FIRSTNAME" placeholder="Имя" class="ui-input__field" value="Дмитрий" required disabled>
+									</div>
+									<div class="ui-input">
+										<input type="text" name="SURNAME" placeholder="Фамилия" class="ui-input__field" value="Кухарь" required disabled>
+									</div>
+									
+									<div class="ui-input">
+										<input type="text" name="CARD" placeholder="Номер карты" class="ui-input__field" value="•••• •••• •••• 4567" required disabled>
+									</div>
+
+									<button type="submit" class="c-settings__form-submit ui-button ui-button--primary js-settings-save is-hide" disabled>Сохранить</button>
+									<button type="button" class="c-settings__form-edit ui-button ui-button--gray">Редактировать</button>
+								</form>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+
+				@@include|'html/_c-footer.htm',{}|
+			</div>
+
+		</div>
+		@@include|'html/popup.htm',{}|
+		@@include|'html/_js.htm',{}|
+	</div>
+</body>
+
+</html>

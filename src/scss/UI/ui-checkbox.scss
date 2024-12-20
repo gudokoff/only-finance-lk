@@ -1,0 +1,196 @@
+.ui-checkbox {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	.ui-input__error {
+		order: 1;
+		width: 100%;
+	}
+
+	&:not(:last-child) {}
+
+	// .checkbox__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+
+		// &:focus + .ui-checkbox__label:before {
+		// 	border: $checkboxHoverBorder;
+		// }
+
+		&:checked~.ui-checkbox__label {
+			.ui-checkbox__text {
+				color: var(--black);
+			}
+
+			&::before {
+				color: var(--black);
+				background-color: var(--body-color);
+				background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0127 0.966666L3.77908 7.49713L0 3.53809L1.0127 2.57143L3.77908 5.46954L9 0L10.0127 0.966666Z' fill='white'/%3E%3C/svg%3E%0A");
+				border-color: var(--body-color);
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					&::before {
+						background-color: var(--gray-600);
+						border-color: var(--gray-600);
+					}
+				}
+			}
+		}
+
+		&:checked:disabled~.ui-checkbox__label {
+			&::before {
+				color: var(--black);
+				background-color: var(--body-color);
+				background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0127 0.966666L3.77908 7.49713L0 3.53809L1.0127 2.57143L3.77908 5.46954L9 0L10.0127 0.966666Z' fill='%2363696A'/%3E%3C/svg%3E%0A");
+				border-color: var(--body-color);
+			}
+		}
+
+		&:disabled~.ui-checkbox__label {
+			pointer-events: none;
+
+			&::before {
+				border-color: var(--gray-300);
+				background-color: var(--white);
+			}
+		}
+
+		&[aria-invalid="true"]+.ui-checkbox__label {
+			&::before {
+				border-color: var(--red);
+			}
+		}
+	}
+
+	// .checkbox__label
+	&__label {
+		cursor: pointer;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		vertical-align: middle;
+		max-width: 80%;
+		font-size: 16px;
+		line-height: 1.5em;
+
+		color: var(--body-color);
+
+		&::before {
+			content: "";
+			width: 18px;
+			height: 18px;
+			flex: 0 0 18px;
+			align-self: flex-start;
+
+			background-repeat: no-repeat;
+			background-size: 11px;
+			background-position: center;
+			background-color: var(--white);
+			border: 1px solid var(--gray-600);
+
+			transition: 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--body-color);
+
+				&::before {
+					background-color: var(--white);
+					border: 1px solid var(--body-color);
+				}
+			}
+		}
+
+		[aria-selected="true"]>&,
+		[aria-selected="true"]>&:hover {
+			color: var(--black);
+
+			&::before {
+				// checkboxSelect
+				color: var(--black);
+				background-color: var(--body-color);
+				background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0127 0.966666L3.77908 7.49713L0 3.53809L1.0127 2.57143L3.77908 5.46954L9 0L10.0127 0.966666Z' fill='white'/%3E%3C/svg%3E%0A");
+				border-color: var(--body-color);
+			}
+		}
+
+		[aria-disabled="true"]>& {
+			opacity: 0.6;
+			pointer-events: none;
+		}
+	}
+
+	// .checkbox__text
+	&__text {
+		line-height: 1.25em;
+		user-select: none;
+
+		a {
+			color: var(--primary-color);
+		}
+	}
+
+	&__amount {
+		margin-left: auto;
+		font-size: 14px;
+		letter-spacing: -0.04em;
+	}
+
+	// Валидация
+	.ui-input__error~.ui-checkbox__label {
+		&::before {
+			// border-color: var(--red);
+		}
+	}
+
+	.ui-input__error[style="display: none;"]~.ui-checkbox__label {
+		&::before {
+			// border-color: var(--primary-color);
+		}
+	}
+
+	//========================================================================================================================================================
+	// Checkbox-заголовок
+	&--title {
+		.ui-checkbox__input {
+			&:checked~.ui-checkbox__label {
+				.ui-checkbox__text {
+					color: #006df1;
+				}
+			}
+		}
+
+		.ui-checkbox__label {
+			transition: none;
+
+			@media (any-hover: hover) {
+				&:hover {
+					.ui-checkbox__text {
+						color: #292D32
+					}
+				}
+			}
+
+			&::before,
+			&::after {
+				content: none;
+			}
+
+			.ui-checkbox__text {
+				font-weight: 600;
+				color: #807D86;
+
+				transition: none;
+			}
+		}
+	}
+}

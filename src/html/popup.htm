@@ -1,7 +1,8 @@
 <!-- Новая заявка -->
 <div id="new-support" class="ui-modal ui-modal--aside">
 	<div class="ui-modal__wrapper">
-		<div class="ui-modal__content">
+
+		<form action="#" method="POST" class="ui-modal__content c-form c-form--support js-validate-support">
 			<div class="ui-modal__header">
 				<div class="ui-modal__title f-heading-3">Новая заявка</div>
 
@@ -14,32 +15,39 @@
 
 			<div class="ui-modal__body">
 
-				<form action="#" method="POST" class="c-form c-form--support js-validate-support">
+				<div>
 					<div class="ui-input">
-						<input autocomplete="off" type="text" name="NAME" placeholder="Имя" class="ui-input__field" required>
+						<input type="text" name="NAME" placeholder="Имя" class="ui-input__field" required>
 					</div>
 					<div class="ui-input">
-						<input autocomplete="off" type="text" name="PHONE" placeholder="Телефон" class="ui-input__field js-mask-phone" required>
+						<input type="text" name="PHONE" placeholder="Телефон" class="ui-input__field js-mask-phone" required>
 					</div>
 
-					<select name="" id="" class="js-select-single">
-						<option value="0">Тема</option>
-						<option value="1">Тема 1</option>
-						<option value="2">Тема 2</option>
-						<option value="3">Тема 3</option>
-					</select>
+					<div class="ui-select">
+						<select name="SUBJECT" class="js-select-single">
+							<option value="">Тема</option>
+							<option value="1">Тема 1</option>
+							<option value="2">Тема 2</option>
+							<option value="3">Тема 3</option>
+							<option value="4">Тема 3</option>
+							<option value="5">Тема 3</option>
+							<option value="6">Тема 3</option>
+							<option value="7">Тема 3</option>
+							<option value="8">Тема 3</option>
+						</select>
+					</div>
 
 					<div class="ui-input">
-						<textarea autocomplete="off" type="text" name="MSG" placeholder="Описание проблемы" class="ui-input__field js-mask-phone" required></textarea>
+						<textarea autocomplete="off" type="text" name="MSG" placeholder="Описание проблемы" class="ui-input__field js-auto-height" required></textarea>
 					</div>
-				</form>
+				</div>
 
 			</div>
 
 			<div class="ui-modal__footer">
-				<button type="button" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
+				<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
 			</div>
-		</div>
+		</form>
 	</div>
 </div>
 
@@ -155,6 +163,123 @@
 
 			<div class="ui-modal__footer">
 				<button type="button" data-close class="ui-button ui-button--gray">Закрыть</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Возврат средств -->
+
+<div id="popup-transaction-refund" class="ui-modal ui-modal--centered">
+	<div class="ui-modal__wrapper">
+		<form action="#" class="ui-modal__content js-validate-return">
+			<div class="ui-modal__header">
+				<div class="ui-modal__title f-heading-3">Возврат средств</div>
+
+				<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+					<svg class="ui-icon" width="11" height="11">
+						<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+					</svg>
+				</button>
+			</div>
+
+			<div class="ui-modal__body">
+				<div class="c-return">
+					<div class="c-return__name">Сумма, ₽</div>
+					<div class="c-return__input ui-input">
+						<input type="text" name="SUMM" placeholder="" class="ui-input__field js-amount-field" required value="0">
+					</div>
+					<div class="c-return__summ">Общая сумма, ₽: <span>1 000 000</span></div>
+				</div>
+				
+			</div>
+
+			<div class="ui-modal__footer">
+				<button type="submit" data-close class="ui-button ui-button--primary" disabled>Вернуть</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Фильтры  -->
+<div id="popup-filters" class="ui-modal ui-modal--aside">
+	<div class="ui-modal__wrapper">
+		<div class="ui-modal__content">
+			<div class="ui-modal__header">
+				<div class="ui-modal__title f-heading-3">Фильтры</div>
+
+				<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+					<svg class="ui-icon" width="11" height="11">
+						<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+					</svg>
+				</button>
+			</div>
+
+			<div class="ui-modal__body no-y-padding">
+
+				<div class="ui-modal__body-subtitle f-heading-4">Сумма, ₽</div>
+
+				<div class="ui-range">
+					<div class="ui-range__slider-price" data-min="1000" data-max="1000000" data-start="1000, 1000000" data-step="1"></div>
+					<label class="ui-range__label">
+						<span class="ui-range__prefix">Мин.</span>
+						<div class="ui-input">
+							<input type="text" class="ui-range__input ui-input__field" name="form[]" value="1 000">
+						</div>
+					</label>
+					<span class="ui-range__label-separator">—</span>
+					<label class="ui-range__label">
+						<span class="ui-range__prefix">Макс.</span>
+						<div class="ui-input">
+							<input type="text" class="ui-range__input ui-input__field" name="form[]" value="1 000 000">
+						</div>
+					</label>
+				</div>
+
+
+				<div class="ui-modal__body-subtitle f-heading-4">Статус</div>
+				<div class="ui-checkbox">
+					<input id="c_0" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+					<label for="c_0" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+				<div class="ui-checkbox">
+					<input id="c_1" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+					<label for="c_1" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+				<div class="ui-checkbox">
+					<input id="c_2" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+					<label for="c_2" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+
+				<div class="ui-modal__body-subtitle f-heading-4">Дата</div>
+				<div class="ui-radiobox">
+					<input id="r_0" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+					<label for="r_0" class="ui-radiobox__label"><span class="ui-radiobox__text">День</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+				<div class="ui-radiobox">
+					<input id="r_1" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+					<label for="r_1" class="ui-radiobox__label"><span class="ui-radiobox__text">Месяц</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+				<div class="ui-radiobox">
+					<input id="r_2" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+					<label for="r_2" class="ui-radiobox__label"><span class="ui-radiobox__text">Квартал</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+				<div class="ui-radiobox">
+					<input id="r_4" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+					<label for="r_4" class="ui-radiobox__label"><span class="ui-radiobox__text">Год</span></label>
+					<div class="ui-checkbox__amount">645</div>
+				</div>
+
+			</div>
+
+			<div class="ui-modal__footer">
+				<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
 			</div>
 		</div>
 	</div>

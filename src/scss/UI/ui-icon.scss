@@ -1,12 +1,14 @@
-.ui-icon{
+.ui-icon {
 	font-size: 0;
 	line-height: 0;
 	fill: var(--body-color);
-	&-line-through{
+
+	&-line-through {
 		display: inline-block;
 		position: relative;
 		white-space: nowrap;
-		&::after{
+
+		&::after {
 			content: "";
 			position: absolute;
 			right: 0;
@@ -20,20 +22,28 @@
 		}
 	}
 
+	&--eye {
+		transform: translateY(-2px);
+	}
+
 	// BANKS
-	&-sberbank{
+	&-sberbank {
 		background-image: url('../img/assets/banks/sberbank.png');
 	}
-	&-tbank{
+
+	&-tbank {
 		background-image: url('../img/assets/banks/tbank.svg');
 	}
-	&-vtb{
+
+	&-vtb {
 		background-image: url('../img/assets/banks/vtb.png');
 	}
-	&-gazprombank{
+
+	&-gazprombank {
 		background-image: url('../img/assets/banks/gazprombank.png');
 	}
-	&-alfabank{
+
+	&-alfabank {
 		background-image: url('../img/assets/banks/alfabank.svg');
 	}
 }

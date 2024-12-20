@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include|'html/_head.htm',{
+"title":"Транзакции",
+"description":"Описание"
+}|
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			@@include|'html/_page-aside.htm',{}|
+
+			<div class="t-page__main">
+				@@include|'html/_c-header.htm',{
+				"fixedClass": "",
+				"bgClass": "is-transparent",
+				"title": "Транзакции"
+				}|
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="ui-table ui-table--transactions">
+							<div class="ui-table__header">
+								<div class="ui-table__header-left">
+									<div class="f-heading-2">21 ноября 2023 — 21 ноября 2024</div>
+								</div>
+								<div class="ui-table__header-right">
+									<div class="ui-table__info">
+										<span class="ui-table__info-title">Всего:</span>
+										<span class="ui-table__info-value">1 025</span>
+									</div>
+
+									<div class="ui-dropdown for-hover has-link ui-dropdown--auto-width">
+										<div class="ui-dropdown__box">
+											<button type="button" class="ui-dropdown__btn">
+												<span class="ui-dropdown__btn-icon is-static">
+													<svg class="ui-icon" width="11" height="11">
+														<use xlink:href="img/assets/sprite.svg#svg-export"></use>
+													</svg>
+												</span>
+												<span class="ui-dropdown__btn-value">Экспорт</span>
+											</button>
+											<div class="ui-dropdown__body">
+												<ul class="ui-dropdown__list">
+													<li><a href="#" class="ui-dropdown__item">
+															<span class="ui-dropdown__item-icon">
+																<svg class="ui-icon is-black" width="11" height="11">
+																	<use xlink:href="img/assets/sprite.svg#svg-export"></use>
+																</svg>
+															</span>
+															<span class="ui-dropdown__item-name">CSV (1С)</span>
+														</a></li>
+													<li><a href="#" class="ui-dropdown__item">
+															<span class="ui-dropdown__item-icon">
+																<svg class="ui-icon is-black" width="11" height="11">
+																	<use xlink:href="img/assets/sprite.svg#svg-export"></use>
+																</svg>
+															</span>
+															<span class="ui-dropdown__item-name">XLS</span>
+														</a></li>
+													<li><a href="#" class="ui-dropdown__item">
+															<span class="ui-dropdown__item-icon">
+																<svg class="ui-icon is-black" width="11" height="11">
+																	<use xlink:href="img/assets/sprite.svg#svg-export"></use>
+																</svg>
+															</span>
+															<span class="ui-dropdown__item-name">XML</span>
+														</a></li>
+													<li><a href="#" class="ui-dropdown__item">
+															<span class="ui-dropdown__item-icon">
+																<svg class="ui-icon is-black" width="11" height="11">
+																	<use xlink:href="img/assets/sprite.svg#svg-export"></use>
+																</svg>
+															</span>
+															<span class="ui-dropdown__item-name">TXT</span>
+														</a></li>
+
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<button type="button" data-popup="#popup-filters" class="ui-button is-inline">
+										<span class="ui-button__icon">
+											<svg class="ui-icon" width="12" height="8">
+												<use xlink:href="img/assets/sprite.svg#svg-filters"></use>
+											</svg>
+										</span>
+										<span>Фильтры</span>
+									</button>
+
+									<button type="button" class="ui-button-reset">Сбросить</button>
+								</div>
+							</div>
+
+							<div class="ui-table__search">
+								<div class="ui-dropdown ui-dropdown--search">
+									<div class="ui-dropdown__box">
+										<div class="ui-dropdown__input">
+											<svg class="ui-icon" width="12" height="12">
+												<use xlink:href="img/assets/sprite.svg#svg-search"></use>
+											</svg>
+											<input type="text" class="ui-dropdown__input-search js-live-search-input" placeholder="Поиск" value="">
+										</div>
+										<div class="ui-dropdown__body">
+											<ul class="ui-dropdown__list">
+												<li><span class="ui-dropdown__item">
+														<span class="ui-dropdown__item-name">Значение 1</span>
+													</span></li>
+												<li><span class="ui-dropdown__item">
+														<span class="ui-dropdown__item-name">Значение 2</span>
+													</span></li>
+												<li><span class="ui-dropdown__item">
+														<span class="ui-dropdown__item-name">Значение 3</span>
+													</span></li>
+												<li><span class="ui-dropdown__item">
+														<span class="ui-dropdown__item-name">Значение 4</span>
+													</span></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<table class="ui-table__el f-body-b2">
+								<thead>
+									<tr>
+										<th>Магазин</th>
+										<th>Статус</th>
+										<th>Сумма, <span>₽</span></th>
+										<th>Создано</th>
+										<th>Номер заказа</th>
+										<th>Изменено</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="7"><span class="color-gray-500">Октябрь, 2024</span></td>
+									</tr>
+									<tr class="align-top">
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+											<span class="f-badge f-badge--gray">Возврат</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">000000000...</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStoreMyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">500 000</span></td>
+										<td>99&nbsp;сентяб. 99:99</td>
+										<td><span class="f-body-lcl">00000000090912813127</span></td>
+										<td>99&nbsp;сентяб. 99:99</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">0000000000000000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">0000000000000000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">0000000000000000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">0000000000000000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="7"><span class="color-gray-500">Сентябрь, 2024</span></td>
+									</tr>
+									<tr class="align-top">
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+											<span class="f-badge f-badge--gray">Возврат</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">000000000...</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStoreMyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">500 000</span></td>
+										<td>99&nbsp;сентяб. 99:99</td>
+										<td><span class="f-body-lcl">00000000090912813127</span></td>
+										<td>99&nbsp;сентяб. 99:99</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--green">Выполнено</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">0000000000000000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>MyStore</td>
+										<td>
+											<span class="f-badge f-badge--red">Ошибка</span>
+										</td>
+										<td><span class="u-digit">1 000 000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td><span class="f-body-lcl">0000000000000000</span></td>
+										<td>14&nbsp;сент. 01:00</td>
+										<td>
+											<button type="button" class="ui-button-return" data-popup="#popup-transaction-refund">
+												<svg class="ui-icon" width="10" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-return"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+
+									<tr>
+										<td colspan="7" class="not-found"><span>За текущий период транзакций нет</span></td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="ui-table__footer">
+								<button type="button" class="ui-button ui-button--gray">Показать еще</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				@@include|'html/_c-footer.htm',{}|
+			</div>
+
+		</div>
+		@@include|'html/popup.htm',{}|
+		@@include|'html/_js.htm',{}|
+	</div>
+</body>
+
+</html>

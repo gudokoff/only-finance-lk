@@ -129,6 +129,9 @@ class Popup {
 			const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
 			if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
 				// e.preventDefault();
+
+				if (window.noUiSliderIsActive) return;
+				
 				this.close();
 				return;
 			}

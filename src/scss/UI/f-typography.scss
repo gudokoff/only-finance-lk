@@ -13,14 +13,38 @@
 		display: block;
 		width: 100%;
 	}
+
+	&-note {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 14px;
+		line-height: 1.14em;
+		letter-spacing: -0.02em;
+	}
 }
 
 .f-heading {
+	&-2 {
+		font-family: var(--font-family-second);
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.2em;
+	}
+
 	&-3 {
 		font-family: var(--font-family-second);
 		font-size: 18px;
 		font-weight: 600;
 		line-height: 1.22em;
+	}
+
+	&-4 {
+		font-family: var(--font-family-second);
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.25em;
+		letter-spacing: initial;
 	}
 }
 
@@ -31,7 +55,7 @@
 	line-height: 1.16em;
 	letter-spacing: -0.01em;
 	font-weight: 400;
-	padding: 4px 6px;
+	padding: 5px 6px 3px;
 
 	&--green {
 		background-color: #E5F6E6;
@@ -41,6 +65,11 @@
 	&--gray {
 		background-color: var(--gray-250);
 		color: var(--gray-500);
+	}
+
+	&--red {
+		background-color: var(--magenta-02);
+		color: #FB4F93;
 	}
 }
 

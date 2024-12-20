@@ -5,11 +5,11 @@
 @import "root/root";
 // Файл шрифтов (формируется автоматически, при изменении шрифтов его нужно удалить и перезапустить сборку)
 @import "fonts/fonts";
-@import "libs/select";
+
 
 // Подключение библиотек
 // @import "libs/bootstrap";
-// @import "libs/tippy";
+@import "libs/tippy";
 // @import "libs/plyr";
 // @import "libs/jvectormap.css";
 // @import "libs/fancybox"; // Медиа-галерея
@@ -75,4 +75,13 @@ body {
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.color-gray-500 {
+	color: var(--gray-500);
+}
+
+.u-digit{
+	font-family: var(--font-family-second);
+	letter-spacing: initial;
 }

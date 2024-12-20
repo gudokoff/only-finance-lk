@@ -14,7 +14,7 @@
 	line-height: 1em;
 
 	border-radius: 0px;
-
+	background-color: transparent;
 	transition: var(--tr);
 	overflow: hidden;
 	user-select: none;
@@ -31,16 +31,22 @@
 			fill: var(--gray-500);
 		}
 	}
-	
-	&--primary{
+
+	&.is-inline {
+		padding: 4px 0;
+	}
+
+	&--primary {
 		color: var(--gray-100);
 		background-color: var(--body-color);
-		@media (any-hover: hover){
-			&:hover{
+
+		@media (any-hover: hover) {
+			&:hover {
 				background-color: var(--gray-600);
 			}
 		}
 	}
+
 	&--gray {
 		background-color: var(--gray-200);
 		color: var(--gray-600);
@@ -121,6 +127,15 @@
 
 	&--fw {
 		width: 100%;
+	}
+
+	&__icon {
+		width: 16px;
+		height: 16px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
 	}
 
 	.ui-icon {
@@ -264,11 +279,7 @@
 	// Кнопка "Показать/скрыть пароль"
 	&-eye {
 		background-color: transparent;
-
-		svg {
-			fill: var(--body-color);
-		}
-
+		
 		span {
 			display: inline-flex;
 			align-items: center;
@@ -282,10 +293,6 @@
 
 				.has-visible-password & {
 					display: inline-flex;
-				}
-
-				svg {
-					fill: #63696A;
 				}
 			}
 
@@ -327,6 +334,7 @@
 		}
 	}
 
+	&-return,
 	&-right {
 		display: inline-flex;
 		align-items: center;
@@ -334,6 +342,14 @@
 		flex-shrink: 0;
 		width: 32px;
 		height: 32px;
+		background-color: transparent;
+	}
+
+	&-reset {
+		font-size: 14px;
+		line-height: 1.14em;
+		letter-spacing: -0.02em;
+		font-weight: 700;
 		background-color: transparent;
 	}
 }
