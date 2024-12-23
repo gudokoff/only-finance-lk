@@ -6,6 +6,19 @@
 	padding-top: 24px;
 	margin-bottom: 32px;
 
+	&--date {
+		padding-top: 0;
+		margin-bottom: 12px;
+	}
+
+	&[data-connect] {
+		display: none;
+
+		&.is-active {
+			display: flex;
+		}
+	}
+
 	&__label {
 		position: relative;
 		display: flex;

@@ -1,0 +1,74 @@
+.c-constructor {
+	&__wrap {
+		display: flex;
+		align-items: flex-start;
+		gap: 78px;
+	}
+
+	&__bar {
+		width: 300px;
+		flex-shrink: 0;
+
+		&-sep {
+			display: block;
+			width: 100%;
+			margin-bottom: 32px;
+			border-top: 1px solid var(--gray-300);
+		}
+
+		.f-link-line {
+			font-size: 14px;
+			letter-spacing: -0.02em;
+		}
+
+		.ui-checkbox-switch {
+			margin-bottom: 16px;
+		}
+
+		.ui-select {
+			margin-bottom: 16px;
+
+			.selectize-control.single .selectize-input.input-active,
+			.selectize-input {
+				background-color: transparent;
+			}
+		}
+
+		&-inner {
+			padding: 24px;
+			background-color: var(--white);
+			border-radius: 0px;
+			border: 1px solid var(--gray-300);
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__view {
+		flex-grow: 1;
+		max-width: 456px;
+
+		.c-pay {
+			padding: 28px 40px;
+			padding-top: 34px;
+			background-color: #FFFFFF;
+			border-radius: 6px;
+		}
+	}
+
+	&__logo {
+		text-align: center;
+		margin-bottom: 20px;
+
+		img {
+			max-height: 100%;
+			width: auto;
+		}
+
+		.ui-attach {
+			margin-bottom: 16px;
+		}
+	}
+}

@@ -14,15 +14,12 @@ import "./libs/autosize.min.js";
 import "./libs/ui-range.js";
 import "./libs/tippy.js";
 import "./libs/chart.js";
+import "./widget.js";
 
 import * as flsFunctions from "./functions.js";
-// Chart
-// import { Chart, DoughnutController, ArcElement, CategoryScale, LinearScale, BarController, BarElement, Tooltip } from 'chart.js';
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
-
-// Chart.register(DoughnutController, ArcElement, CategoryScale, LinearScale, BarController, BarElement, ChartDataLabels, Tooltip);
 
 import validate from "jquery-validation";
+import "jquery-validation/dist/additional-methods.min.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 	(async () => {
@@ -119,8 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (this.value.charAt(0) === '0') {
 				// this.value = this.value.slice(1);
 			}
-
-
 		});
 		$(document).on("focus", ".js-amount-field", function () {
 			if ($(this).val() == "0") {
@@ -143,7 +138,30 @@ document.addEventListener("DOMContentLoaded", function () {
 			// }
 		})
 
-		// Валидация аторизации
+		// Разблокировака кнопки отправки формы
+		$(".js-validate-form, .js-validate-return, .js-validate-settings-1, .js-validate-settings-password").each(function () {
+			let form = $(this);
+			// disabled button[type='submit']
+			form.on("input", function (e) {
+				let inputsSelectsValid = false;
+
+				form.find(".ui-input__field, select").each(function () {
+					if ($(this).val().length === 0) {
+						inputsSelectsValid = false;
+						return false;
+					} else {
+						inputsSelectsValid = true;
+					}
+				});
+
+				if (inputsSelectsValid && form.valid()) {
+					$("button[type='submit']").attr('disabled', false);
+				} else {
+					$("button[type='submit']").attr('disabled', true);
+				}
+			});
+		});
+		// Валидаци попап поддержки
 		$(".js-validate-support").each(function () {
 			let form = $(this);
 			let formValidate = form.validate({
@@ -198,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				}
 			});
 		});
-
+		// Валидация попап возврат
 		$(".js-validate-return").each(function () {
 			let form = $(this);
 			let formValidate = form.validate({
@@ -226,30 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				}
 			});
 		});
-
-		$(".js-validate-return, .js-validate-settings-1, .js-validate-settings-password").each(function () {
-			let form = $(this);
-			// disabled button[type='submit']
-			form.on("input", function (e) {
-				let inputsSelectsValid = false;
-
-				form.find(".ui-input__field, select").each(function () {
-					if ($(this).val().length === 0) {
-						inputsSelectsValid = false;
-						return false;
-					} else {
-						inputsSelectsValid = true;
-					}
-				});
-
-				if (inputsSelectsValid && form.valid()) {
-					$("button[type='submit']").attr('disabled', false);
-				} else {
-					$("button[type='submit']").attr('disabled', true);
-				}
-			});
-		})
-
+		// Валидация настройки
 		$(".js-validate-settings-1").each(function () {
 			let form = $(this);
 			let formValidate = form.validate({
@@ -282,6 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				}
 			});
 		});
+		// Валидация настройки паролей
 		$(".js-validate-settings-password").each(function () {
 			let form = $(this);
 			let formValidate = form.validate({
@@ -332,7 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 
 		flsFunctions.passwordToggleVisible();
-
 
 		// Dropdown
 		const dropdowns = document.querySelectorAll(".ui-dropdown");
@@ -413,7 +408,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			})
 		}
 
-
 		// Фокус на input поиска
 		$(".js-live-search-input").on("focus", function () {
 			let dropdown = $(this).closest(".ui-dropdown");
@@ -448,20 +442,11 @@ document.addEventListener("DOMContentLoaded", function () {
 				dropdownBody.removeClass("is-show for-search");
 			}
 		});
-		// Закрытие попап-поиска при клике за его пределами
-		$(document).mouseup(function (e) {
-			var dropdownBody = $(".ui-dropdown__body, .ui-dropdown--search");
-			if (!dropdownBody.is(e.target) && dropdownBody.has(e.target).length === 0) {
-				dropdownBody.removeClass("is-show");
-				$(".ui-dropdown--search").removeClass("is-focus");
-			}
-		});
 
 
 		// Input field focus
 		$('.ui-input3__field').not(".not-focus").focus(function () {
 			$(this).parent('.ui-input3').addClass('is-focus').removeClass('has-error');
-
 		});
 		// Input field focusout
 		$('.ui-input3__field').not(".not-focus").focusout(function () {
@@ -500,9 +485,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			return password;
 		}
 
-
-		document.addEventListener("click", function () {
+		document.addEventListener("click", function (event) {
 			let targetElement = event.target;
+
+			// Закрытие попап-поиска при клике за его пределами
+			var dropdownBody = $(".ui-dropdown__body, .ui-dropdown--search");
+			if (!dropdownBody.is(targetElement) && dropdownBody.has(targetElement).length === 0) {
+				dropdownBody.removeClass("is-show");
+				$(".ui-dropdown--search").removeClass("is-focus");
+			}
 
 			// Разблокировать поля в форме настроек
 			if (targetElement.closest('.c-settings__form-edit')) {
@@ -562,7 +553,113 @@ document.addEventListener("DOMContentLoaded", function () {
 					newPasswordField.value = newPasswordValue;
 				}
 			}
-		})
+		});
+
+		// Табы radiobox
+		const radioboxes = document.querySelectorAll(".ui-radiobox__input, .ui-checkbox-switch__input");
+		if (radioboxes.length) {
+			radioboxes.forEach(function (radio) {
+				radio.addEventListener("change", function () {
+					let radioChecked = radio.checked;
+					let connectId = radio.getAttribute("data-connect-for");
+					let connectTabs = document.querySelectorAll("[data-connect]");
+					if (connectTabs.length) {
+						connectTabs.forEach(function (tab) {
+							let tabId = tab.getAttribute("data-connect");
+
+							tab.classList.remove("is-active");
+
+							if (tabId && tabId === connectId && radioChecked) {
+								tab.classList.add("is-active");
+							}
+						})
+					}
+
+					// Электронная почта
+					if (radio.classList.contains("js-kit-toggle-email")) {
+						let item = document.querySelector(".js-kit-email");
+						if (item) {
+							if (radioChecked) {
+								item.style.display = "block";
+							} else {
+								item.style.display = "none";
+							}
+						}
+					}
+
+					// Язык
+					if (radio.classList.contains("js-kit-toggle-lang")) {
+						let lang = document.querySelector(".js-kit-lang");
+						let timer = document.querySelector(".js-kit-timer");
+						let header = document.querySelector(".c-pay__header");
+
+						if (lang) {
+							if (radioChecked) {
+								lang.style.display = "inline-flex";
+								if (header) {
+									header.style.display = "flex";
+								}
+							} else {
+								lang.style.display = "none";
+								if (!timer.checkVisibility() && header) {
+									header.style.display = "none";
+								}
+							}
+						}
+					}
+
+					// Таймер
+					if (radio.classList.contains("js-kit-toggle-timer")) {
+						let lang = document.querySelector(".js-kit-lang");
+						let timer = document.querySelector(".js-kit-timer");
+						let header = document.querySelector(".c-pay__header");
+						if (timer) {
+							if (radioChecked) {
+								timer.style.display = "flex";
+								if (header) {
+									header.style.display = "flex";
+								}
+							} else {
+								timer.style.display = "none";
+								if (!lang.checkVisibility() && header) {
+									header.style.display = "none";
+								}
+							}
+						}
+					}
+
+					// js-kit-toggle-phone
+					// js-kit-toggle-name
+				});
+			})
+		}
+
+
+		// Добавление логотипа в конструкторе
+		const attachFiles = document.querySelectorAll(".js-attach-file");
+		if (attachFiles.length) {
+			attachFiles.forEach(function (file) {
+
+				file.addEventListener("change", function (e) {
+					let input = e.target;
+
+					if (input.files && input.files[0]) {
+						let reader = new FileReader();
+						reader.onload = (e) => {
+							let imgData = e.target.result;
+							let imgName = input.files[0].name;
+							input.setAttribute("data-title", imgName);
+							console.log(e.target.result);
+
+							var oImg = document.createElement("img");
+							oImg.setAttribute('src', e.target.result);
+							$(".c-pay__logotype").html(oImg);
+						}
+						reader.readAsDataURL(input.files[0]);
+					}
+				});
+			})
+		}
 	})()
 });
 

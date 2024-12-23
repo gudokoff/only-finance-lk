@@ -22,6 +22,14 @@
 		}
 	}
 
+	&--green {
+		fill: var(--green-01);
+	}
+
+	&--red {
+		fill: var(--magenta-01);
+	}
+
 	&--eye {
 		transform: translateY(-2px);
 	}

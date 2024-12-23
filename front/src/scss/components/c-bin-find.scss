@@ -1,0 +1,65 @@
+.c-bin-find {
+	padding-top: 44px;
+
+	&__wrap {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+
+	&__left {}
+
+	&__input {
+		min-width: 266px;
+	}
+
+	&__right {
+		.ui-button {
+			height: 58px;
+			min-width: 266px;
+		}
+	}
+
+	&__bank {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		&-logo {}
+
+		&-name {
+			font-size: 37px;
+			letter-spacing: 0.02em;
+			color: #828E90;
+		}
+	}
+
+	&__result {
+		&-success {
+			padding-top: 44px;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+		}
+
+		&-not-found {
+			margin-top: 44px;
+			text-align: center;
+		}
+
+		&-icon {
+			margin-bottom: 16px;
+		}
+
+		&-info {
+			text-align: center;
+			font-size: 18px;
+			letter-spacing: initial;
+			line-height: 1.5em;
+		}
+	}
+}

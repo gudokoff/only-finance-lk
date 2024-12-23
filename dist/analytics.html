@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Аналитка</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="robots" content="index, follow"> <!-- noindex, nofollow -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="URL">
+	<meta property="og:title" content="Аналитка">
+	<meta property="og:image" content="URL">
+	<meta name="description" content="Описание">
+
+	<meta name="apple-mobile-web-app-title" content="Аналитка">
+	<meta name="application-name" content="Аналитка">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="css/style.min.css?_v=20241223080342">
+</head>
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			<div class="t-page__aside">
+				<div class="t-page__aside-inner">
+					<div class="t-page__aside-top">
+						<img src="img/upload/logotype-white-1.svg" width="168" height="20" alt="only-finance">
+					</div>
+
+					<div class="t-page__aside-body">
+						<ul class="c-menu-aside">
+							<li class="c-menu-aside__item">
+								<a href="analytics.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-1"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Аналитика</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item">
+								<a href="transactions.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="14" height="13">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-2"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Транзакции</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item">
+								<a href="constructor.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="15" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-3"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Конструктор</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item is-active">
+								<a href="support.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-4"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Поддержка</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="t-page__aside-footer">
+						<div class="t-page__aside-copyright">©2024 OOO «ОНЛИФИНАНС»</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="t-page__main">
+				<header class="c-header  is-transparent">
+					<div class="c-header__top">
+						<div class="c-header__top-cnt container">
+							<div class="c-header__top-left">
+								<div class="c-header__title f-heading-3">Аналитка</div>
+							</div>
+
+							<div class="c-header__top-right">
+
+								<div class="ui-dropdown for-hover has-link">
+									<div class="ui-dropdown__box">
+										<button type="button" class="ui-dropdown__btn">
+											<span class="ui-dropdown__btn-icon">
+												<svg class="ui-icon" width="14" height="14">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-down"></use>
+												</svg>
+											</span>
+											<span class="ui-dropdown__btn-value">Дмитрий Кухарь</span>
+										</button>
+										<div class="ui-dropdown__body">
+											<ul class="ui-dropdown__list">
+												<li><a href="settings-personal.html" class="ui-dropdown__item">
+														<span class="ui-dropdown__item-icon">
+															<svg class="ui-icon" width="13" height="14">
+																<use xlink:href="img/assets/sprite.svg#svg-settings"></use>
+															</svg>
+														</span>
+														<span class="ui-dropdown__item-name">Настройки</span>
+													</a></li>
+												<li><a href="index.html" class="ui-dropdown__item">
+														<span class="ui-dropdown__item-icon">
+															<svg class="ui-icon" width="12" height="12">
+																<use xlink:href="img/assets/sprite.svg#svg-exit"></use>
+															</svg>
+														</span>
+														<span class="ui-dropdown__item-name">Выйти</span>
+													</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="c-language">
+									<a href="#" class="c-language__item">Ru</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="ui-table ui-table--transactions">
+							<div class="ui-table__header">
+								<div class="ui-table__header-left">
+									<div class="f-heading-2">21 ноября 2023 — 21 ноября 2024</div>
+								</div>
+								<div class="ui-table__header-right">
+									<button type="button" data-popup="#popup-set-period" class="ui-button is-inline">
+										<span class="ui-button__icon">
+											<svg class="ui-icon" width="12" height="8">
+												<use xlink:href="img/assets/sprite.svg#svg-filters"></use>
+											</svg>
+										</span>
+										<span>Выбрать период</span>
+									</button>
+
+									<button type="button" class="ui-button-reset">Сбросить</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="t-page__analytics">
+							<div class="t-page__analytics-cards">
+								<!-- chart -->
+								<div class="ui-chart-sm">
+									<div class="ui-chart-sm__title">Конверсия</div>
+									<div class="ui-chart-sm__view">
+										<div class="ui-chart-sm__view-left">
+											<div class="ui-chart-sm__value f-heading-2">12,08%</div>
+
+											<div class="ui-chart-sm__params">
+												<div class="ui-chart-sm__params-1">
+													<svg class="ui-icon ui-icon--green" width="8" height="6">
+														<use xlink:href="img/assets/sprite.svg#svg-triangle-top"></use>
+													</svg>
+												</div>
+												<div class="ui-chart-sm__params-2">+24</div>
+												<div class="ui-chart-sm__params-3">+25.50%</div>
+											</div>
+										</div>
+										<div class="ui-chart-sm__view-right">
+											<div class="ui-chart-sm__box">
+												<canvas class="ui-chart-sm__canvas js-chart-sm" data-json='[{"date": "1 May", "value": 21},
+										{"date": "2 May", "value": 20},
+										{"date": "3 May", "value": 24},
+										{"date": "4 May", "value": 20},
+										{"date": "5 May", "value": 18},
+										{"date": "6 May", "value": 17},
+										{"date": "7 May", "value": 15},
+										{"date": "8 May", "value": 17},
+										{"date": "9 May", "value": 18},
+										{"date": "10 May", "value": 30},
+										{"date": "11 May", "value": 31},
+										{"date": "12 May", "value": 30},
+										{"date": "13 May", "value": 30},
+										{"date": "14 May", "value": 35},
+										{"date": "15 May", "value": 25},
+										{"date": "16 May", "value": 35},
+										{"date": "17 May", "value": 35},
+										{"date": "18 May", "value": 40},
+										{"date": "19 May", "value": 60},
+										{"date": "20 May", "value": 90},
+										{"date": "21 May", "value": 90},
+										{"date": "22 May", "value": 90},
+										{"date": "23 May", "value": 85},
+										{"date": "24 May", "value": 70},
+										{"date": "25 May", "value": 75},
+										{"date": "26 May", "value": 70},
+										{"date": "27 May", "value": 30},
+										{"date": "28 May", "value": 30},
+										{"date": "29 May", "value": 30},
+										{"date": "30 May", "value": 50},
+										{"date": "31 May", "value": 72}]' width="99" height="57">
+												</canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- chart -->
+								<div class="ui-chart-sm">
+									<div class="ui-chart-sm__title">Конверсия</div>
+									<div class="ui-chart-sm__view">
+										<div class="ui-chart-sm__view-left">
+											<div class="ui-chart-sm__value f-heading-2">12,08%</div>
+
+											<div class="ui-chart-sm__params">
+												<div class="ui-chart-sm__params-1">
+													<svg class="ui-icon ui-icon--red" width="8" height="6">
+														<use xlink:href="img/assets/sprite.svg#svg-triangle-down"></use>
+													</svg>
+												</div>
+												<div class="ui-chart-sm__params-2">+24</div>
+												<div class="ui-chart-sm__params-3">-25.50%</div>
+											</div>
+										</div>
+										<div class="ui-chart-sm__view-right">
+											<div class="ui-chart-sm__box">
+												<canvas class="ui-chart-sm__canvas js-chart-sm" data-json='[{"date": "1 May", "value": 21},
+										{"date": "2 May", "value": 20},
+										{"date": "3 May", "value": 24},
+										{"date": "4 May", "value": 15},
+										{"date": "5 May", "value": 17},
+										{"date": "6 May", "value": 30},
+										{"date": "7 May", "value": 30},
+										{"date": "8 May", "value": 35},
+										{"date": "9 May", "value": 35},
+										{"date": "10 May", "value": 35},
+										{"date": "11 May", "value": 40},
+										{"date": "12 May", "value": 60},
+										{"date": "13 May", "value": 12},
+										{"date": "14 May", "value": 90},
+										{"date": "15 May", "value": 90},
+										{"date": "16 May", "value": 85},
+										{"date": "17 May", "value": 70},
+										{"date": "18 May", "value": 75},
+										{"date": "19 May", "value": 43},
+										{"date": "20 May", "value": 75},
+										{"date": "21 May", "value": 90},
+										{"date": "22 May", "value": 22},
+										{"date": "23 May", "value": 120},
+										{"date": "24 May", "value": 120},
+										{"date": "25 May", "value": 90},
+										{"date": "26 May", "value": 85},
+										{"date": "27 May", "value": 100},
+										{"date": "28 May", "value": 92},
+										{"date": "29 May", "value": 92},
+										{"date": "30 May", "value": 92},
+										{"date": "31 May", "value": 92}]' width="99" height="57">
+												</canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- chart -->
+								<div class="ui-chart-sm">
+									<div class="ui-chart-sm__title">Конверсия</div>
+									<div class="ui-chart-sm__view">
+										<div class="ui-chart-sm__view-left">
+											<div class="ui-chart-sm__value f-heading-2">12,08%</div>
+
+											<div class="ui-chart-sm__params">
+												<div class="ui-chart-sm__params-1">
+													<svg class="ui-icon ui-icon--green" width="8" height="6">
+														<use xlink:href="img/assets/sprite.svg#svg-triangle-top"></use>
+													</svg>
+												</div>
+												<div class="ui-chart-sm__params-2">+24</div>
+												<div class="ui-chart-sm__params-3">+25.50%</div>
+											</div>
+										</div>
+										<div class="ui-chart-sm__view-right">
+											<div class="ui-chart-sm__box">
+												<canvas class="ui-chart-sm__canvas js-chart-sm" data-json='[{"date": "1 May", "value": 21},
+										{"date": "2 May", "value": 20},
+										{"date": "3 May", "value": 24},
+										{"date": "4 May", "value": 20},
+										{"date": "5 May", "value": 18},
+										{"date": "6 May", "value": 17},
+										{"date": "7 May", "value": 15},
+										{"date": "8 May", "value": 17},
+										{"date": "9 May", "value": 18},
+										{"date": "10 May", "value": 30},
+										{"date": "11 May", "value": 131},
+										{"date": "12 May", "value": 30},
+										{"date": "13 May", "value": 130},
+										{"date": "14 May", "value": 135},
+										{"date": "15 May", "value": 125},
+										{"date": "16 May", "value": 95},
+										{"date": "17 May", "value": 85},
+										{"date": "18 May", "value": 70},
+										{"date": "19 May", "value": 60},
+										{"date": "20 May", "value": 50},
+										{"date": "21 May", "value": 41},
+										{"date": "22 May", "value": 40},
+										{"date": "23 May", "value": 45},
+										{"date": "24 May", "value": 40},
+										{"date": "25 May", "value": 45},
+										{"date": "26 May", "value": 40},
+										{"date": "27 May", "value": 30},
+										{"date": "28 May", "value": 40},
+										{"date": "29 May", "value": 41},
+										{"date": "30 May", "value": 42},
+										{"date": "31 May", "value": 40}]' width="99" height="57">
+												</canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+
+							<div class="t-page__subtitle f-heading-2">Количество транзакций</div>
+
+							<div class="ui-chart-bar">
+								<div class="ui-chart-bar__params">
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-name">Всего</div>
+										<div class="ui-chart-bar__param-value">14</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #077673;"></div>
+										<div class="ui-chart-bar__param-name">Успешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #9DA4F4;"></div>
+										<div class="ui-chart-bar__param-name">Неуспешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+								</div>
+								<div class="ui-chart-bar__box">
+									<canvas class="ui-chart-bar__canvas js-chart-bar" data-json='[{"date": "01.05", "value": 21, "value2": 30},
+									{"date": "02.05", "value": 20, "value2": 30},
+									{"date": "03.05", "value": 0, "value2": 0},
+									{"date": "04.05", "value": 20, "value2": 10},
+									{"date": "05.05", "value": 18, "value2": 9},
+									{"date": "06.05", "value": 17, "value2": 6},
+									{"date": "07.05", "value": 15, "value2": 7},
+									{"date": "08.05", "value": 17, "value2": 8},
+									{"date": "09.05", "value": 18, "value2": 9},
+									{"date": "10.05", "value": 30, "value2": 15},
+									{"date": "11.05", "value": 31, "value2": 35},
+									{"date": "12.05", "value": 30, "value2": 15}]'></canvas>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+							<div class="t-page__subtitle f-heading-2">Оборот</div>
+							<div class="ui-chart-bar">
+								<div class="ui-chart-bar__params">
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-name">Всего</div>
+										<div class="ui-chart-bar__param-value">14</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #077673;"></div>
+										<div class="ui-chart-bar__param-name">Успешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #9DA4F4;"></div>
+										<div class="ui-chart-bar__param-name">Неуспешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+								</div>
+								<div class="ui-chart-bar__box is-sm">
+									<canvas class="ui-chart-bar__canvas js-chart-bar" data-json='[{"date": "01.05", "value": 2001, "value2": 3000},
+									{"date": "02.05", "value": 20000, "value2": 30000},
+									{"date": "03.05", "value": 0, "value2": 0},
+									{"date": "04.05", "value": 20000, "value2": 10000},
+									{"date": "05.05", "value": 18000, "value2": 9000},
+									{"date": "06.05", "value": 17000, "value2": 6000},
+									{"date": "07.05", "value": 15000, "value2": 7000},
+									{"date": "08.05", "value": 17000, "value2": 8000},
+									{"date": "09.05", "value": 18000, "value2": 9000},
+									{"date": "10.05", "value": 30000, "value2": 15000},
+									{"date": "11.05", "value": 31000, "value2": 35000},
+									{"date": "12.05", "value": 30000, "value2": 15000}]'></canvas>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+							<div class="t-page__subtitle f-heading-2">Подтверждённый оборот</div>
+							<div class="ui-chart-bar">
+								<div class="ui-chart-bar__params">
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #077673;"></div>
+										<div class="ui-chart-bar__param-name">Успешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #9DA4F4;"></div>
+										<div class="ui-chart-bar__param-name">Неуспешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+								</div>
+								<div class="ui-chart-bar__box is-sm">
+									<canvas class="ui-chart-bar__canvas js-chart-bar" data-json='[{"date": "01.05", "value": 2001, "value2": 3000},
+									{"date": "02.05", "value": 20000, "value2": 30000},
+									{"date": "03.05", "value": 0, "value2": 0},
+									{"date": "04.05", "value": 20000, "value2": 10000},
+									{"date": "05.05", "value": 18000, "value2": 9000},
+									{"date": "06.05", "value": 17000, "value2": 6000},
+									{"date": "07.05", "value": 15000, "value2": 7000},
+									{"date": "08.05", "value": 17000, "value2": 8000},
+									{"date": "09.05", "value": 18000, "value2": 9000},
+									{"date": "10.05", "value": 30000, "value2": 15000},
+									{"date": "11.05", "value": 31000, "value2": 35000},
+									{"date": "12.05", "value": 30000, "value2": 15000}]'></canvas>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+							<div class="t-page__subtitle f-heading-2">Причины отказов</div>
+							<div class="ui-chart-circle">
+								<!-- Обновится в js -->
+								<div class="ui-chart-circle__data">
+									<div class="ui-chart-circle__data-item"><span style="background-color: #077673" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Клиент не вернулся с Платежной страницы</span><span class="ui-chart-circle__data-item-count">104</span></div>
+									<div class="ui-chart-circle__data-item"><span style="background-color: #006765" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Срок оплаты истёк</span><span class="ui-chart-circle__data-item-count">5</span></div>
+									<div class="ui-chart-circle__data-item"><span style="background-color: #027C8E" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Вы не можете производить платежи без 3D Secure</span><span class="ui-chart-circle__data-item-count">5</span></div>
+									<div class="ui-chart-circle__data-item"><span style="background-color: #008CBA" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Эмитет карты отклонил платеж из-за неудачной проверки 3D Secure</span><span class="ui-chart-circle__data-item-count">5</span></div>
+								</div>
+								<div class="ui-chart-circle__view">
+									<div class="ui-chart-circle__inner">
+										<canvas data-json='[
+												{ "name": "Клиент не вернулся с Платежной страницы", "count": 14, "color": "#077673" },
+												{ "name": "Срок оплаты истёк", "count": 5, "color": "#008CBA" },
+												{ "name": "Вы не можете производить платежи без 3D Secure", "count": 5, "color": "#9DA4F4" },
+												{ "name": "Эмитет карты отклонил платеж из-за неудачной проверки 3D Secure", "count": 5, "color": "#BFE9F7" }
+											]' data-label="отказов" class="js-chart-circle">Your browser does not support the canvas element.</canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <footer class="c-footer">
+	<div class="c-footer__cnt container">
+		
+	</div>
+</footer> -->
+			</div>
+
+		</div>
+		<!-- Новая заявка -->
+		<div id="new-support" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+
+				<form action="#" method="POST" class="ui-modal__content c-form c-form--support js-validate-support">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Новая заявка</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+
+						<div>
+							<div class="ui-input">
+								<input type="text" name="NAME" placeholder="Имя" class="ui-input__field" required>
+							</div>
+							<div class="ui-input">
+								<input type="text" name="PHONE" placeholder="Телефон" class="ui-input__field js-mask-phone" required>
+							</div>
+
+							<div class="ui-select">
+								<select name="SUBJECT" class="js-select-single">
+									<option value="">Тема</option>
+									<option value="1">Тема 1</option>
+									<option value="2">Тема 2</option>
+									<option value="3">Тема 3</option>
+									<option value="4">Тема 3</option>
+									<option value="5">Тема 3</option>
+									<option value="6">Тема 3</option>
+									<option value="7">Тема 3</option>
+									<option value="8">Тема 3</option>
+								</select>
+							</div>
+
+							<div class="ui-input">
+								<textarea autocomplete="off" type="text" name="MSG" placeholder="Описание проблемы" class="ui-input__field js-auto-height" required></textarea>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Скопировать код -->
+		<div id="popup-copy-widget" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+
+				<form action="#" method="POST" class="ui-modal__content c-form c-form--support js-validate-support">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Скопировать код</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение виджета на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Объявление виджета:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='window.widgetConfig = { api_key: "" };' data-tippy-note="Скопирован">
+									window.widgetConfig = { api_key: '' };
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение скрипта платежной формы на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of_dom.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение скрипта платежной формы на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of_dom.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Обязательно нужно создать DOM-элемент:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;div id="of_widget"&gt;&lt;/div&gt;
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" class="ui-button ui-button--gray" data-close>Закрыть</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Заявка # -->
+		<div id="ticket-support" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<div class="ui-modal__content">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Заявка #144 / Возврат</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" data-close class="ui-button ui-button--gray">Закрыть</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Возврат средств -->
+		<div id="popup-transaction-refund" class="ui-modal ui-modal--centered">
+			<div class="ui-modal__wrapper">
+				<form action="#" class="ui-modal__content js-validate-return">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Возврат средств</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div class="c-return">
+							<div class="c-return__name">Сумма, ₽</div>
+							<div class="c-return__input ui-input">
+								<input type="text" name="SUMM" placeholder="" class="ui-input__field js-amount-field" required value="0">
+							</div>
+							<div class="c-return__summ">Общая сумма, ₽: <span>1 000 000</span></div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" data-close class="ui-button ui-button--primary" disabled>Вернуть</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Фильтры  -->
+		<div id="popup-filters" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<div class="ui-modal__content">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Фильтры</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body no-y-padding">
+
+						<div class="ui-modal__body-subtitle f-heading-4">Сумма, ₽</div>
+
+						<div class="ui-range">
+							<div class="ui-range__slider-price" data-min="1000" data-max="1000000" data-start="1000, 1000000" data-step="1"></div>
+							<label class="ui-range__label">
+								<span class="ui-range__prefix">Мин.</span>
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field" name="form[]" value="1 000">
+								</div>
+							</label>
+							<span class="ui-range__label-separator">—</span>
+							<label class="ui-range__label">
+								<span class="ui-range__prefix">Макс.</span>
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field" name="form[]" value="1 000 000">
+								</div>
+							</label>
+						</div>
+
+
+						<div class="ui-modal__body-subtitle f-heading-4">Статус</div>
+						<div class="ui-checkbox">
+							<input id="c_0" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+							<label for="c_0" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-checkbox">
+							<input id="c_1" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+							<label for="c_1" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-checkbox">
+							<input id="c_2" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+							<label for="c_2" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+
+						<div class="ui-modal__body-subtitle f-heading-4">Дата</div>
+						<div class="ui-radiobox">
+							<input id="r_0" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_0" class="ui-radiobox__label"><span class="ui-radiobox__text">День</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-radiobox">
+							<input id="r_1" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_1" class="ui-radiobox__label"><span class="ui-radiobox__text">Месяц</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-radiobox">
+							<input id="r_2" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_2" class="ui-radiobox__label"><span class="ui-radiobox__text">Квартал</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-radiobox">
+							<input id="r_4" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_4" class="ui-radiobox__label"><span class="ui-radiobox__text">Год</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Выбрать период  -->
+		<div id="popup-set-period" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<form action="#" method="POST" class="ui-modal__content js-validate-form">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Выбрать период</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div class="ui-radiobox">
+							<input id="d_0" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_0" class="ui-radiobox__label"><span class="ui-radiobox__text">День</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_1" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_1" class="ui-radiobox__label"><span class="ui-radiobox__text">Месяц</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_2" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_2" class="ui-radiobox__label"><span class="ui-radiobox__text">Квартал</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_4" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_4" class="ui-radiobox__label"><span class="ui-radiobox__text">Год</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_5" class="ui-radiobox__input" type="radio" data-connect-for="date01" value="1" name="PERIOD">
+							<label for="d_5" class="ui-radiobox__label"><span class="ui-radiobox__text">Укажите дату</span></label>
+						</div>
+						<div class="ui-range ui-range--date is-hidden" data-connect="date01">
+							<label class="ui-range__label">
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field js-mask-date" name="DATE_FROM" value="21.11.2023">
+								</div>
+							</label>
+							<span class="ui-range__label-separator">—</span>
+							<label class="ui-range__label">
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field js-mask-date" name="DATE_TO" value="21.11.2024">
+								</div>
+							</label>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Применить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="js/app.min.js?_v=20241223080342"></script>
+
+		<!-- Затемнение для попап -->
+		<span class="u-body-after" aria-hidden="true"></span>
+	</div>
+</body>
+
+</html>

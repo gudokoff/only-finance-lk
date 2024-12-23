@@ -21,8 +21,12 @@
 @import "UI/ui-modal";
 @import "UI/ui-input";
 @import "UI/ui-input2";
+@import "UI/ui-input3";
 @import "UI/ui-button";
 @import "UI/ui-timer";
+@import "UI/ui-chart";
+@import "UI/ui-icon";
+@import "UI/ui-chart-line";
 
 body {
 	font-size: 18px;
@@ -1243,6 +1247,40 @@ body {
 .s-page-text {
 	padding-top: 60px;
 
+	&.is-dark {
+		color: var(--gray-100);
+		background-color: #010101;
+
+		--body-color: #fff;
+	}
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	ul {
+		li {
+			position: relative;
+			padding-left: 32px;
+
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+
+			&::before {
+				content: "—";
+				font-size: 18px;
+
+				position: absolute;
+				left: 0;
+				top: 1px;
+
+			}
+		}
+	}
+
 	&__row-1 {
 		&:not(:last-child) {
 			margin-bottom: 80px;
@@ -1348,6 +1386,16 @@ body {
 			row-gap: 20px;
 		}
 	}
+
+	&__dashboard {
+		padding: 30px;
+		padding-bottom: 80px;
+
+		.row {
+			--bs-gutter-x: 3.75rem;
+			--bs-gutter-y: 1.5rem;
+		}
+	}
 }
 
 .s-product {
@@ -1411,10 +1459,12 @@ body {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			picture{
+
+			picture {
 				width: 100%;
 				height: 100%;
 			}
+
 			img {
 				width: 100%;
 				height: auto;
@@ -1765,6 +1815,19 @@ body {
 
 		@include media-breakpoint-down(md) {
 			font-size: 40px;
+		}
+	}
+
+	&-heading03 {
+		font-size: 44px;
+		font-weight: 400;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 30px;
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: 20px;
 		}
 	}
 

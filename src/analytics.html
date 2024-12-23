@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include|'html/_head.htm',{
+"title":"Аналитка",
+"description":"Описание"
+}|
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			@@include|'html/_page-aside.htm',{}|
+
+			<div class="t-page__main">
+				@@include|'html/_c-header.htm',{
+				"fixedClass": "",
+				"bgClass": "is-transparent",
+				"title": "Аналитка"
+				}|
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="ui-table ui-table--transactions">
+							<div class="ui-table__header">
+								<div class="ui-table__header-left">
+									<div class="f-heading-2">21 ноября 2023 — 21 ноября 2024</div>
+								</div>
+								<div class="ui-table__header-right">
+									<button type="button" data-popup="#popup-set-period" class="ui-button is-inline">
+										<span class="ui-button__icon">
+											<svg class="ui-icon" width="12" height="8">
+												<use xlink:href="img/assets/sprite.svg#svg-filters"></use>
+											</svg>
+										</span>
+										<span>Выбрать период</span>
+									</button>
+
+									<button type="button" class="ui-button-reset">Сбросить</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="t-page__analytics">
+							<div class="t-page__analytics-cards">
+								<!-- chart -->
+								<div class="ui-chart-sm">
+									<div class="ui-chart-sm__title">Конверсия</div>
+									<div class="ui-chart-sm__view">
+										<div class="ui-chart-sm__view-left">
+											<div class="ui-chart-sm__value f-heading-2">12,08%</div>
+
+											<div class="ui-chart-sm__params">
+												<div class="ui-chart-sm__params-1">
+													<svg class="ui-icon ui-icon--green" width="8" height="6">
+														<use xlink:href="img/assets/sprite.svg#svg-triangle-top"></use>
+													</svg>
+												</div>
+												<div class="ui-chart-sm__params-2">+24</div>
+												<div class="ui-chart-sm__params-3">+25.50%</div>
+											</div>
+										</div>
+										<div class="ui-chart-sm__view-right">
+											<div class="ui-chart-sm__box">
+												<canvas class="ui-chart-sm__canvas js-chart-sm" data-json='[{"date": "1 May", "value": 21},
+										{"date": "2 May", "value": 20},
+										{"date": "3 May", "value": 24},
+										{"date": "4 May", "value": 20},
+										{"date": "5 May", "value": 18},
+										{"date": "6 May", "value": 17},
+										{"date": "7 May", "value": 15},
+										{"date": "8 May", "value": 17},
+										{"date": "9 May", "value": 18},
+										{"date": "10 May", "value": 30},
+										{"date": "11 May", "value": 31},
+										{"date": "12 May", "value": 30},
+										{"date": "13 May", "value": 30},
+										{"date": "14 May", "value": 35},
+										{"date": "15 May", "value": 25},
+										{"date": "16 May", "value": 35},
+										{"date": "17 May", "value": 35},
+										{"date": "18 May", "value": 40},
+										{"date": "19 May", "value": 60},
+										{"date": "20 May", "value": 90},
+										{"date": "21 May", "value": 90},
+										{"date": "22 May", "value": 90},
+										{"date": "23 May", "value": 85},
+										{"date": "24 May", "value": 70},
+										{"date": "25 May", "value": 75},
+										{"date": "26 May", "value": 70},
+										{"date": "27 May", "value": 30},
+										{"date": "28 May", "value": 30},
+										{"date": "29 May", "value": 30},
+										{"date": "30 May", "value": 50},
+										{"date": "31 May", "value": 72}]' width="99" height="57">
+												</canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- chart -->
+								<div class="ui-chart-sm">
+									<div class="ui-chart-sm__title">Конверсия</div>
+									<div class="ui-chart-sm__view">
+										<div class="ui-chart-sm__view-left">
+											<div class="ui-chart-sm__value f-heading-2">12,08%</div>
+
+											<div class="ui-chart-sm__params">
+												<div class="ui-chart-sm__params-1">
+													<svg class="ui-icon ui-icon--red" width="8" height="6">
+														<use xlink:href="img/assets/sprite.svg#svg-triangle-down"></use>
+													</svg>
+												</div>
+												<div class="ui-chart-sm__params-2">+24</div>
+												<div class="ui-chart-sm__params-3">-25.50%</div>
+											</div>
+										</div>
+										<div class="ui-chart-sm__view-right">
+											<div class="ui-chart-sm__box">
+												<canvas class="ui-chart-sm__canvas js-chart-sm" data-json='[{"date": "1 May", "value": 21},
+										{"date": "2 May", "value": 20},
+										{"date": "3 May", "value": 24},
+										{"date": "4 May", "value": 15},
+										{"date": "5 May", "value": 17},
+										{"date": "6 May", "value": 30},
+										{"date": "7 May", "value": 30},
+										{"date": "8 May", "value": 35},
+										{"date": "9 May", "value": 35},
+										{"date": "10 May", "value": 35},
+										{"date": "11 May", "value": 40},
+										{"date": "12 May", "value": 60},
+										{"date": "13 May", "value": 12},
+										{"date": "14 May", "value": 90},
+										{"date": "15 May", "value": 90},
+										{"date": "16 May", "value": 85},
+										{"date": "17 May", "value": 70},
+										{"date": "18 May", "value": 75},
+										{"date": "19 May", "value": 43},
+										{"date": "20 May", "value": 75},
+										{"date": "21 May", "value": 90},
+										{"date": "22 May", "value": 22},
+										{"date": "23 May", "value": 120},
+										{"date": "24 May", "value": 120},
+										{"date": "25 May", "value": 90},
+										{"date": "26 May", "value": 85},
+										{"date": "27 May", "value": 100},
+										{"date": "28 May", "value": 92},
+										{"date": "29 May", "value": 92},
+										{"date": "30 May", "value": 92},
+										{"date": "31 May", "value": 92}]' width="99" height="57">
+												</canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- chart -->
+								<div class="ui-chart-sm">
+									<div class="ui-chart-sm__title">Конверсия</div>
+									<div class="ui-chart-sm__view">
+										<div class="ui-chart-sm__view-left">
+											<div class="ui-chart-sm__value f-heading-2">12,08%</div>
+
+											<div class="ui-chart-sm__params">
+												<div class="ui-chart-sm__params-1">
+													<svg class="ui-icon ui-icon--green" width="8" height="6">
+														<use xlink:href="img/assets/sprite.svg#svg-triangle-top"></use>
+													</svg>
+												</div>
+												<div class="ui-chart-sm__params-2">+24</div>
+												<div class="ui-chart-sm__params-3">+25.50%</div>
+											</div>
+										</div>
+										<div class="ui-chart-sm__view-right">
+											<div class="ui-chart-sm__box">
+												<canvas class="ui-chart-sm__canvas js-chart-sm" data-json='[{"date": "1 May", "value": 21},
+										{"date": "2 May", "value": 20},
+										{"date": "3 May", "value": 24},
+										{"date": "4 May", "value": 20},
+										{"date": "5 May", "value": 18},
+										{"date": "6 May", "value": 17},
+										{"date": "7 May", "value": 15},
+										{"date": "8 May", "value": 17},
+										{"date": "9 May", "value": 18},
+										{"date": "10 May", "value": 30},
+										{"date": "11 May", "value": 131},
+										{"date": "12 May", "value": 30},
+										{"date": "13 May", "value": 130},
+										{"date": "14 May", "value": 135},
+										{"date": "15 May", "value": 125},
+										{"date": "16 May", "value": 95},
+										{"date": "17 May", "value": 85},
+										{"date": "18 May", "value": 70},
+										{"date": "19 May", "value": 60},
+										{"date": "20 May", "value": 50},
+										{"date": "21 May", "value": 41},
+										{"date": "22 May", "value": 40},
+										{"date": "23 May", "value": 45},
+										{"date": "24 May", "value": 40},
+										{"date": "25 May", "value": 45},
+										{"date": "26 May", "value": 40},
+										{"date": "27 May", "value": 30},
+										{"date": "28 May", "value": 40},
+										{"date": "29 May", "value": 41},
+										{"date": "30 May", "value": 42},
+										{"date": "31 May", "value": 40}]' width="99" height="57">
+												</canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+
+							<div class="t-page__subtitle f-heading-2">Количество транзакций</div>
+
+							<div class="ui-chart-bar">
+								<div class="ui-chart-bar__params">
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-name">Всего</div>
+										<div class="ui-chart-bar__param-value">14</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #077673;"></div>
+										<div class="ui-chart-bar__param-name">Успешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #9DA4F4;"></div>
+										<div class="ui-chart-bar__param-name">Неуспешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+								</div>
+								<div class="ui-chart-bar__box">
+									<canvas class="ui-chart-bar__canvas js-chart-bar" data-json='[{"date": "01.05", "value": 21, "value2": 30},
+									{"date": "02.05", "value": 20, "value2": 30},
+									{"date": "03.05", "value": 0, "value2": 0},
+									{"date": "04.05", "value": 20, "value2": 10},
+									{"date": "05.05", "value": 18, "value2": 9},
+									{"date": "06.05", "value": 17, "value2": 6},
+									{"date": "07.05", "value": 15, "value2": 7},
+									{"date": "08.05", "value": 17, "value2": 8},
+									{"date": "09.05", "value": 18, "value2": 9},
+									{"date": "10.05", "value": 30, "value2": 15},
+									{"date": "11.05", "value": 31, "value2": 35},
+									{"date": "12.05", "value": 30, "value2": 15}]'></canvas>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+							<div class="t-page__subtitle f-heading-2">Оборот</div>
+							<div class="ui-chart-bar">
+								<div class="ui-chart-bar__params">
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-name">Всего</div>
+										<div class="ui-chart-bar__param-value">14</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #077673;"></div>
+										<div class="ui-chart-bar__param-name">Успешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #9DA4F4;"></div>
+										<div class="ui-chart-bar__param-name">Неуспешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+								</div>
+								<div class="ui-chart-bar__box is-sm">
+									<canvas class="ui-chart-bar__canvas js-chart-bar" data-json='[{"date": "01.05", "value": 2001, "value2": 3000},
+									{"date": "02.05", "value": 20000, "value2": 30000},
+									{"date": "03.05", "value": 0, "value2": 0},
+									{"date": "04.05", "value": 20000, "value2": 10000},
+									{"date": "05.05", "value": 18000, "value2": 9000},
+									{"date": "06.05", "value": 17000, "value2": 6000},
+									{"date": "07.05", "value": 15000, "value2": 7000},
+									{"date": "08.05", "value": 17000, "value2": 8000},
+									{"date": "09.05", "value": 18000, "value2": 9000},
+									{"date": "10.05", "value": 30000, "value2": 15000},
+									{"date": "11.05", "value": 31000, "value2": 35000},
+									{"date": "12.05", "value": 30000, "value2": 15000}]'></canvas>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+							<div class="t-page__subtitle f-heading-2">Подтверждённый оборот</div>
+							<div class="ui-chart-bar">
+								<div class="ui-chart-bar__params">
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #077673;"></div>
+										<div class="ui-chart-bar__param-name">Успешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+									<div class="ui-chart-bar__param">
+										<div class="ui-chart-bar__param-marker" style="background-color: #9DA4F4;"></div>
+										<div class="ui-chart-bar__param-name">Неуспешных</div>
+										<div class="ui-chart-bar__param-value">5</div>
+									</div>
+								</div>
+								<div class="ui-chart-bar__box is-sm">
+									<canvas class="ui-chart-bar__canvas js-chart-bar" data-json='[{"date": "01.05", "value": 2001, "value2": 3000},
+									{"date": "02.05", "value": 20000, "value2": 30000},
+									{"date": "03.05", "value": 0, "value2": 0},
+									{"date": "04.05", "value": 20000, "value2": 10000},
+									{"date": "05.05", "value": 18000, "value2": 9000},
+									{"date": "06.05", "value": 17000, "value2": 6000},
+									{"date": "07.05", "value": 15000, "value2": 7000},
+									{"date": "08.05", "value": 17000, "value2": 8000},
+									{"date": "09.05", "value": 18000, "value2": 9000},
+									{"date": "10.05", "value": 30000, "value2": 15000},
+									{"date": "11.05", "value": 31000, "value2": 35000},
+									{"date": "12.05", "value": 30000, "value2": 15000}]'></canvas>
+								</div>
+							</div>
+
+							<div class="u-hr u-mb-24"></div>
+							<div class="t-page__subtitle f-heading-2">Причины отказов</div>
+							<div class="ui-chart-circle">
+								<!-- Обновится в js -->
+								<div class="ui-chart-circle__data">
+									<div class="ui-chart-circle__data-item"><span style="background-color: #077673" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Клиент не вернулся с Платежной страницы</span><span class="ui-chart-circle__data-item-count">104</span></div>
+									<div class="ui-chart-circle__data-item"><span style="background-color: #006765" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Срок оплаты истёк</span><span class="ui-chart-circle__data-item-count">5</span></div>
+									<div class="ui-chart-circle__data-item"><span style="background-color: #027C8E" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Вы не можете производить платежи без 3D Secure</span><span class="ui-chart-circle__data-item-count">5</span></div>
+									<div class="ui-chart-circle__data-item"><span style="background-color: #008CBA" class="ui-chart-circle__data-item-color"></span><span class="ui-chart-circle__data-item-name">Эмитет карты отклонил платеж из-за неудачной проверки 3D Secure</span><span class="ui-chart-circle__data-item-count">5</span></div>
+								</div>
+								<div class="ui-chart-circle__view">
+									<div class="ui-chart-circle__inner">
+										<canvas data-json='[
+												{ "name": "Клиент не вернулся с Платежной страницы", "count": 14, "color": "#077673" },
+												{ "name": "Срок оплаты истёк", "count": 5, "color": "#008CBA" },
+												{ "name": "Вы не можете производить платежи без 3D Secure", "count": 5, "color": "#9DA4F4" },
+												{ "name": "Эмитет карты отклонил платеж из-за неудачной проверки 3D Secure", "count": 5, "color": "#BFE9F7" }
+											]' data-label="отказов" class="js-chart-circle">Your browser does not support the canvas element.</canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				@@include|'html/_c-footer.htm',{}|
+			</div>
+
+		</div>
+		@@include|'html/popup.htm',{}|
+		@@include|'html/_js.htm',{}|
+	</div>
+</body>
+
+</html>

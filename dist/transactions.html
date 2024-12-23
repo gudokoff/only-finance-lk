@@ -20,7 +20,7 @@
 	<meta name="application-name" content="Транзакции">
 	<meta name="theme-color" content="#ffffff">
 
-	<link rel="stylesheet" href="css/style.min.css?_v=20241220123805">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241223080342">
 </head>
 
 <body>
@@ -507,6 +507,75 @@
 			</div>
 		</div>
 
+		<!-- Скопировать код -->
+		<div id="popup-copy-widget" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+
+				<form action="#" method="POST" class="ui-modal__content c-form c-form--support js-validate-support">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Скопировать код</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение виджета на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Объявление виджета:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='window.widgetConfig = { api_key: "" };' data-tippy-note="Скопирован">
+									window.widgetConfig = { api_key: '' };
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение скрипта платежной формы на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of_dom.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение скрипта платежной формы на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of_dom.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Обязательно нужно создать DOM-элемент:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;div id="of_widget"&gt;&lt;/div&gt;
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" class="ui-button ui-button--gray" data-close>Закрыть</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
 		<!-- Заявка # -->
 		<div id="ticket-support" class="ui-modal ui-modal--aside">
 			<div class="ui-modal__wrapper">
@@ -625,7 +694,6 @@
 		</div>
 
 		<!-- Возврат средств -->
-
 		<div id="popup-transaction-refund" class="ui-modal ui-modal--centered">
 			<div class="ui-modal__wrapper">
 				<form action="#" class="ui-modal__content js-validate-return">
@@ -740,7 +808,65 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/app.min.js?_v=20241220123805"></script>
+
+		<!-- Выбрать период  -->
+		<div id="popup-set-period" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<form action="#" method="POST" class="ui-modal__content js-validate-form">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Выбрать период</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div class="ui-radiobox">
+							<input id="d_0" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_0" class="ui-radiobox__label"><span class="ui-radiobox__text">День</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_1" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_1" class="ui-radiobox__label"><span class="ui-radiobox__text">Месяц</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_2" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_2" class="ui-radiobox__label"><span class="ui-radiobox__text">Квартал</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_4" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_4" class="ui-radiobox__label"><span class="ui-radiobox__text">Год</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_5" class="ui-radiobox__input" type="radio" data-connect-for="date01" value="1" name="PERIOD">
+							<label for="d_5" class="ui-radiobox__label"><span class="ui-radiobox__text">Укажите дату</span></label>
+						</div>
+						<div class="ui-range ui-range--date is-hidden" data-connect="date01">
+							<label class="ui-range__label">
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field js-mask-date" name="DATE_FROM" value="21.11.2023">
+								</div>
+							</label>
+							<span class="ui-range__label-separator">—</span>
+							<label class="ui-range__label">
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field js-mask-date" name="DATE_TO" value="21.11.2024">
+								</div>
+							</label>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Применить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="js/app.min.js?_v=20241223080342"></script>
 
 		<!-- Затемнение для попап -->
 		<span class="u-body-after" aria-hidden="true"></span>

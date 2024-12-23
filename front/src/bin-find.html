@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include|'html/_head.htm',{
+"title":"Гадание по бинам",
+"description":"Описание"
+}|
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+			@@include|'html/_c-header.htm',{
+			"fixedClass": "is-fixed"
+			}|
+			<main class="t-page__main">
+				<section class="s-page-text">
+					<div class="s-page-text__cnt container">
+						<div class="s-page-text__row-1 row">
+							<div class="col-lg-11">
+								<div class="s-page-text__title">
+									<div class="f-type-heading01">Гадание по&nbsp;бинам <span class="f-type-cursor is-black"></span></div>
+								</div>
+							</div>
+							<div class="s-page-text__counter col-lg-1">
+								<div class="c-section-counter">
+									<div class="c-section-counter__num">01</div>
+								</div>
+							</div>
+						</div>
+						<div class="s-page-text__row-2 row">
+							<div class="s-page-text__descr-left col-md-11 offset-md-1 col-lg-8 offset-lg-2">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when unknown printer took. </p>
+
+								<div class="c-bin-find">
+									<div class="c-bin-find__wrap">
+										<div class="c-bin-find__left">
+											<div class="c-bin-find__input ui-input3">
+												<input type="text" id="bin" class="ui-input3__field js-bin-search js-amount-field" maxlength="4">
+												<label for="bin" class="ui-input3__name">Введите 4 цифры</label>
+												<button type="button" class="ui-input3__clear">
+													<svg class="ui-icon" width="20" height="20">
+														<use xlink:href="img/assets/sprite.svg#svg-close2"></use>
+													</svg>
+												</button>
+											</div>
+										</div>
+										<div class="c-bin-find__right">
+											<button type="button" class="ui-button ui-button-primary">искать</button>
+										</div>
+									</div>
+
+									<div class="c-bin-find__result">
+										<div class="c-bin-find__result-success">
+											<div class="c-bin-find__bank">
+												<div class="c-bin-find__bank-logo">
+													<img src="img/upload/bank/t-bank.svg" width="58" height="57" alt="1">
+												</div>
+												<div class="c-bin-find__bank-name">T-Банк</div>
+											</div>
+
+											<button type="submit" class="ui-button-arrow">
+												<span>узнать больше</span>
+												<svg class="ui-icon" width="38" height="15">
+													<use xlink:href="img/assets/sprite.svg#svg-arrow-right"></use>
+												</svg>
+											</button>
+										</div>
+										<div class="c-bin-find__result-not-found" style="display: none;">
+											<div class="c-bin-find__result-icon">
+												<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M35.491 37.9448L46.6011 49.0549C47.2349 49.6886 48.2651 49.6886 48.8989 49.0549C49.5326 48.4211 49.5326 47.3909 48.8989 46.7571L37.7904 35.647C40.9591 31.9534 42.875 27.1515 42.875 21.906C42.875 10.2466 33.4094 0.781006 21.75 0.781006C10.0906 0.781006 0.625 10.2466 0.625 21.906C0.625 33.5654 10.0906 43.031 21.75 43.031C26.9955 43.031 31.7974 41.1151 35.491 37.9448ZM21.75 4.03101C31.6154 4.03101 39.625 12.0406 39.625 21.906C39.625 31.7714 31.6154 39.781 21.75 39.781C11.8846 39.781 3.875 31.7714 3.875 21.906C3.875 12.0406 11.8846 4.03101 21.75 4.03101Z" fill="black" />
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9992 17.7038L10.8503 18.8526C10.2166 19.4864 10.2166 20.5166 10.8503 21.1504C11.4841 21.7858 12.5143 21.7858 13.1481 21.1504L14.2969 20.0015L15.4458 21.1504C16.0812 21.7858 17.1098 21.7858 17.7452 21.1504C18.3789 20.5166 18.3789 19.4864 17.7452 18.8526L16.5947 17.7038L17.7452 16.5549C18.3789 15.9211 18.3789 14.8909 17.7452 14.2571C17.1098 13.6218 16.0812 13.6218 15.4458 14.2571L14.2969 15.406L13.1481 14.2571C12.5143 13.6218 11.4841 13.6218 10.8503 14.2571C10.2166 14.8909 10.2166 15.9211 10.8503 16.5549L11.9992 17.7038Z" fill="black" />
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M25.8117 17.7038L24.6628 18.8526C24.0291 19.4864 24.0291 20.5166 24.6628 21.1504C25.2966 21.7858 26.3268 21.7858 26.9606 21.1504L28.1094 20.0015L29.2583 21.1504C29.8937 21.7858 30.9223 21.7858 31.5577 21.1504C32.1914 20.5166 32.1914 19.4864 31.5577 18.8526L30.4072 17.7038L31.5577 16.5549C32.1914 15.9211 32.1914 14.8909 31.5577 14.2571C30.9223 13.6218 29.8937 13.6218 29.2583 14.2571L28.1094 15.406L26.9606 14.2571C26.3268 13.6218 25.2966 13.6218 24.6628 14.2571C24.0291 14.8909 24.0291 15.9211 24.6628 16.5549L25.8117 17.7038Z" fill="black" />
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M16.3363 31.2383C17.8687 29.8587 19.3783 29.1632 20.9107 29.1876C22.4756 29.212 24.0177 29.9692 25.5826 31.2773C26.2699 31.8526 27.2953 31.76 27.8706 31.0726C28.4458 30.3836 28.3548 29.3582 27.6658 28.783C25.4396 26.9223 23.1889 25.9733 20.9627 25.9376C18.7039 25.9018 16.4208 26.7891 14.1621 28.822C13.4958 29.4232 13.4422 30.4518 14.0418 31.1181C14.6414 31.7843 15.6701 31.838 16.3363 31.2383Z" fill="black" />
+												</svg>
+											</div>
+											<div class="c-bin-find__result-info">Упс... <br> Ничего не найдено</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+				<section class="s-page-text">
+					<div class="s-page-text__cnt container">
+						<div class="s-page-text__row-1 row">
+							<div class="col-lg-11">
+								<div class="s-page-text__title">
+									<div class="f-type-heading03">Немного интересной информации</div>
+								</div>
+							</div>
+							<div class="s-page-text__counter col-lg-1">
+								<div class="c-section-counter">
+									<div class="c-section-counter__num">02</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="s-page-text__dashboard">
+						<div class="row">
+							<div class="col-lg-7 col-xxl-8">
+								<div class="c-card-board">
+									<div class="c-card-board__header">
+										<div class="c-card-board__title">Транзакции по городам</div>
+									</div>
+									<div class="c-card-board__body">
+										<div class="c-card-board__chart-horizontal-bar ui-chart-horizontal-bar">
+											<div class="ui-chart-horizontal-bar__view">
+												<div class="ui-chart-horizontal-bar__inner">
+													<canvas data-json='[
+																{ "name": "Москва", "count": 52, "color": "#01503E"},
+																{ "name": "Московская область", "count": 48, "color": "#006765"},
+																{ "name": "Санкт-Петербург", "count": 24, "color": "#027C8E"},
+																{ "name": "Краснодарский край", "count": 18, "color": "#008CBA"},
+																{ "name": "Ростовская область", "count": 16, "color": "#5A9ADA"},
+																{ "name": "Нижегородская область", "count": 15, "color": "#9DA4F4"},
+																{ "name": "Свердловская область", "count": 9, "color": "#60C8EA"},
+																{ "name": "Республика Татарстан", "count": 8, "color": "#63686B"},
+																{ "name": "Самарская область", "count": 5, "color": "#858D8C"},
+																{ "name": "Красноярский край", "count": 3, "color": "#8E9998"},
+																{ "name": "Прочее", "count": 3, "color": "#EFF6F7" }
+															]' data-label="Транзакции" class="js-chart-horizontal-bar">Your browser does not support the canvas element.</canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-5 col-xxl-4">
+								<div class="c-card-board">
+									<div class="c-card-board__header">
+										<div class="c-card-board__title">Транзакции по банкам</div>
+									</div>
+									<div class="c-card-board__body">
+										<div class="c-card-board__chart-half-circle ui-chart-half-circle">
+											<div class="ui-chart-half-circle__view">
+												<div class="ui-chart-half-circle__inner">
+													<canvas data-json='[
+															{ "name": "Сбербанк", "icon": "sberbank", "color": "--color-sberbank", "count": 1116105.03, "currency": "руб."},
+															{ "name": "TБанк", "icon": "tbank", "color": "--color-tbank", "count": 726105.33, "currency": "руб."},
+															{ "name": "ВТБ банк", "icon": "vtb", "color": "--color-vtb", "count": 356105.66, "currency": "руб."},
+															{ "name": "Газпромбанк", "icon": "gazprombank", "color": "--color-gazprombank", "count": 61105, "currency": "руб."},
+															{ "name": "Альфабанк", "icon": "alfabank", "color": "--color-alfabank", "count": 166105.00, "currency": "руб."}
+														]' data-float data-label="Транзакций" class="js-chart-half-circle">Your browser does not support the canvas element.</canvas>
+												</div>
+												<div class="ui-chart-half-circle__info">
+													<div class="ui-chart-half-circle__info-title">Всего</div>
+													<div class="ui-chart-half-circle__info-total">
+														<span class="ui-chart-half-circle__info-total-value"></span>
+														<span class="ui-chart-half-circle__info-total-icon">
+															<svg class="ui-icon" width="18" height="23">
+																<use xlink:href="img/assets/sprite.svg#svg-ruble"></use>
+															</svg>
+														</span>
+													</div>
+												</div>
+											</div>
+											<!-- Обновится в js -->
+											<div class="ui-chart-half-circle__data">
+											</div>
+										</div>
+									</div>
+									<div class="c-card-board__footer">
+										<button type="button" class="ui-button-more">
+											Показать больше
+											<svg class="ui-icon" width="14" height="14">
+												<use xlink:href="img/assets/sprite.svg#svg-chevron-down"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="s-page-text">
+					<div class="s-page-text__cnt container">
+						<div class="s-page-text__row-1 row">
+							<div class="col-lg-11">
+								<img src="img/upload/black-logotype4.svg" width="392" height="42" alt="1">
+							</div>
+							<div class="s-page-text__counter col-lg-1">
+								<div class="c-section-counter">
+									<div class="c-section-counter__num">03</div>
+								</div>
+							</div>
+						</div>
+						<div class="s-page-text__row-2 row">
+							<div class="s-page-text__descr-left col-md-5 offset-md-1 col-lg-5 offset-lg-1">
+								<p><b>Powered by Only Finance</b></p>
+								<p>Lorem Ipsum is simply dummy text printing and typesetting industry. Lorem Ipsum is simply dummy text printing and typesetting industry.Lorem Ipsum is simply dummy text printing and typesetting industry.</p>
+							</div>
+							<div class="s-page-text__descr-right col-md-6 col-lg-4">
+								<ul>
+									<li><b>Lorem</b> Ipsum is simply dummy text printing and typesetting industry.</li>
+									<li><b>Lorem</b> Ipsum is simply dummy text printing and typesetting industry.</li>
+									<li><b>Lorem</b> Ipsum is simply dummy text printing and typesetting industry.</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</section>
+			</main>
+
+			@@include|'html/_c-footer.htm',{}|
+		</div>
+		@@include|'html/popup.htm',{}|
+		@@include|'html/_js.htm',{}|
+
+</body>
+
+</html>

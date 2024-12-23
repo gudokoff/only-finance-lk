@@ -50,38 +50,66 @@ body {
 	}
 }
 
-// Затемнения для попап окон
-.u-body-after {
-	display: block;
-	position: fixed;
-
-	top: 0;
-	left: 0;
-	// pointer-events: none;
-	user-select: none;
-
-	background-color: rgba(1, 1, 1, 0.05);
-
-	// transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-
-	opacity: 0;
-	visibility: hidden;
-	z-index: -1;
-
-	.ui-modal-show & {
-		opacity: 1;
-		visibility: visible;
-		z-index: 149;
-		width: 100%;
-		height: 100%;
-	}
-}
-
 .color-gray-500 {
 	color: var(--gray-500);
 }
 
-.u-digit{
-	font-family: var(--font-family-second);
-	letter-spacing: initial;
+.u {
+	&-mb {
+		&-24 {
+			margin-bottom: 24px;
+		}
+	}
+
+	&-hr {
+		display: block;
+		width: 100%;
+		height: 1px;
+		background-color: var(--gray-300);
+		flex-shrink: 0;
+	}
+
+	&-digit {
+		font-family: var(--font-family-second);
+		letter-spacing: initial;
+	}
+
+	// Затемнения для попап окон
+	&-body-after {
+		display: block;
+		position: fixed;
+
+		top: 0;
+		left: 0;
+		// pointer-events: none;
+		user-select: none;
+
+		background-color: rgba(1, 1, 1, 0.05);
+
+		// transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+		opacity: 0;
+		visibility: hidden;
+		z-index: -1;
+
+		.ui-modal-show & {
+			opacity: 1;
+			visibility: visible;
+			z-index: 149;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&-chartjs-tooltip {
+		color: #fff;
+		background-color: var(--body-color);
+		padding: 10px;
+		
+		border-radius: 0px;
+		border: 1px solid var(--white);
+		transition: .2s ease-in-out;
+		margin: 5px;
+		z-index: 100
+	}
 }

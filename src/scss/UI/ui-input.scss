@@ -1,6 +1,31 @@
 .ui-input {
 	position: relative;
 
+	&--text {
+		margin-bottom: 24px;
+
+		textarea {
+			&:disabled {
+				color: var(--body-color);
+			}
+		}
+
+		.ui-input__title {
+			margin-bottom: 16px;
+			line-height: 1em;
+		}
+
+		.ui-input__field {
+			height: auto;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			padding-right: 0;
+			user-select: auto;
+			line-height: 1em;
+
+		}
+	}
+
 	.ui-button-eye {
 		position: absolute;
 		right: 0;
@@ -18,6 +43,8 @@
 		color: var(--body-color);
 		border-radius: 0 !important;
 		border-bottom: 1px solid var(--gray-600);
+		letter-spacing: -0.02em;
+		word-break: break-all;
 
 		&::placeholder {
 			color: var(--gray-400);

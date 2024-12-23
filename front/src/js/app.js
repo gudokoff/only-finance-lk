@@ -5,6 +5,13 @@ import $ from "jquery";
 window.$ = $;
 window.jQuery = jQuery;
 
+import * as flsFunctions from "./files/functions.js";
+// Chart
+import { Chart, DoughnutController, ArcElement, CategoryScale, LinearScale, BarController, BarElement, Tooltip } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+Chart.register(DoughnutController, ArcElement, CategoryScale, LinearScale, BarController, BarElement, ChartDataLabels, Tooltip);
+
 import validate from "jquery-validation";
 import "jquery-validation/dist/additional-methods.min.js";
 
@@ -53,16 +60,20 @@ function formValidate() {
 		}
 
 		if (!$(this).hasClass("is-float")) {
-			if (this.value == 0) {
-				this.value = 1
-			}
 			this.value = this.value.split('.')[0].replace(/\D+/g, "");
-		}
-		if (this.value.charAt(0) === '0') {
-			// this.value = this.value.slice(1);
 		}
 	});
 	//========================================================================================================================================================
+	$(document).on("input", ".js-bin-search", function () {
+		let input = $(this);
+		if (input.val().length) {
+			input.siblings(".ui-input3__clear").show();
+		} else {
+			input.siblings(".ui-input3__clear").hide();
+		}
+	});
+
+
 
 	//========================================================================================================================================================
 	// Валидация форм
@@ -102,6 +113,353 @@ function formValidate() {
 }
 document.addEventListener("DOMContentLoaded", function () {
 	formValidate();
+
+	// Chart
+	Chart.defaults.font.family = "CourierNew";
+	Chart.register(ChartDataLabels);
+	// Chart circle
+	let chartsHalfCircle = document.querySelectorAll(".js-chart-half-circle");
+	if (chartsHalfCircle.length) {
+		chartsHalfCircle.forEach(function (chart) {
+			let chartBOX = chart.closest(".ui-chart-half-circle");
+			let totalTitleHTML = chartBOX.querySelector(".ui-chart-half-circle__info-title");
+			let totalHTML = chartBOX.querySelector(".ui-chart-half-circle__info-total-value");
+			let dataHTML = chartBOX.querySelector(".ui-chart-half-circle__data");
+			let data = null;
+			let totalCount = 0;
+			let totalTitle = totalTitleHTML.textContent;
+			let dataLabel = '';
+			let chartInstance = null;
+			let digFormat = flsFunctions.getDigFormat;
+			if (chart.hasAttribute("data-float")) {
+				digFormat = flsFunctions.getFloatFormat;
+			}
+
+			if (chart.getAttribute("data-json")) {
+				data = chart.getAttribute("data-json");
+				data = JSON.parse(data);
+				data.map(row => {
+					if (row.color && row.color.startsWith('--')) {
+						row.color = flsFunctions.cssVarValue(row.color);
+					}
+				});
+				totalCount = data.map(row => row.count).reduce((partialSum, a) => partialSum + a, 0);
+			}
+
+			if (chart.getAttribute("data-label")) {
+				dataLabel = chart.getAttribute("data-label");
+			}
+
+			if (totalHTML) {
+				totalHTML.innerHTML = digFormat(totalCount);
+			}
+
+			if (dataHTML) {
+				dataHTML.innerHTML = '';
+				let dataItems = [];
+				data.map(function (row, idx) {
+					let dataItem = document.createElement("div");
+					dataItem.className = 'ui-chart-half-circle__data-item';
+					dataItem.setAttribute("data-id", idx);
+
+					let color = '';
+					if (row.color) {
+						color = `<span style='background-color: ${row.color}' class='ui-chart-half-circle__data-item-color'></span>`;
+					}
+
+					let icon = '';
+					if (row.icon) {
+						icon = `<span class="ui-chart-half-circle__data-item-icon ui-icon-${row.icon}"></span>`;
+					}
+
+					let name = '';
+					if (row.name) {
+						name = `<span class='ui-chart-half-circle__data-item-name'>${row.name}</span>`;
+					}
+
+					let count = '';
+					if (row.count) {
+						count = `<span class='ui-chart-half-circle__data-item-count'>${digFormat(row.count)}</span>`;
+					}
+
+					let currency = '';
+					if (row.currency) {
+						currency = `<span class='ui-chart-half-circle__data-item-currency'>${row.currency}</span>`;
+					}
+
+					let content = color + icon + name + count + currency;
+
+					dataItem.innerHTML = content;
+					dataItems.push(dataItem);
+				});
+				let itemHandlerInTimeout = null;
+				let chartHandlerOutTimeout = null;
+				function chartHandlerOut() {
+					totalTitleHTML.innerHTML = totalTitle;
+					totalHTML.innerHTML = digFormat(totalCount);
+				}
+				if (dataItems.length) {
+					function itemHandlerIn(item) {
+						let id = item.data("id");
+
+						chartInstance.setActiveElements([
+							{ datasetIndex: 0, index: id }
+						]);
+						chartInstance.update();
+
+						const label = data[id].name;
+						const value = data[id].count;
+						totalTitleHTML.innerHTML = label;
+						totalHTML.innerHTML = digFormat(value);
+					}
+					function itemHandlerOut() {
+						clearInterval(chartHandlerOutTimeout);
+						clearInterval(itemHandlerInTimeout);
+						chartInstance.setActiveElements([]);
+						chartInstance.update();
+						totalTitleHTML.innerHTML = totalTitle;
+						totalHTML.innerHTML = digFormat(totalCount);
+					}
+					dataItems.forEach(function (item) {
+						dataHTML.appendChild(item);
+						$(item).on("mouseenter", function () {
+							let item = $(this);
+							clearInterval(chartHandlerOutTimeout);
+							clearInterval(itemHandlerInTimeout);
+							itemHandlerInTimeout = setTimeout(function () {
+								itemHandlerIn(item);
+							}, 50);
+						});
+						$(dataHTML).on("mouseleave", itemHandlerOut);
+					});
+				}
+
+				$(chart).on("mouseleave", function () {
+					clearInterval(itemHandlerInTimeout);
+					chartHandlerOutTimeout = setTimeout(chartHandlerOut, 0);
+				});
+			}
+
+			chartInstance = new Chart(
+				chart,
+				{
+					type: 'doughnut',
+					data: {
+						labels: data.map(row => row.name),
+						datasets: [
+							{
+								label: dataLabel,
+								data: data.map(row => row.count),
+								backgroundColor: data.map(row => row.color),
+								hoverBackgroundColor: data.map(row => row.color),
+								borderWidth: 0,
+								borderRadius: 0,
+								hoverBorderWidth: 6,
+								hoverBorderRadius: 0,
+								hoverBorderColor: data.map(row => row.color),
+								borderSkipped: 'top',
+								borderColor: data.map(row => row.color),
+								borderJoinStyle: flsFunctions.mediaWidth() < flsFunctions.mediaBreakpoints["sm"] ? "round" : "miter",
+								borderAlign: 'center',
+								weight: 1,
+							}
+						]
+					},
+					options: {
+						plugins: {
+							datalabels: false,
+							tooltip: {
+								enabled: true,
+								xAlign: "center",
+								yAlign: "top",
+								backgroundColor: 'rgba(0, 0, 0, 1)',
+								cornerRadius: 0,
+								padding: 10,
+								borderWidth: 1,
+								borderColor: "#ffffff",
+								boxPadding: 10,
+								titleFont: {
+									size: 16
+								},
+								bodyFont: {
+									size: 16
+								}
+							},
+						},
+						animation: {
+							duration: 50,
+						},
+						rotation: -90,
+						circumference: 180,
+						cutout: "84%",
+						layout: {
+							padding: {
+								left: 10,
+								right: 10
+							}
+						},
+						onHover: (evt) => {
+							const points = chartInstance.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+							if (points.length) {
+								const firstPoint = points[0];
+								const label = chartInstance.data.labels[firstPoint.index];
+								const value = chartInstance.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+								totalTitleHTML.innerHTML = label;
+								totalHTML.innerHTML = digFormat(value);
+							} else {
+								totalTitleHTML.innerHTML = totalTitle;
+								totalHTML.innerHTML = digFormat(totalCount);
+							}
+						},
+						onClick: (evt) => {
+							const points = chartInstance.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+							if (points.length) {
+								const firstPoint = points[0];
+								const label = chartInstance.data.labels[firstPoint.index];
+								const value = chartInstance.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+								totalTitleHTML.innerHTML = label;
+								totalHTML.innerHTML = digFormat(value);
+							} else {
+								totalTitleHTML.innerHTML = totalTitle;
+								totalHTML.innerHTML = digFormat(totalCount);
+							}
+						},
+					}
+				}
+			);
+		})
+	}
+
+	// Chart Horizontal
+	let chartsHorizontalBar = document.querySelectorAll(".js-chart-horizontal-bar");
+	if (chartsHorizontalBar.length) {
+		chartsHorizontalBar.forEach(function (chart) {
+			let isDarkMode = chart.closest(".is-dark");
+			let chartBOX = chart.closest(".ui-chart-horizontal-bar");
+			let data = null;
+			let totalCount = 0;
+			let dataLabel = '';
+			if (chart.getAttribute("data-json")) {
+				data = chart.getAttribute("data-json");
+				data = JSON.parse(data);
+				data.map(row => {
+					if (row.color && row.color.startsWith('--')) {
+						row.color = flsFunctions.cssVarValue(row.color);
+					}
+				});
+			}
+			if (chart.getAttribute("data-label")) {
+				dataLabel = chart.getAttribute("data-label");
+			}
+
+			setTimeout(function () {
+				new Chart(
+					chart,
+					{
+						type: 'bar',
+						data: {
+							labels: data.map(row => row.name),
+							datasets: [
+								{
+									label: dataLabel,
+									data: data.map(row => row.count),
+									backgroundColor: data.map(row => row.color),
+									hoverBackgroundColor: data.map(row => flsFunctions.setOpacity(row.color, 0.5)),
+									hoverBorderColor: "#000000",
+									borderSkipped: false,
+									barThickness: 24,
+									borderWidth: 0,
+									hoverborderWidth: 0,
+									borderColor: "#fff",
+								}
+							]
+						},
+						options: {
+							animation: {
+								duration: 50,
+							},
+							resizeDelay: 100,
+							indexAxis: 'y',
+							maintainAspectRatio: false,
+							responsive: true,
+							scales: {
+								x: {
+									border: {
+										display: false,
+									},
+
+									grid: {
+										display: false
+									},
+									position: 'top',
+									ticks: {
+										major: {
+											enabled: true
+										},
+										color: isDarkMode ? '#ffffff' : '#000000',
+										font: {
+											weight: "bold",
+											size: 16
+										}
+									}
+								},
+								y: {
+									grid: {
+										display: false
+									},
+									border: {
+										display: false,
+									},
+									ticks: {
+										major: {
+											enabled: true
+										},
+										color: isDarkMode ? '#ffffff' : '#000000',
+										font: {
+											weight: "normal",
+											size: 14
+										}
+									}
+								},
+							},
+							plugins: {
+								datalabels: {
+									clamp: true,
+									align: 'end',
+									anchor: 'end',
+									color: '#000000',
+									offset: 10,
+									font: {
+										weight: "bold",
+										size: 16
+									}
+								},
+								tooltip: {
+									enabled: true,
+									backgroundColor: 'rgba(0, 0, 0, 1)',
+									cornerRadius: 0,
+									padding: 10,
+									borderWidth: 1,
+									borderColor: "#ffffff",
+									boxPadding: 10,
+									titleFont: {
+										size: 16
+									},
+									bodyFont: {
+										size: 16
+									}
+								},
+							}
+						}
+					}
+				);
+			}, 0)
+		})
+	}
+
+
 	// Кастомизация загрузки файла
 	var dt = new DataTransfer();
 	$('.input-file input[type=file]').on('change', function () {
@@ -131,6 +489,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		input[0].files = dt.files;
 	}
 	window.removeFilesItem = removeFilesItem;
+
+
+	// Input field focus
+	$('.ui-input3__field').not(".not-focus").focus(function () {
+		$(this).parent('.ui-input3').addClass('is-focus').removeClass('has-error');
+	});
+	// Input field focusout
+	$('.ui-input3__field').not(".not-focus").focusout(function () {
+		if ($(this).val().length == 0) {
+			$(this).parent('.ui-input3').removeClass('is-focus');
+		}
+	});
 
 	// Плавный скрол к блоку
 	$("[data-goto]").on("click", function () {
@@ -223,6 +593,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			let btn = targetElement.closest('.js-copy-to-clipboard');
 			if (btn.hasAttribute("data-copy")) {
 				copyToClipboard(btn.getAttribute("data-copy"));
+			}
+		}
+
+		if (targetElement.closest('.ui-input3__clear')) {
+			let btn = targetElement.closest('.ui-input3__clear');
+			let btnField = document.querySelector(".js-bin-search");
+			if (btnField) {
+				btnField.value = "";
+				$(btnField).trigger("input").focus();
 			}
 		}
 	});

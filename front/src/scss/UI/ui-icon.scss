@@ -27,4 +27,25 @@
 	&--tg {
 		transform: translate(-1px, 0px);
 	}
+
+	// BANKS
+	&-sberbank {
+		background-image: url('../img/assets/banks/sberbank.png');
+	}
+
+	&-tbank {
+		background-image: url('../img/assets/banks/tbank.svg');
+	}
+
+	&-vtb {
+		background-image: url('../img/assets/banks/vtb.png');
+	}
+
+	&-gazprombank {
+		background-image: url('../img/assets/banks/gazprombank.png');
+	}
+
+	&-alfabank {
+		background-image: url('../img/assets/banks/alfabank.svg');
+	}
 }

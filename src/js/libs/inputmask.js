@@ -3,10 +3,19 @@
 // Подключение модуля
 import "inputmask/dist/inputmask.min.js";
 
-const inputMasks = document.querySelectorAll('.js-mask-phone');
-if (inputMasks.length) {
+const phoneMasks = document.querySelectorAll('.js-mask-phone');
+if (phoneMasks.length) {
 	let inputmask = Inputmask({
 		mask: "+7 (999) 999 9999",
 		// clearMaskOnLostFocus: false,
-	}).mask(inputMasks);
+	}).mask(phoneMasks);
+}
+
+const dateMasks = document.querySelectorAll('.js-mask-date');
+if (dateMasks.length) {
+	let inputmask = Inputmask({
+		jitMasking: true,
+		alias: "datetime",
+		inputFormat: "dd.mm.yyyy"
+	}).mask(dateMasks);
 }

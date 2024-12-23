@@ -1,0 +1,141 @@
+.c-card-board {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&__header {
+		border-top: 1px solid var(--body-color);
+		border-bottom: 1px solid var(--body-color);
+		padding-top: 20px;
+		padding-bottom: 21px;
+		padding-left: 12px;
+		padding-right: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: $breakpoint-sm) {
+			flex-direction: column;
+			row-gap: 20px;
+
+			.c-card-board__note {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__title {
+		font-family: var(--font-family-second);
+		line-height: 1.2em;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		text-align: center;
+
+		&.is-left {
+			text-align: left;
+		}
+	}
+
+	&__note {
+		font-weight: 700;
+		margin-left: auto;
+	}
+
+	&__top10 {
+		li {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+
+				@media (max-width: $breakpoint-xl) {
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+
+	&__body {
+		flex-grow: 1;
+	}
+
+	&__snippets {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+
+		@media (max-width: $breakpoint-xl) {
+			gap: 16px;
+		}
+
+		@media (max-width: $breakpoint-sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+
+		@media (max-width: $breakpoint-md) {
+			flex-direction: column;
+			row-gap: 20px;
+			align-items: flex-start;
+		}
+
+		&-left {
+			display: flex;
+			align-items: center;
+			gap: 50px;
+
+			@media (max-width: $breakpoint-md) {
+				width: 100%;
+				justify-content: space-between;
+			}
+		}
+
+		&-right {
+			margin-left: auto;
+
+			@media (max-width: $breakpoint-md) {
+				margin-left: 0;
+				width: 100%;
+			}
+		}
+
+		.ui-button-more {
+			margin-top: 20px;
+		}
+	}
+
+	&__chart {
+		&-half-circle {}
+	}
+
+	&__map {
+		&-frame {
+			width: 100%;
+			height: 303px;
+			margin-bottom: 24px;
+
+			@media (max-width: $breakpoint-sm) {
+				height: 180px;
+			}
+		}
+
+		&-lines {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+			column-gap: 30px;
+			row-gap: 16px;
+
+			@media (max-width: $breakpoint-sm) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+}

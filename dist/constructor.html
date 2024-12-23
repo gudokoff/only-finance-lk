@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Конструктор</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="robots" content="index, follow"> <!-- noindex, nofollow -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="URL">
+	<meta property="og:title" content="Конструктор">
+	<meta property="og:image" content="URL">
+	<meta name="description" content="Описание">
+
+	<meta name="apple-mobile-web-app-title" content="Конструктор">
+	<meta name="application-name" content="Конструктор">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="css/style.min.css?_v=20241223080342">
+</head>
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			<div class="t-page__aside">
+				<div class="t-page__aside-inner">
+					<div class="t-page__aside-top">
+						<img src="img/upload/logotype-white-1.svg" width="168" height="20" alt="only-finance">
+					</div>
+
+					<div class="t-page__aside-body">
+						<ul class="c-menu-aside">
+							<li class="c-menu-aside__item">
+								<a href="analytics.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-1"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Аналитика</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item">
+								<a href="transactions.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="14" height="13">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-2"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Транзакции</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item">
+								<a href="constructor.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="15" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-3"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Конструктор</span>
+								</a>
+							</li>
+							<li class="c-menu-aside__item is-active">
+								<a href="support.html" class="c-menu-aside__link">
+									<span class="c-menu-aside__link-icon">
+										<svg class="ui-icon" width="12" height="12">
+											<use xlink:href="img/assets/sprite.svg#svg-menu-4"></use>
+										</svg>
+									</span>
+									<span class="c-menu-aside__link-name">Поддержка</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="t-page__aside-footer">
+						<div class="t-page__aside-copyright">©2024 OOO «ОНЛИФИНАНС»</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="t-page__main has-bg-gray">
+				<header class="c-header  is-transparent">
+					<div class="c-header__top">
+						<div class="c-header__top-cnt container">
+							<div class="c-header__top-left">
+								<div class="c-header__title f-heading-3">Конструктор</div>
+							</div>
+
+							<div class="c-header__top-right">
+
+								<div class="ui-dropdown for-hover has-link">
+									<div class="ui-dropdown__box">
+										<button type="button" class="ui-dropdown__btn">
+											<span class="ui-dropdown__btn-icon">
+												<svg class="ui-icon" width="14" height="14">
+													<use xlink:href="img/assets/sprite.svg#svg-chevron-down"></use>
+												</svg>
+											</span>
+											<span class="ui-dropdown__btn-value">Дмитрий Кухарь</span>
+										</button>
+										<div class="ui-dropdown__body">
+											<ul class="ui-dropdown__list">
+												<li><a href="settings-personal.html" class="ui-dropdown__item">
+														<span class="ui-dropdown__item-icon">
+															<svg class="ui-icon" width="13" height="14">
+																<use xlink:href="img/assets/sprite.svg#svg-settings"></use>
+															</svg>
+														</span>
+														<span class="ui-dropdown__item-name">Настройки</span>
+													</a></li>
+												<li><a href="index.html" class="ui-dropdown__item">
+														<span class="ui-dropdown__item-icon">
+															<svg class="ui-icon" width="12" height="12">
+																<use xlink:href="img/assets/sprite.svg#svg-exit"></use>
+															</svg>
+														</span>
+														<span class="ui-dropdown__item-name">Выйти</span>
+													</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="c-language">
+									<a href="#" class="c-language__item">Ru</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="c-constructor">
+							<div class="c-constructor__wrap">
+								<div class="c-constructor__bar">
+									<div class="ui-select">
+										<select name="SUBJECT" class="js-select-single">
+											<option value="">Тема</option>
+											<option value="1" selected>My store</option>
+											<option value="2">My store 2</option>
+											<option value="3">My store 3</option>
+											<option value="4">My store 3</option>
+											<option value="5">My store 3</option>
+											<option value="6">My store 3</option>
+											<option value="7">My store 3</option>
+											<option value="8">My store 3</option>
+										</select>
+									</div>
+									<div class="c-constructor__bar-inner">
+
+										<div class="c-constructor__logo">
+											<div class="ui-attach">
+												<label class="ui-attach__label" for="logotype">
+													<div class="ui-attach__btn ui-button-attach">
+														<div class="ui-button-attach__icon">
+															<svg class="ui-icon" width="16" height="16">
+																<use xlink:href="img/assets/sprite.svg#svg-plus"></use>
+															</svg>
+														</div>
+													</div>
+												</label>
+												<input type="file" name="LOGO" class="ui-attach__input js-attach-file" id="logotype" accept="image/png">
+											</div>
+
+											<div class="f-body-note" data-content-template="tippy-1">
+												<svg class="ui-icon" width="12" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-info"></use>
+												</svg>
+												<div class="">Требования для логотипа?</div>
+											</div>
+											<div style="display: none;">
+												<div id="tippy-1">
+													Изображение не больше 400x400px <br>в формате PNG
+												</div>
+											</div>
+										</div>
+
+										<div class="c-constructor__bar-sep"></div>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET1" class="ui-checkbox-switch__input js-kit-toggle-email" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Электронная почта</span>
+										</label>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET2" class="ui-checkbox-switch__input js-kit-toggle-phone" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Телефон</span>
+										</label>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET3" class="ui-checkbox-switch__input js-kit-toggle-name" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Владелец карты</span>
+										</label>
+
+										<div class="c-constructor__bar-sep"></div>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET4" class="ui-checkbox-switch__input js-kit-toggle-lang" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Язык</span>
+										</label>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET5" class="ui-checkbox-switch__input js-kit-toggle-timer" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Таймер</span>
+										</label>
+
+										<div class="c-constructor__bar-sep"></div>
+										<button type="button" class="ui-button ui-button--outline-black">Сохранить</button>
+									</div>
+
+									<a href="#" data-popup="#popup-copy-widget" class="f-link-line">Скопировать код</a>
+								</div>
+								<div class="c-constructor__view">
+									<div class="c-pay">
+										<div class="c-pay__header">
+											<div class="c-pay__local js-kit-lang">
+												<span class="c-pay__local-item">ru</span>
+											</div>
+											<div class="c-pay__timer ui-timer  js-kit-timer">
+												<div class="ui-timer__icon">
+													<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M14.9239 13.8965L11.8565 11.5959V6.90969C11.8565 6.43849 11.4756 6.05762 11.0044 6.05762C10.5332 6.05762 10.1523 6.43849 10.1523 6.90969V12.022C10.1523 12.2904 10.2785 12.5435 10.4932 12.7037L13.9014 15.2598C14.0547 15.3749 14.2337 15.4303 14.4117 15.4303C14.6716 15.4303 14.9272 15.3135 15.0943 15.0886C15.3772 14.7128 15.3005 14.1785 14.9239 13.8965Z" fill="#010101" />
+														<path d="M10.9922 0.953369C4.92642 0.953369 -0.0078125 5.8876 -0.0078125 11.9534C-0.0078125 18.0191 4.92642 22.9534 10.9922 22.9534C17.058 22.9534 21.9922 18.0191 21.9922 11.9534C21.9922 5.8876 17.058 0.953369 10.9922 0.953369ZM10.9922 21.2493C5.86709 21.2493 1.69629 17.0785 1.69629 11.9534C1.69629 6.82827 5.86709 2.65747 10.9922 2.65747C16.1181 2.65747 20.2881 6.82827 20.2881 11.9534C20.2881 17.0785 16.1173 21.2493 10.9922 21.2493Z" fill="#010101" />
+													</svg>
+												</div>
+												<div class="ui-timer__data">
+													<div class="ui-timer__name">таймер</div>
+													<div class="ui-timer__counter js-timer-countdown" data-deadline="2024-12-23 22:25:59">
+														<span class="js-timer-minutes"></span>:<span class="js-timer-seconds"></span>
+													</div>
+												</div>
+											</div>
+											<div class="c-pay__header-close">
+												<svg class="ui-icon" width="14" height="14">
+													<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+												</svg>
+											</div>
+										</div>
+										<div class="c-pay__logotype">
+											<div class="c-pay__logotype-block">Логотип</div>
+										</div>
+
+
+										<div class="c-pay__tabs">
+											<div class="c-pay__tab">
+												<button type="button" class="c-pay__tab-button">
+													<span class="is-digit">12 000,00</span>
+													<svg class="ui-icon" width="10" height="12">
+														<use xlink:href="img/assets/sprite.svg#svg-ruble"></use>
+													</svg>
+												</button>
+												<div class="c-pay__tab-body">
+													<div class="c-pay__info-item">
+														<span class="c-pay__info-item-name">Магазин</span>
+														<span class="c-pay__info-item-value"><a href="#">Название магазина</a></span>
+													</div>
+													<div class="c-pay__info-item">
+														<span class="c-pay__info-item-name">Номер заказа</span>
+														<span class="c-pay__info-item-value">10478</span>
+													</div>
+													<div class="c-pay__info-item">
+														<span class="c-pay__info-item-name">Описание</span>
+														<span class="c-pay__info-item-value">Оплата заказа</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="c-pay__tab is-active">
+												<button type="button" class="c-pay__tab-button">
+													<span>Быстрая оплата</span>
+												</button>
+												<div class="c-pay__tab-body">
+													<div class="c-pay__fast-buy">
+														<button type="button" class="ui-button-sbp">
+															Оплатить c
+															<img src="img/assets/sbp.svg" width="44" height="25" alt="Система быстрых платежей" loading="lazy">
+														</button>
+														<button type="button" class="ui-button-ya">
+															Оплатить c
+															<span>
+																<img src="img/assets/ya.svg" width="24" height="24" alt="Яндекс Пэй" loading="lazy">
+																Пэй
+															</span>
+														</button>
+													</div>
+												</div>
+											</div>
+
+											<div class="c-pay__tab is-active">
+												<button type="button" class="c-pay__tab-button">
+													<span>Оплата картой</span>
+												</button>
+												<div class="c-pay__tab-body">
+
+													<form action="#" method="POST" class="c-pay__form js-validate-widget-pay">
+
+														<div class="c-pay__input">
+															<div class="c-pay__input-card-numb ui-input2">
+																<input id="cardNumb" autocomplete="off" type="text" name="CARD_NUMBER" placeholder="" class="ui-input2__field js-mask-card" required>
+																<label for="cardNumb" class="ui-input2__name">Номер карты</label>
+															</div>
+
+															<!-- Banks -->
+															<div class="c-pay__input-banks">
+																<div class="c-pay__input-bank">
+																	<img src="img/upload/bank/t-bank.svg" class="c-pay__input-bank-logo" width="20" height="20" alt="bank logo" loading="lazy">
+																	<img src="img/upload/bank/master-card.svg" class="c-pay__input-bank-system" width="20" height="20" alt="system logo" loading="lazy">
+																</div>
+															</div>
+
+															<!-- Clear button -->
+															<button type="button" aria-label="Очистить данные" class="c-pay__input-clear js-clear-pay">
+																<svg class="ui-icon" width="13" height="13">
+																	<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+																</svg>
+															</button>
+
+															<div class="c-pay__card-data">
+																<div class="c-pay__card-data-numb ui-input2 is-focus">
+																	<input id="cardDateComplet" autocomplete="off" type="text" name="CARD_COMPLET" placeholder="" value="" class="ui-input2__field">
+																	<label for="cardDateComplet" class="ui-input2__name">Номер</label>
+																</div>
+
+																<div class="c-pay__card-data-date ui-input2 is-focus">
+																	<input id="cardDate" autocomplete="off" type="text" name="CARD_MMYY" placeholder="00/00" minlength="5" class="ui-input2__field js-mask-pay-mmyy not-focus" required>
+																	<label for="cardDate" class="ui-input2__name">ММ/ГГ</label>
+																</div>
+
+																<div class="c-pay__card-data-code ui-input2 is-focus">
+																	<input id="cardCvv" autocomplete="off" type="password" name="CVV" minlength="3" maxlength="3" placeholder="000" class="ui-input2__field not-focus" required>
+																	<label for="cardCvv" class="ui-input2__name">CVV</label>
+																</div>
+															</div>
+														</div>
+
+														<div class="js-kit-email">
+															<div class="ui-checkbox2">
+																<input id="getReceipt" class="ui-checkbox2__input" type="checkbox" value="1" name="GET_RECEIPT">
+																<label for="getReceipt" class="ui-checkbox2__label"><span class="ui-checkbox2__text">Получить квитанцию на e-mail</span></label>
+															</div>
+															<div id="getReceiptField" class="c-pay__form-email">
+																<div class="ui-input2">
+																	<input id="getReciptInp" autocomplete="off" type="email" name="EMAIL" placeholder="" class="ui-input2__field">
+																	<label for="getReciptInp" class="ui-input2__name">E-mail</label>
+																</div>
+															</div>
+														</div>
+
+														<button type="submit" class="c-pay__form-submit">Оплатить</button>
+
+														<div class="c-pay__form-note">
+															Нажимая кнопку “Оплатить”,вы соглашаетесь&nbsp;<a href="#">с&nbsp;условиями передачи&nbsp;данных</a>
+														</div>
+													</form>
+
+												</div>
+											</div>
+											<div class="c-pay__powered">Powered by Only Finance</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <footer class="c-footer">
+	<div class="c-footer__cnt container">
+		
+	</div>
+</footer> -->
+			</div>
+
+		</div>
+		<!-- Новая заявка -->
+		<div id="new-support" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+
+				<form action="#" method="POST" class="ui-modal__content c-form c-form--support js-validate-support">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Новая заявка</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+
+						<div>
+							<div class="ui-input">
+								<input type="text" name="NAME" placeholder="Имя" class="ui-input__field" required>
+							</div>
+							<div class="ui-input">
+								<input type="text" name="PHONE" placeholder="Телефон" class="ui-input__field js-mask-phone" required>
+							</div>
+
+							<div class="ui-select">
+								<select name="SUBJECT" class="js-select-single">
+									<option value="">Тема</option>
+									<option value="1">Тема 1</option>
+									<option value="2">Тема 2</option>
+									<option value="3">Тема 3</option>
+									<option value="4">Тема 3</option>
+									<option value="5">Тема 3</option>
+									<option value="6">Тема 3</option>
+									<option value="7">Тема 3</option>
+									<option value="8">Тема 3</option>
+								</select>
+							</div>
+
+							<div class="ui-input">
+								<textarea autocomplete="off" type="text" name="MSG" placeholder="Описание проблемы" class="ui-input__field js-auto-height" required></textarea>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Скопировать код -->
+		<div id="popup-copy-widget" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+
+				<form action="#" method="POST" class="ui-modal__content c-form c-form--support js-validate-support">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Скопировать код</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение виджета на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Объявление виджета:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='window.widgetConfig = { api_key: "" };' data-tippy-note="Скопирован">
+									window.widgetConfig = { api_key: '' };
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение скрипта платежной формы на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of_dom.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Подключение скрипта платежной формы на сайте:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;script type="module" src="https://widget.onlyfinance.ru/of_dom.js"&gt;&lt;/script&gt;
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="ui-input ui-input--text">
+								<div class="ui-input__title">Обязательно нужно создать DOM-элемент:</div>
+								<div class="ui-input__field js-copy-to-clipboard" data-copy='<script type="module" src="https://widget.onlyfinance.ru/of_dom.js?_v=20241223080342"></script>' data-tippy-note="Скопирован">
+									&lt;div id="of_widget"&gt;&lt;/div&gt;
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" class="ui-button ui-button--gray" data-close>Закрыть</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Заявка # -->
+		<div id="ticket-support" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<div class="ui-modal__content">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Заявка #144 / Возврат</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<svg class="ui-icon" width="12" height="12">
+									<use xlink:href="img/assets/sprite.svg#svg-ava"></use>
+								</svg>
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__msg">Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">14 сент. 01:00</div>
+						</div>
+
+						<div class="c-card-ticket">
+							<div class="c-card-ticket__ava">
+								<img src="img/assets/ava.jpg" width="30" height="30" alt="1">
+							</div>
+							<div class="c-card-ticket__main f-body-b2">
+								<div class="c-card-ticket__name">Агент поддержки</div>
+								<div class="c-card-ticket__msg">Добрый день, Дмитрий! <br>Подскажите где можно указать адрес для колбека, для возврата ответа от банка при успешном платеже? Тут в настройках не нашел этого Куда банк пришлет ответ что транзакция проведена.</div>
+							</div>
+							<div class="c-card-ticket__date f-body-b2">15 сент. 12:05</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="button" data-close class="ui-button ui-button--gray">Закрыть</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Возврат средств -->
+		<div id="popup-transaction-refund" class="ui-modal ui-modal--centered">
+			<div class="ui-modal__wrapper">
+				<form action="#" class="ui-modal__content js-validate-return">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Возврат средств</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div class="c-return">
+							<div class="c-return__name">Сумма, ₽</div>
+							<div class="c-return__input ui-input">
+								<input type="text" name="SUMM" placeholder="" class="ui-input__field js-amount-field" required value="0">
+							</div>
+							<div class="c-return__summ">Общая сумма, ₽: <span>1 000 000</span></div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" data-close class="ui-button ui-button--primary" disabled>Вернуть</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Фильтры  -->
+		<div id="popup-filters" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<div class="ui-modal__content">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Фильтры</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body no-y-padding">
+
+						<div class="ui-modal__body-subtitle f-heading-4">Сумма, ₽</div>
+
+						<div class="ui-range">
+							<div class="ui-range__slider-price" data-min="1000" data-max="1000000" data-start="1000, 1000000" data-step="1"></div>
+							<label class="ui-range__label">
+								<span class="ui-range__prefix">Мин.</span>
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field" name="form[]" value="1 000">
+								</div>
+							</label>
+							<span class="ui-range__label-separator">—</span>
+							<label class="ui-range__label">
+								<span class="ui-range__prefix">Макс.</span>
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field" name="form[]" value="1 000 000">
+								</div>
+							</label>
+						</div>
+
+
+						<div class="ui-modal__body-subtitle f-heading-4">Статус</div>
+						<div class="ui-checkbox">
+							<input id="c_0" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+							<label for="c_0" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-checkbox">
+							<input id="c_1" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+							<label for="c_1" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-checkbox">
+							<input id="c_2" class="ui-checkbox__input" type="checkbox" value="1" name="form[]" checked>
+							<label for="c_2" class="ui-checkbox__label"><span class="ui-checkbox__text">Наименование</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+
+						<div class="ui-modal__body-subtitle f-heading-4">Дата</div>
+						<div class="ui-radiobox">
+							<input id="r_0" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_0" class="ui-radiobox__label"><span class="ui-radiobox__text">День</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-radiobox">
+							<input id="r_1" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_1" class="ui-radiobox__label"><span class="ui-radiobox__text">Месяц</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-radiobox">
+							<input id="r_2" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_2" class="ui-radiobox__label"><span class="ui-radiobox__text">Квартал</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+						<div class="ui-radiobox">
+							<input id="r_4" class="ui-radiobox__input" type="radio" value="1" name="radiobox">
+							<label for="r_4" class="ui-radiobox__label"><span class="ui-radiobox__text">Год</span></label>
+							<div class="ui-checkbox__amount">645</div>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Выбрать период  -->
+		<div id="popup-set-period" class="ui-modal ui-modal--aside">
+			<div class="ui-modal__wrapper">
+				<form action="#" method="POST" class="ui-modal__content js-validate-form">
+					<div class="ui-modal__header">
+						<div class="ui-modal__title f-heading-3">Выбрать период</div>
+
+						<button type="button" class="ui-modal__close" data-close aria-label="Закрыть попап">
+							<svg class="ui-icon" width="11" height="11">
+								<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+							</svg>
+						</button>
+					</div>
+
+					<div class="ui-modal__body">
+						<div class="ui-radiobox">
+							<input id="d_0" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_0" class="ui-radiobox__label"><span class="ui-radiobox__text">День</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_1" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_1" class="ui-radiobox__label"><span class="ui-radiobox__text">Месяц</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_2" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_2" class="ui-radiobox__label"><span class="ui-radiobox__text">Квартал</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_4" class="ui-radiobox__input" type="radio" value="1" name="PERIOD">
+							<label for="d_4" class="ui-radiobox__label"><span class="ui-radiobox__text">Год</span></label>
+						</div>
+						<div class="ui-radiobox">
+							<input id="d_5" class="ui-radiobox__input" type="radio" data-connect-for="date01" value="1" name="PERIOD">
+							<label for="d_5" class="ui-radiobox__label"><span class="ui-radiobox__text">Укажите дату</span></label>
+						</div>
+						<div class="ui-range ui-range--date is-hidden" data-connect="date01">
+							<label class="ui-range__label">
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field js-mask-date" name="DATE_FROM" value="21.11.2023">
+								</div>
+							</label>
+							<span class="ui-range__label-separator">—</span>
+							<label class="ui-range__label">
+								<div class="ui-input">
+									<input type="text" class="ui-range__input ui-input__field js-mask-date" name="DATE_TO" value="21.11.2024">
+								</div>
+							</label>
+						</div>
+
+					</div>
+
+					<div class="ui-modal__footer">
+						<button type="submit" class="ui-button ui-button--fw ui-button--primary" disabled>Применить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="js/app.min.js?_v=20241223080342"></script>
+
+		<!-- Затемнение для попап -->
+		<span class="u-body-after" aria-hidden="true"></span>
+	</div>
+</body>
+
+</html>

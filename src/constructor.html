@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include|'html/_head.htm',{
+"title":"Конструктор",
+"description":"Описание"
+}|
+
+<body>
+	<div class="t-page">
+		<div class="t-page__inner">
+
+			@@include|'html/_page-aside.htm',{}|
+
+			<div class="t-page__main has-bg-gray">
+				@@include|'html/_c-header.htm',{
+				"fixedClass": "",
+				"bgClass": "is-transparent",
+				"title": "Конструктор"
+				}|
+
+				<div class="t-page__main-inner">
+					<div class="container-main">
+						<div class="c-constructor">
+							<div class="c-constructor__wrap">
+								<div class="c-constructor__bar">
+									<div class="ui-select">
+										<select name="SUBJECT" class="js-select-single">
+											<option value="">Тема</option>
+											<option value="1" selected>My store</option>
+											<option value="2">My store 2</option>
+											<option value="3">My store 3</option>
+											<option value="4">My store 3</option>
+											<option value="5">My store 3</option>
+											<option value="6">My store 3</option>
+											<option value="7">My store 3</option>
+											<option value="8">My store 3</option>
+										</select>
+									</div>
+									<div class="c-constructor__bar-inner">
+
+										<div class="c-constructor__logo">
+											<div class="ui-attach">
+												<label class="ui-attach__label" for="logotype">
+													<div class="ui-attach__btn ui-button-attach">
+														<div class="ui-button-attach__icon">
+															<svg class="ui-icon" width="16" height="16">
+																<use xlink:href="img/assets/sprite.svg#svg-plus"></use>
+															</svg>
+														</div>
+													</div>
+												</label>
+												<input type="file" name="LOGO" class="ui-attach__input js-attach-file" id="logotype" accept="image/png">
+											</div>
+
+											<div class="f-body-note" data-content-template="tippy-1">
+												<svg class="ui-icon" width="12" height="12">
+													<use xlink:href="img/assets/sprite.svg#svg-info"></use>
+												</svg>
+												<div class="">Требования для логотипа?</div>
+											</div>
+											<div style="display: none;">
+												<div id="tippy-1">
+													Изображение не больше 400x400px <br>в формате PNG
+												</div>
+											</div>
+										</div>
+
+										<div class="c-constructor__bar-sep"></div>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET1" class="ui-checkbox-switch__input js-kit-toggle-email" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Электронная почта</span>
+										</label>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET2" class="ui-checkbox-switch__input js-kit-toggle-phone" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Телефон</span>
+										</label>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET3" class="ui-checkbox-switch__input js-kit-toggle-name" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Владелец карты</span>
+										</label>
+
+										<div class="c-constructor__bar-sep"></div>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET4" class="ui-checkbox-switch__input js-kit-toggle-lang" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Язык</span>
+										</label>
+										<label class="ui-checkbox-switch">
+											<input type="checkbox" name="SET5" class="ui-checkbox-switch__input js-kit-toggle-timer" checked>
+											<span class="ui-checkbox-switch__slider ui-checkbox-switch__slider--round"></span>
+											<span class="ui-checkbox-switch__text">Таймер</span>
+										</label>
+
+										<div class="c-constructor__bar-sep"></div>
+										<button type="button" class="ui-button ui-button--outline-black">Сохранить</button>
+									</div>
+
+									<a href="#" data-popup="#popup-copy-widget" class="f-link-line">Скопировать код</a>
+								</div>
+								<div class="c-constructor__view">
+									<div class="c-pay">
+										<div class="c-pay__header">
+											<div class="c-pay__local js-kit-lang">
+												<span class="c-pay__local-item">ru</span>
+											</div>
+											<div class="c-pay__timer ui-timer  js-kit-timer">
+												<div class="ui-timer__icon">
+													<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M14.9239 13.8965L11.8565 11.5959V6.90969C11.8565 6.43849 11.4756 6.05762 11.0044 6.05762C10.5332 6.05762 10.1523 6.43849 10.1523 6.90969V12.022C10.1523 12.2904 10.2785 12.5435 10.4932 12.7037L13.9014 15.2598C14.0547 15.3749 14.2337 15.4303 14.4117 15.4303C14.6716 15.4303 14.9272 15.3135 15.0943 15.0886C15.3772 14.7128 15.3005 14.1785 14.9239 13.8965Z" fill="#010101" />
+														<path d="M10.9922 0.953369C4.92642 0.953369 -0.0078125 5.8876 -0.0078125 11.9534C-0.0078125 18.0191 4.92642 22.9534 10.9922 22.9534C17.058 22.9534 21.9922 18.0191 21.9922 11.9534C21.9922 5.8876 17.058 0.953369 10.9922 0.953369ZM10.9922 21.2493C5.86709 21.2493 1.69629 17.0785 1.69629 11.9534C1.69629 6.82827 5.86709 2.65747 10.9922 2.65747C16.1181 2.65747 20.2881 6.82827 20.2881 11.9534C20.2881 17.0785 16.1173 21.2493 10.9922 21.2493Z" fill="#010101" />
+													</svg>
+												</div>
+												<div class="ui-timer__data">
+													<div class="ui-timer__name">таймер</div>
+													<div class="ui-timer__counter js-timer-countdown" data-deadline="2024-12-23 22:25:59">
+														<span class="js-timer-minutes"></span>:<span class="js-timer-seconds"></span>
+													</div>
+												</div>
+											</div>
+											<div class="c-pay__header-close">
+												<svg class="ui-icon" width="14" height="14">
+													<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+												</svg>
+											</div>
+										</div>
+										<div class="c-pay__logotype">
+											<div class="c-pay__logotype-block">Логотип</div>
+										</div>
+
+
+										<div class="c-pay__tabs">
+											<div class="c-pay__tab">
+												<button type="button" class="c-pay__tab-button">
+													<span class="is-digit">12 000,00</span>
+													<svg class="ui-icon" width="10" height="12">
+														<use xlink:href="img/assets/sprite.svg#svg-ruble"></use>
+													</svg>
+												</button>
+												<div class="c-pay__tab-body">
+													<div class="c-pay__info-item">
+														<span class="c-pay__info-item-name">Магазин</span>
+														<span class="c-pay__info-item-value"><a href="#">Название магазина</a></span>
+													</div>
+													<div class="c-pay__info-item">
+														<span class="c-pay__info-item-name">Номер заказа</span>
+														<span class="c-pay__info-item-value">10478</span>
+													</div>
+													<div class="c-pay__info-item">
+														<span class="c-pay__info-item-name">Описание</span>
+														<span class="c-pay__info-item-value">Оплата заказа</span>
+													</div>
+												</div>
+											</div>
+
+											<div class="c-pay__tab is-active">
+												<button type="button" class="c-pay__tab-button">
+													<span>Быстрая оплата</span>
+												</button>
+												<div class="c-pay__tab-body">
+													<div class="c-pay__fast-buy">
+														<button type="button" class="ui-button-sbp">
+															Оплатить c
+															<img src="img/assets/sbp.svg" width="44" height="25" alt="Система быстрых платежей" loading="lazy">
+														</button>
+														<button type="button" class="ui-button-ya">
+															Оплатить c
+															<span>
+																<img src="img/assets/ya.svg" width="24" height="24" alt="Яндекс Пэй" loading="lazy">
+																Пэй
+															</span>
+														</button>
+													</div>
+												</div>
+											</div>
+
+											<div class="c-pay__tab is-active">
+												<button type="button" class="c-pay__tab-button">
+													<span>Оплата картой</span>
+												</button>
+												<div class="c-pay__tab-body">
+
+													<form action="#" method="POST" class="c-pay__form js-validate-widget-pay">
+
+														<div class="c-pay__input">
+															<div class="c-pay__input-card-numb ui-input2">
+																<input id="cardNumb" autocomplete="off" type="text" name="CARD_NUMBER" placeholder="" class="ui-input2__field js-mask-card" required>
+																<label for="cardNumb" class="ui-input2__name">Номер карты</label>
+															</div>
+
+															<!-- Banks -->
+															<div class="c-pay__input-banks">
+																<div class="c-pay__input-bank">
+																	<img src="img/upload/bank/t-bank.svg" class="c-pay__input-bank-logo" width="20" height="20" alt="bank logo" loading="lazy">
+																	<img src="img/upload/bank/master-card.svg" class="c-pay__input-bank-system" width="20" height="20" alt="system logo" loading="lazy">
+																</div>
+															</div>
+
+															<!-- Clear button -->
+															<button type="button" aria-label="Очистить данные" class="c-pay__input-clear js-clear-pay">
+																<svg class="ui-icon" width="13" height="13">
+																	<use xlink:href="img/assets/sprite.svg#svg-close"></use>
+																</svg>
+															</button>
+
+															<div class="c-pay__card-data">
+																<div class="c-pay__card-data-numb ui-input2 is-focus">
+																	<input id="cardDateComplet" autocomplete="off" type="text" name="CARD_COMPLET" placeholder="" value="" class="ui-input2__field">
+																	<label for="cardDateComplet" class="ui-input2__name">Номер</label>
+																</div>
+
+																<div class="c-pay__card-data-date ui-input2 is-focus">
+																	<input id="cardDate" autocomplete="off" type="text" name="CARD_MMYY" placeholder="00/00" minlength="5" class="ui-input2__field js-mask-pay-mmyy not-focus" required>
+																	<label for="cardDate" class="ui-input2__name">ММ/ГГ</label>
+																</div>
+
+																<div class="c-pay__card-data-code ui-input2 is-focus">
+																	<input id="cardCvv" autocomplete="off" type="password" name="CVV" minlength="3" maxlength="3" placeholder="000" class="ui-input2__field not-focus" required>
+																	<label for="cardCvv" class="ui-input2__name">CVV</label>
+																</div>
+															</div>
+														</div>
+
+														<div class="js-kit-email">
+															<div class="ui-checkbox2">
+																<input id="getReceipt" class="ui-checkbox2__input" type="checkbox" value="1" name="GET_RECEIPT">
+																<label for="getReceipt" class="ui-checkbox2__label"><span class="ui-checkbox2__text">Получить квитанцию на e-mail</span></label>
+															</div>
+															<div id="getReceiptField" class="c-pay__form-email">
+																<div class="ui-input2">
+																	<input id="getReciptInp" autocomplete="off" type="email" name="EMAIL" placeholder="" class="ui-input2__field">
+																	<label for="getReciptInp" class="ui-input2__name">E-mail</label>
+																</div>
+															</div>
+														</div>
+
+														<button type="submit" class="c-pay__form-submit">Оплатить</button>
+
+														<div class="c-pay__form-note">
+															Нажимая кнопку “Оплатить”,вы соглашаетесь&nbsp;<a href="#">с&nbsp;условиями передачи&nbsp;данных</a>
+														</div>
+													</form>
+
+												</div>
+											</div>
+											<div class="c-pay__powered">Powered by Only Finance</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				@@include|'html/_c-footer.htm',{}|
+			</div>
+
+		</div>
+		@@include|'html/popup.htm',{}|
+		@@include|'html/_js.htm',{}|
+	</div>
+</body>
+
+</html>

@@ -1,6 +1,10 @@
 .t-page {
 	height: 100%;
 
+	&__subtitle {
+		margin-bottom: 24px;
+	}
+
 	&__inner {
 		display: flex;
 		flex-direction: row;
@@ -16,6 +20,7 @@
 			flex-direction: column;
 			background-color: var(--body-color);
 			height: 100%;
+
 		}
 
 		&-top {
@@ -57,10 +62,25 @@
 		flex-direction: column;
 		overflow: auto;
 
+		&.has-bg-gray {
+			background-color: #F7F8F8;
+		}
+
 		&-inner {
 			flex-grow: 1;
 			padding-top: 24px;
 			padding-bottom: 24px;
+			overflow-x: hidden;
 		}
 	}
+
+	&__analytics {
+		&-cards {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 17px;
+			margin-bottom: 44px;
+		}
+	}
+
 }

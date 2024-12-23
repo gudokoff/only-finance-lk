@@ -774,3 +774,14 @@ export function passwordToggleVisible() {
 		}
 	})
 }
+
+export function getFloatFormat(item) {
+	if (!item) return;
+	return item.toFixed(2).toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
+}
+
+export function cssVarValue(name) {
+	return getComputedStyle(document.documentElement).getPropertyValue(name);
+}
+
+export const setOpacity = (hex, alpha) => `${hex}${Math.floor(alpha * 255).toString(16).padStart(2, 0)}`;
