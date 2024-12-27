@@ -9,7 +9,7 @@
 @import "libs/bootstrap";
 @import "libs/tippy";
 // @import "libs/plyr";
-// @import "libs/fancybox"; // Медиа-галерея
+@import "libs/fancybox"; // Медиа-галерея
 
 
 // UI элементы
@@ -27,6 +27,7 @@
 @import "UI/ui-chart";
 @import "UI/ui-icon";
 @import "UI/ui-chart-line";
+@import "UI/ui-spoller";
 
 body {
 	font-size: 18px;
@@ -1340,6 +1341,12 @@ body {
 	&__title {
 		max-width: 700px;
 
+		&.is-center {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 		.f-type-cursor {
 			vertical-align: middle;
 		}
@@ -1358,6 +1365,17 @@ body {
 		}
 
 		&-right {}
+	}
+
+	&__descr2 {
+		text-align: center;
+		line-height: 1.6em;
+		font-weight: 300;
+		font-family: var(--font-family-second);
+
+		&:not(:first-child) {
+			margin-top: 16px;
+		}
 	}
 
 	&__counter {
@@ -1536,6 +1554,78 @@ body {
 	}
 }
 
+.s-faq {
+	padding-top: 70px;
+	padding-bottom: 90px;
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+
+	&__header {
+		margin-bottom: 24px;
+		display: flex;
+		align-items: center;
+
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+		}
+
+		&-left {
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+			}
+		}
+
+		&-right {
+			font-family: var(--font-family-second);
+			margin-left: auto;
+			font-size: 24px;
+
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+				margin-left: 0;
+				margin-top: 16px;
+				font-size: 18px;
+			}
+
+			b {
+				margin-right: 16px;
+			}
+		}
+	}
+
+	&__footer {
+		margin-top: 24px;
+	}
+
+	&__link {
+		@include media-breakpoint-down(md) {
+			width: 100%;
+
+			svg {
+				margin-left: auto;
+			}
+		}
+
+		&-name {
+			&-desktop {
+				@include media-breakpoint-down(lg) {
+					display: none;
+				}
+			}
+
+			&-mobile {
+				display: none;
+
+				@include media-breakpoint-down(lg) {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
 
 .c-form-resume {
 	position: relative;
@@ -1831,6 +1921,12 @@ body {
 		}
 	}
 
+	&-heading04 {
+		font-family: var(--font-family-second);
+		font-size: 44px;
+		font-weight: 700;
+	}
+
 	&-heading1 {
 		font-family: var(--font-family-second);
 		font-size: 24px;
@@ -1853,6 +1949,18 @@ body {
 			&:not(:last-child) {
 				margin-bottom: 16px;
 			}
+		}
+	}
+
+	&-heading3 {
+		font-family: var(--font-family-second);
+		font-size: 48px;
+		font-weight: 700;
+		letter-spacing: initial;
+		line-height: 1.2em;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 38px;
 		}
 	}
 

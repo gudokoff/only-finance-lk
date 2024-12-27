@@ -20,7 +20,14 @@ import './libs/ui-modal.js';
 
 import './files/tippy.js';
 
-import './widget.js'
+import './widget.js';
+
+import './aichat.js';
+
+import { Fancybox } from "@fancyapps/ui";
+Fancybox.bind("[data-fancybox]", {
+	// Your custom options
+});
 
 function formValidate() {
 	jQuery.extend(jQuery.validator.messages, {
@@ -548,6 +555,27 @@ document.addEventListener("DOMContentLoaded", function () {
 		}, 300);
 	});
 
+	// SPOLLERS
+	$(document).on("click", ".ui-spoller__item", function () {
+		let item = $(this);
+		let btn = item.find(".ui-spoller__button");
+		if (!item.hasClass("is-active")) {
+			item.addClass("is-active");
+			item.find(".ui-spoller__box").slideDown();
+			btn.addClass("is-active");
+		}
+	})
+	$(document).on("click", ".ui-spoller__button.is-active", function (e) {
+		e.stopPropagation();
+		let btn = $(this);
+		let item = btn.closest(".ui-spoller__item");
+		if (item.hasClass("is-active")) {
+			item.removeClass("is-active");
+			item.find(".ui-spoller__box").slideUp();
+			btn.removeClass("is-active");
+		}
+	});
+
 	// Анимация логотипа
 	var headerLogotype = document.getElementById('header-logotype');
 	if (headerLogotype) {
@@ -578,7 +606,19 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.body.removeChild(aux);
 	}
 
-	document.addEventListener("click", function () {
+	async function askWritePermission() {
+		try {
+			// The clipboard-write permission is granted automatically to pages 
+			// when they are the active tab. So it's not required, but it's more safe.
+			const { state } = await navigator.permissions.query({ name: 'clipboard-write' })
+			return state === 'granted'
+		} catch (error) {
+			// Browser compatibility / Security error (ONLY HTTPS) ...
+			return false
+		}
+	}
+
+	document.addEventListener("click", async function () {
 		let targetElement = event.target;
 
 		// Смена видимости пароля
@@ -593,6 +633,36 @@ document.addEventListener("DOMContentLoaded", function () {
 			let btn = targetElement.closest('.js-copy-to-clipboard');
 			if (btn.hasAttribute("data-copy")) {
 				copyToClipboard(btn.getAttribute("data-copy"));
+			}
+		}
+
+		if (targetElement.closest('.js-copy-blob-to-clipboard')) {
+			let btn = targetElement.closest('.js-copy-blob-to-clipboard');
+
+			const setToClipboard = async blob => {
+				const data = [new ClipboardItem({ [blob.type]: blob })]
+				await navigator.clipboard.write(data)
+			}
+			// Can we copy a text or an image ?
+			const canWriteToClipboard = await askWritePermission()
+
+			if (btn.hasAttribute("data-copy-img")) {
+				
+				// Copy a PNG image to clipboard
+				if (canWriteToClipboard) {
+					console.log('123');
+					const response = await fetch(btn.getAttribute("data-copy-img"))
+					const blob = await response.blob()
+					await setToClipboard(blob)
+				}
+			}
+
+			if (btn.hasAttribute("data-copy")) {
+				// Copy a text to clipboard
+				if (canWriteToClipboard) {
+					const blob = new Blob([btn.getAttribute("data-copy")], { type: 'text/plain' })
+					await setToClipboard(blob)
+				}
 			}
 		}
 
