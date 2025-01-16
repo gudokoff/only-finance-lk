@@ -9,7 +9,7 @@
 		padding-bottom: 16px;
 	}
 
-	@include media-breakpoint-down(md) {
+	@media (max-width: 900px) {
 		font-size: 18px;
 		padding-top: 52px;
 		padding-bottom: 36px;
@@ -34,10 +34,17 @@
 		}
 	}
 
+	.container {
+		position: relative;
+	}
+
 	&__row {
 		&-1 {
-			align-items: center;
-			margin-bottom: 50px;
+			align-items: flex-start;
+
+			@include media-breakpoint-up(sm) {
+				min-height: 130px;
+			}
 
 			@include media-breakpoint-down(sm) {
 				margin-bottom: 40px;
@@ -55,7 +62,7 @@
 				}
 
 				&.for-desktop {
-					@include media-breakpoint-down(md) {
+					@media (max-width: 900px) {
 						display: none;
 					}
 				}
@@ -63,7 +70,7 @@
 				&.for-mobile {
 					display: none;
 
-					@include media-breakpoint-down(md) {
+					@media (max-width: 900px) {
 						display: flex;
 						justify-content: center;
 						order: 2;
@@ -88,7 +95,7 @@
 			}
 
 			&-data {
-				@include media-breakpoint-down(md) {
+				@media (max-width: 900px) {
 					order: 1;
 
 					.c-footer__data {
@@ -100,10 +107,11 @@
 			&-links {
 				margin-top: -45px;
 
-				@include media-breakpoint-down(md) {
+				@media (max-width: 900px) {
 					order: 2;
 					text-align: center !important;
 					margin-top: 40px;
+					width: 100%;
 				}
 
 				@include media-breakpoint-down(sm) {
@@ -121,10 +129,28 @@
 		}
 	}
 
+	&__logotypes {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		margin-bottom: 20px;
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 0;
+		}
+
+		img {
+			height: auto;
+			object-fit: contain;
+		}
+	}
+
 	&__logotype {
+		display: inline-flex;
+
 		@include media-breakpoint-down(sm) {
 			margin-bottom: 17px;
-			display: block;
 		}
 	}
 
@@ -139,10 +165,11 @@
 	}
 
 	&__data {
-		margin-top: -108px;
+		position: absolute;
+		top: 0;
 
-		@include media-breakpoint-down(md) {
-			margin-top: 0;
+		@media (max-width: 900px) {
+			position: initial;
 		}
 
 		&-item {
@@ -154,13 +181,13 @@
 				display: inline-block;
 				min-width: 82px;
 
-				@include media-breakpoint-down(md) {
+				@media (max-width: 900px) {
 					min-width: 60px;
 				}
 			}
 
 			&--left {
-				@include media-breakpoint-down(md) {
+				@media (max-width: 900px) {
 					justify-content: flex-start;
 					text-align: left;
 
@@ -175,10 +202,11 @@
 		flex-direction: column;
 		justify-content: flex-end;
 
-		@include media-breakpoint-down(md) {
+		@media (max-width: 900px) {
 			order: 3;
 			text-align: center;
 			margin-top: 40px;
+			width: 100%;
 		}
 
 		@include media-breakpoint-down(sm) {
